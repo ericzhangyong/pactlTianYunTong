@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="newbzZSCell">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="107"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="220" height="107"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDw-Lf-BgL">
+                        <rect key="frame" x="45" y="38" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tle-9G-0Aq">
+                        <rect key="frame" x="111" y="40.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="S1L-UT-Y3N"/>
+                            <constraint firstAttribute="width" constant="25" id="Tl9-xP-1YZ"/>
+                        </constraints>
+                        <state key="normal" image="delete"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK7-HV-Z6i">
+                        <rect key="frame" x="10" y="41" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="i8J-Ju-jtz"/>
+                            <constraint firstAttribute="width" constant="25" id="i9G-4y-562"/>
+                        </constraints>
+                        <state key="normal" image="pdf2"/>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VK7-HV-Z6i" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="9W2-g8-Rp3"/>
+                <constraint firstItem="VK7-HV-Z6i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="BBS-mL-Q1s"/>
+                <constraint firstItem="Tle-9G-0Aq" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="F8l-yn-9Vf"/>
+                <constraint firstItem="Tle-9G-0Aq" firstAttribute="leading" secondItem="GDw-Lf-BgL" secondAttribute="trailing" constant="20" id="JHJ-XA-kW9"/>
+                <constraint firstItem="GDw-Lf-BgL" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="mBF-dL-z0n"/>
+                <constraint firstItem="GDw-Lf-BgL" firstAttribute="leading" secondItem="VK7-HV-Z6i" secondAttribute="trailing" constant="10" id="qnv-0e-K1f"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="220" height="107"/>
+            <connections>
+                <outlet property="ZSImgBtn" destination="VK7-HV-Z6i" id="QQJ-Ii-1FE"/>
+                <outlet property="ZSTitleBtn" destination="GDw-Lf-BgL" id="R44-DJ-mJP"/>
+                <outlet property="deleteBtn" destination="Tle-9G-0Aq" id="NLd-ZP-c5l"/>
+            </connections>
+            <point key="canvasLocation" x="210" y="83"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="delete" width="25" height="25"/>
+        <image name="pdf2" width="40" height="40"/>
+    </resources>
+</document>

@@ -1,0 +1,71 @@
+//
+//  PrefixHeader.pch
+//  MyTYT
+//
+//  Created by Fly on 2018/4/23.
+//  Copyright © 2018年 上海易迪爱网络工程有限公司. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#ifndef __OPTIMIZE__
+
+#define FlyLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define FlyLog(...)
+
+#endif
+
+#warning -----发布时看是否是测试环境--------
+
+#define testInteacher 1//1老师测试 0正式环境
+
+#define MyCountText 1 //1自己登陆时测试 0 正式环境
+
+#warning -----发布时看是否是测试环境--------
+
+
+#import "UIColor+ColorString.h"
+
+
+
+
+
+#define kuan [UIScreen mainScreen].bounds.size.width
+
+#define gao  [UIScreen mainScreen].bounds.size.height
+
+#define FirstFrame CGRectMake(0, 0, kuan, gao-64) 
+
+#define loginColor [UIColor colorWithRed:0.914 green:0.420 blue:0.184 alpha:1.00]
+
+#define BtnColor [UIColor colorWithRed:0.000 green:0.381 blue:0.650 alpha:1.00]
+
+#define NavColor [UIColor colorWithRed:0.933 green:0.463 blue:0.129 alpha:1.00]
+
+#define BZCOlor [UIColor colorWithRed:0.106 green:0.573 blue:0.969 alpha:1.00]
+
+#define ELICOlor [UIColor colorWithRed:0.596 green:0.796 blue:0.157 alpha:1.00]
+
+#define Oration @"oration"
+
+#define isReadMessage @"isreadmessage"
+
+#define MYCOOKE @"MYCOOK"
+
+//扫描一票成功通知
+#define YDNOTIFICATION @"ydnotification"
+//扫描 保存成功通知
+#define YDSaveNotiFication @"ydsaveNotification"
+
+#define YDArray @"YDARRAY"
+
+#define LeavTime 60 * 30
+
+#define BaseUrlPath @"baseurlpath"
+
+#endif /* PrefixHeader_pch */

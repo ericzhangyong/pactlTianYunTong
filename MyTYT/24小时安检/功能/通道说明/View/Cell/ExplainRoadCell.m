@@ -1,0 +1,28 @@
+//
+//  ExplainRoadCell.m
+//  MyTYT
+//
+//  Created by Fly on 2018/5/22.
+//  Copyright © 2018年 上海易迪爱网络工程有限公司. All rights reserved.
+//
+
+#import "ExplainRoadCell.h"
+#import "RoadModel.h"
+
+@implementation ExplainRoadCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+
+}
+
+- (void)loaddataWithModel:(RoadModel *)model{
+    
+    self.Roadname.text = model.name;
+    
+    self.roadRemark.text = model.remark;
+    
+}
+
+@end

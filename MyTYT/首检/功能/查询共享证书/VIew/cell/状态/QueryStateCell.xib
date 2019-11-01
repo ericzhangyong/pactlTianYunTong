@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="QueryStateCell">
+            <rect key="frame" x="0.0" y="0.0" width="498" height="190"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="498" height="190"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="证书号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYi-b9-Ii6">
+                        <rect key="frame" x="30" y="80.5" width="83.5" height="30"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pn2-B6-wGh">
+                        <rect key="frame" x="118.5" y="82" width="56.5" height="26.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz4-u7-wPe">
+                        <rect key="frame" x="353.5" y="70" width="124.5" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="yRi-7Q-Zw0"/>
+                        </constraints>
+                        <state key="normal" title="扫描/输入证书号">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pn2-B6-wGh" firstAttribute="leading" secondItem="nYi-b9-Ii6" secondAttribute="trailing" constant="5" id="2MU-6o-Tom"/>
+                <constraint firstItem="Tz4-u7-wPe" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.25" id="IG3-vz-eh0"/>
+                <constraint firstItem="nYi-b9-Ii6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="Ng7-yO-sLX"/>
+                <constraint firstAttribute="trailing" secondItem="Tz4-u7-wPe" secondAttribute="trailing" constant="20" id="VmC-xk-cJX"/>
+                <constraint firstItem="Tz4-u7-wPe" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="Vop-P5-R4c"/>
+                <constraint firstItem="pn2-B6-wGh" firstAttribute="centerY" secondItem="nYi-b9-Ii6" secondAttribute="centerY" id="bCL-5y-sLN"/>
+                <constraint firstItem="nYi-b9-Ii6" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="zYg-ek-2vJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="498" height="190"/>
+            <connections>
+                <outlet property="Scanbtn" destination="Tz4-u7-wPe" id="ssd-l0-D7m"/>
+                <outlet property="cerlable" destination="pn2-B6-wGh" id="Nfd-Oi-U2N"/>
+                <outlet property="zhhLable" destination="nYi-b9-Ii6" id="pUQ-cv-ZvY"/>
+            </connections>
+            <point key="canvasLocation" x="152" y="117"/>
+        </collectionViewCell>
+    </objects>
+</document>

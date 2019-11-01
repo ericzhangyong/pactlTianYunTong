@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="FlyPhotoFooterResuabview">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="132"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Buy-s0-kpB">
+                    <rect key="frame" x="0.0" y="0.0" width="382" height="132"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Buy-s0-kpB" secondAttribute="bottom" id="1PC-Xu-eHI"/>
+                <constraint firstItem="Buy-s0-kpB" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="62Q-fP-85y"/>
+                <constraint firstItem="Buy-s0-kpB" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="9Qe-Lt-zey"/>
+                <constraint firstAttribute="trailing" secondItem="Buy-s0-kpB" secondAttribute="trailing" id="q46-Kz-AHz"/>
+            </constraints>
+            <connections>
+                <outlet property="countlable" destination="Buy-s0-kpB" id="8ce-xb-ung"/>
+            </connections>
+            <point key="canvasLocation" x="65" y="95"/>
+        </collectionReusableView>
+    </objects>
+</document>
