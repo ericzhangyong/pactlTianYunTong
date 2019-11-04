@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
+@class ScanBillModel;
 
-@interface ScanModel : NSObject<NSCoding>
+@interface ScanModel : BaseModel<NSCoding>
 
 
 //代理简称
 @property (nonatomic) NSString *agentShortName;
 //运单号
 @property (nonatomic) NSString *waybillno;
+
 //航班
 @property (nonatomic) NSString *flightNo;
 //航班时间
@@ -67,6 +70,59 @@
 /*****************************************************/
 
 
+///子单信息
+@property (nonatomic,copy) NSDictionary *subWaybill;
+
+/// 总单信息
+@property (nonatomic,copy) NSDictionary *waybill;
+/// 证书信息
+@property (nonatomic,copy) NSArray *books;
+
+
 - (instancetype)initWithDic:(NSDictionary *)dic;
+
+
+@end
+
+@interface ScanBillModel : BaseModel
+// 总单
+@property (nonatomic,copy) ScanModel *waybill;
+
+/// 子单
+@property (nonatomic,copy) ScanModel *subWaybill;
+
+/// 证书信息
+@property (nonatomic,copy) NSArray *books;
+
+@end
+
+
+@interface ScanBillSubModel:BaseModel
+
+/// type:1 子单
+@property (nonatomic,assign) NSInteger type;
+@property (nonatomic,copy) NSString *awId;
+/// 代理
+@property (nonatomic,copy) NSString *agent_oprn;
+/// 代理id
+@property (nonatomic,copy) NSString *agent_oprn_id;
+/// 销售代理
+@property (nonatomic,copy) NSString *agent_sales;
+/// 单号
+@property (nonatomic,copy) NSString *waybill_no;
+/// 目的港口
+@property (nonatomic,copy) NSString *dest1;
+@property (nonatomic,copy) NSString *total_count;
+///毛重
+@property (nonatomic,copy) NSString *gross_weight;
+///毛重
+@property (nonatomic,copy) NSString *goods_desc;
+///是否电子运单0:不是 1 是
+@property (nonatomic,copy) NSString *wb_ele;
+///ref_status
+@property (nonatomic,copy) NSString *ref_status;
+///主单id
+@property (nonatomic,copy) NSString *parent_no;
+
 
 @end

@@ -31,6 +31,7 @@
 #import "FlyPhotoKitManager.h"
 #import "FlyPhotoNav.h"
 #import "NSString+Helper.h"
+#import "CheckBottomView.h"
 
 @interface AddBZVC ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,SelectPicDelegate>
 
@@ -42,10 +43,27 @@
 
 @property (nonatomic) AddBZDataManager *dataManager;
 
+@property (nonatomic,strong) CheckBottomView *view_bottom;
+
+@property (nonatomic,assign) DetectionType detectionType;
 @end
 
 @implementation AddBZVC
-
+-(instancetype)initWithOpeartionModel:(OperationMachinModel *)opeartionModel
+                                 aWID:(NSString *)aWID
+                               MachID:(NSString *)MachID
+                                  YDH:(NSString *)YDH
+                        DetectionType:(DetectionType)detectionType;
+{
+    if (self = [super init]) {
+        self.opeartionModel = opeartionModel;
+        self.aWID = aWID;
+        self.MachID = MachID;
+        self.YDH = YDH;
+        self.detectionType = detectionType;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -70,7 +88,33 @@
     [super viewDidLayoutSubviews];
     
     self.tableview.frame = CGRectMake(20, 20, self.view.bounds.size.width-40, self.view.bounds.size.height-40);
+    if (self.detectionType == DetectionType9610System) {
+        WEAK_SELF
+        self.tableview.tableFooterView = self.view_bottom;
+        self.view_bottom.bottomClickBlock = ^(NSInteger clickType) {
+            if (clickType == 1) {
+                [weakSelf buHeGeClick];
+            }else if (clickType == 2){
+                [weakSelf zanKouClick];
+            }else if (clickType == 3){
+                [weakSelf tongGuoClick];
+            }
+        };
+    }
 }
+
+-(void)buHeGeClick{
+    
+}
+
+-(void)zanKouClick{
+    
+}
+
+-(void)tongGuoClick{
+    
+}
+
 
 //返回 进入没有加载成功，之间取消返回，则取消网络
 - (void)back{
@@ -134,10 +178,12 @@
 //        // Fallback on earlier versions
 //    }
 
+    [[IQKeyboardManager sharedManager] setEnable:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [[IQKeyboardManager sharedManager] setEnable:YES];
 //    if (@available(iOS 11.0, *)) {
 //        self.navigationController.navigationBar.prefersLargeTitles = NO;
 //    } else {
@@ -708,6 +754,7 @@
     [self presentViewController:nav animated:YES completion:nil];
 
 }
+
 
 
 

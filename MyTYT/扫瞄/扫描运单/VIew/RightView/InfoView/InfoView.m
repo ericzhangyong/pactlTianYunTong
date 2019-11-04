@@ -117,7 +117,7 @@
 #pragma mark------------------------------------------------------------------------------------
 
 - (void)creatUI{
-    
+    self.backgroundColor = [UIColor lightGrayColor];
     self.allnumberlable = [[LeftLable alloc] initWithTitle:@"运单号"];
     self.hangbanlable = [[LeftLable alloc] initWithTitle:@"航班"];
     self.mudiganglable = [[LeftLable alloc] initWithTitle:@"目的港"];

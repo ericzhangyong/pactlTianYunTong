@@ -42,6 +42,7 @@
 #import "ControlAlertView.h"
 #import "ControlModel.h"
 #import "ClickControlModel.h"
+#import "CheckOrderVC.h"
 
 @interface FirstVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -262,12 +263,15 @@
 
 //扫瞄
 - (void)scanEvent{
-    ScanVC *scanvc = [[ScanVC alloc] init];
+    ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanVCTypeScan];
     
     scanvc.machID = self.allmodel.deviceModel.machinID;
     
-    scanvc.intoScantype = FirstScanType;
-    
+    if (self.detectionType == DetectionType9610System) {
+        scanvc.intoScantype = IntoScanType9610System;
+    }else{
+        scanvc.intoScantype = FirstScanType;
+    }
     [self.navigationController pushViewController:scanvc animated:NO];
 }
 
@@ -312,11 +316,26 @@
 //操作说明
 - (void)OpeationEvent{
     
-    [ShowUserAgreeVIew showUserTitle:@"操作说明" content:self.allmodel.protocolModel.protocolContrnt type:ShowOperationType agree:^{
+    if (self.detectionType == DetectionType9610System) {//
+//        CheckOrderVC *check = [[CheckOrderVC alloc] init];
+//        [self.navigationController pushViewController:check animated:YES];
         
-    } dontAgree:^{
+        ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanVCTypeCheck];
         
-    }];
+        scanvc.machID = self.allmodel.deviceModel.machinID;
+        if (self.detectionType == DetectionType9610System) {
+            scanvc.intoScantype = IntoScanType9610System;
+        }else{
+            scanvc.intoScantype = FirstScanType;
+        }
+        [self.navigationController pushViewController:scanvc animated:NO];
+    }else{
+        [ShowUserAgreeVIew showUserTitle:@"操作说明" content:self.allmodel.protocolModel.protocolContrnt type:ShowOperationType agree:^{
+               
+           } dontAgree:^{
+               
+           }];
+    }
 }
 
 //查看总单号

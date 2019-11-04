@@ -11,9 +11,17 @@
 typedef NS_ENUM(NSInteger,IntoScanType){
     FirstScanType,//首检类型
     TwenTyScanType,//24小时类型
+    IntoScanType9610System //9610系统
+};
+typedef NS_ENUM(NSInteger,ScanVCType){
+    ScanVCTypeScan = 0,//扫描界面
+    ScanVCTypeCheck//查验界面
 };
 
 @interface ScanVC : UIViewController
+
+-(instancetype)initWithScanVCType:(ScanVCType)vcType;
+
 
 @property (nonatomic) NSString *machID;
 

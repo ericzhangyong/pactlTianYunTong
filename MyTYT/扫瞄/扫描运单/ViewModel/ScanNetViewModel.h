@@ -13,6 +13,8 @@
 typedef void(^ScanStartBlock)(void);
 typedef void(^ScanSuccessModelBlock)(ScanModel *model);
 typedef void(^ScanFailBlock)(NSString *failStr);
+typedef void(^ScanCheckSuccessModelBlock)(id data);
+
 
 typedef void(^SaveScanStartBlock)(void);
 typedef void(^SaveScanSuccessModelBlock)(NSString *numStr);
@@ -28,6 +30,13 @@ typedef void(^SaveScanFailBlock)(NSString *failStr);
                    success:(ScanSuccessModelBlock)success
                       fail:(ScanFailBlock)fail;
 
+/// 查验单
+- (void)loaddataWitNumber:(NSString *)number
+                      start:(ScanStartBlock)start
+                    success:(ScanCheckSuccessModelBlock)success
+                      fail:(ScanFailBlock)fail;
+
+
 //保存<0首检 1 24小时>
 - (void)saveEventWithMachID:(NSString *)machID
                   listArray:(NSArray *)listarray
@@ -35,6 +44,7 @@ typedef void(^SaveScanFailBlock)(NSString *failStr);
                       start:(SaveScanStartBlock)start
                     success:(SaveScanSuccessModelBlock)success
                        fail:(SaveScanFailBlock)fail;
+
 
 
 @end

@@ -17,19 +17,29 @@
 #import "MBProgressHUD+FLyHUD.h"
 #import "ScanModel.h"
 #import "ScanSectionModel.h"
+#import "CheckBillSelectView.h"
 
 @interface ScanVC ()<leftViewDelegate>
 
 @property (nonatomic) LeftView *leftView;
 
 @property (nonatomic) RightView *rightVIew;
+@property (nonatomic,strong) CheckBillSelectView *view_billCheckSelect;
+
 
 @property (nonatomic) ScanNetViewModel *NetViewModel;
 
+/// vctype:扫描  查验
+@property (nonatomic,assign) ScanVCType vcType;
 @end
 
 @implementation ScanVC
-
+-(instancetype)initWithScanVCType:(ScanVCType)vcType{
+    if (self = [super init]) {
+        self.vcType = vcType;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -103,7 +113,11 @@
     
     PreSentScanVC *scanvc = [[PreSentScanVC alloc] init];
     
-    scanvc.type = SCANYGD;
+    if (self.vcType == ScanVCTypeCheck) {
+        scanvc.type = ScanTypeCheck;
+    }else{
+        scanvc.type = SCANYGD;
+    }
     
     scanvc.MachID = self.machID;
     
@@ -119,6 +133,12 @@
             scanvc.fromType = FromTwentyCome;
         }
             break;
+        case IntoScanType9610System:
+        {
+            scanvc.fromType = From9610System;
+        }
+            break;
+            
     }
     
     scanvc.block = ^(NSString *scanStr) {
@@ -140,24 +160,60 @@
     
     __weak typeof(self)weakself = self;
     
-    [self.NetViewModel loaddataWithMachID:self.machID number:str TypeStr:[self MytypeStr] start:^{
-        [MBProgressHUD showLoadView:weakself.view loadTitle:@"正在加载"];
-    } success:^(ScanModel *model) {
-        
-        [MBProgressHUD showSuccessView:weakself.view];
-        
-        [weakself successScanEventWithModel:model];
-        
-        
-    } fail:^(NSString *failStr) {
-        
-        [MBProgressHUD showErrorView:weakself.view errorTitle:failStr];
-        
-        weakself.rightVIew.infoView.hidden = YES;
-        
-        [weakself.leftView.tableview reloadData];
-        
-    }];
+    
+    
+    if (self.vcType) {
+    
+        [self.NetViewModel loaddataWitNumber:str start:^{
+            [MBProgressHUD showLoadView:weakself.view loadTitle:@"正在加载"];
+        } success:^(id data) {
+            [MBProgressHUD showSuccessView:weakself.view];
+            if ([data isKindOfClass:[NSArray class]]) {
+                NSArray *dataArr  = data;
+                ScanModel *model = dataArr.firstObject;
+                if (dataArr.count>1) {
+                    weakself.view_billCheckSelect.dataSource = dataArr;
+                    [weakself.view_billCheckSelect showBillSelectViewWithSuperView:self.view];
+                    weakself.view_billCheckSelect.didSeleced = ^(ScanBillModel * _Nonnull billModel) {
+                        [weakself successScanEventWithModel:billModel.subWaybill];
+                    };
+                }else{
+                    [weakself successScanEventWithModel:model];
+                }
+            }
+        } fail:^(NSString *failStr) {
+            [MBProgressHUD showErrorView:weakself.view errorTitle:failStr];
+           weakself.rightVIew.infoView.hidden = YES;
+           
+           [weakself.leftView.tableview reloadData];
+                       
+        }];
+    }else{
+        [self.NetViewModel loaddataWithMachID:self.machID number:str TypeStr:[self MytypeStr] start:^{
+            [MBProgressHUD showLoadView:weakself.view loadTitle:@"正在加载"];
+        } success:^(ScanModel *model) {
+            
+            [MBProgressHUD showSuccessView:weakself.view];
+            
+            [weakself successScanEventWithModel:model];
+            
+            
+        } fail:^(NSString *failStr) {
+            
+            [MBProgressHUD showErrorView:weakself.view errorTitle:failStr];
+            
+            weakself.rightVIew.infoView.hidden = YES;
+            
+            [weakself.leftView.tableview reloadData];
+            
+        }];
+    }
+    
+    
+    
+    //测试
+    [self.rightVIew configData];
+
 }
 
 //成功扫描
@@ -184,7 +240,6 @@
         ScanSectionModel *sectionModel = [[ScanSectionModel alloc] initWithScanModel:model];
 
         [self.leftView.dataArray replaceObjectAtIndex:j withObject:sectionModel];
-        
         [self.leftView setFreshDataWithRow:j];
         
     }else{//添加到第一个，刷新数据
@@ -203,7 +258,6 @@
     
     self.rightVIew.infoView.hidden = NO;
     [self.rightVIew.infoView loaddataWithscanModel:model];
-    
 }
 
 //删除隐藏相应数据
@@ -283,6 +337,12 @@
             
         }
             break;
+        case IntoScanType9610System:
+        {
+            typeStr = @"2";
+            
+        }
+            break;
     }
     
     return typeStr;
@@ -291,7 +351,8 @@
 
 - (void)creatUI{
     
-    self.title = @"扫描";
+    
+    self.title = self.vcType== ScanVCTypeScan?@"扫描":@"查验";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     
@@ -299,9 +360,11 @@
     [self.view addSubview:self.rightVIew];
     
     [self layout];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
-    
-    
+    [[IQKeyboardManager sharedManager] setEnable:YES];
 }
 
 - (void)layout{
@@ -338,7 +401,10 @@
 
 - (RightView *)rightVIew{
     if (!_rightVIew) {
-        _rightVIew = [[RightView alloc] init];
+        CGFloat pad = kuan *0.02;
+        CGFloat VPad = self.view.bounds.size.height *0.02;
+        CGFloat rightX = pad + kScreenWidth *0.38 + pad ;
+        _rightVIew = [[RightView alloc] initWithFrame:CGRectMake(rightX, VPad, kScreenWidth - rightX-pad, self.view.bounds.size.height-2*pad) vcType:self.vcType];
         _rightVIew.layer.masksToBounds = YES;
         _rightVIew.layer.cornerRadius = 15;
         _rightVIew.backgroundColor = [UIColor whiteColor];
@@ -356,5 +422,15 @@
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+#pragma mark- lazy
+-(CheckBillSelectView *)view_billCheckSelect{
+    if (!_view_billCheckSelect) {
+        _view_billCheckSelect = [CheckBillSelectView new];
+    }
+    return _view_billCheckSelect;
+}
+
 
 @end

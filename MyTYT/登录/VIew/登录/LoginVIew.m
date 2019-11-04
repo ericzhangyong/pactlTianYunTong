@@ -278,7 +278,9 @@
     switch (conrole.selectedSegmentIndex) {
         case 0://测试外网
         {
-            [[NSUserDefaults standardUserDefaults] setObject:@"http://chendejun00.gicp.net" forKey:BaseUrlPath];
+//            [[NSUserDefaults standardUserDefaults] setObject:@"http://chendejun00.gicp.net" forKey:BaseUrlPath];
+            [[NSUserDefaults standardUserDefaults] setObject:@"http://192.168.100.3:79" forKey:BaseUrlPath];
+
         }
             break;
         case 1://测试内网

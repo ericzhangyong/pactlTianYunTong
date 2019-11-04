@@ -118,8 +118,22 @@
         }else{
             self.elmFlag = @"";
         }
+        if (temdic[@"subWaybill"] !=nil) {
+            self.subWaybill = temdic[@"subWaybill"];
+        }else{
+            self.subWaybill = nil;
+        }
+        if (temdic[@"waybill"] !=nil) {
+            self.waybill = temdic[@"waybill"];
+        }else{
+            self.waybill = nil;
+        }
         
-        
+        if (temdic[@"books"] !=nil) {
+            self.books = temdic[@"books"];
+        }else{
+            self.books = nil;
+        }
         /*****************
          ****************字段******************************************/
         
@@ -184,8 +198,6 @@
         }else{
             [self HistoryWithArray:@[]];
         }
-        
-        
     }
     return self;
 }
@@ -268,9 +280,25 @@
     [aCoder encodeBool:self.isABControl forKey:@"isABControl"];
     [aCoder encodeObject:self.historyArray forKey:@"historyArray"];
     /*****************************************************/
-    
-    
-    
 }
+
++(NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
+    return @{@"waybillno":@[@"waybillno",@"waybill_no"],
+             @"agentOprn":@[@"agentOprn",@"agent_oprn"],
+             @"airportDest":@[@"airportDest",@"dest1"]
+    };
+}
+
+@end
+
+@implementation ScanBillModel
+
+
+@end
+
+
+@implementation ScanBillSubModel
+
+
 
 @end

@@ -288,7 +288,9 @@
 -(void)setDetectionType:(DetectionType)detectionType{
     _detectionType = detectionType;
     
+    [self.operationBtn setTitle:@"操作说明" forState:UIControlStateNormal];
     if (detectionType == DetectionType9610System ) {
+        [self.operationBtn setTitle:@"查验" forState:UIControlStateNormal];
         [self layout];
     }
 }

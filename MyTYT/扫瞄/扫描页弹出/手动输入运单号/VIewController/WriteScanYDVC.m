@@ -17,6 +17,8 @@
 #import "ScanSectionModel.h"
 #import "ScanRowModel.h"
 #import "WriteScanNewHeadView.h"
+#import "CheckBillSelectView.h"
+
 @interface WriteScanYDVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (nonatomic) UITableView *tableview;
@@ -26,7 +28,7 @@
 @property (nonatomic) NSMutableArray *dataArray;
 
 @property (nonatomic) ScanNetViewModel *NetViewModel;
-
+@property (nonatomic,strong) CheckBillSelectView *view_billCheckSelect;
 @end
 
 @implementation WriteScanYDVC
@@ -165,16 +167,64 @@
     self.headview.textfiled.text = @"";
     
     [self.headview.textfiled resignFirstResponder];
+    WEAK_SELF
+    if (self.scanVcType == ScanTypeCheck) {
+        [self.NetViewModel loaddataWitNumber:text start:^{
+            [MBProgressHUD showLoadView:self.navigationController.view loadTitle:@"正在请求运单信息"];
+        } success:^(id data) {
+           
+            [MBProgressHUD showSuccessView:weakSelf.navigationController.view];
+            ScanModel *model = [ScanModel new];
+            if ([data isKindOfClass:[NSArray class]]) {
+               NSArray *dataArr  = data;
+               ScanBillModel  *scanBillModel = dataArr.firstObject;
+                model = scanBillModel.subWaybill;
+                if (dataArr.count>1) {
+                    weakSelf.view_billCheckSelect.dataSource = dataArr;
+                    weakSelf.view_billCheckSelect.didSeleced = ^(ScanBillModel * _Nonnull billModel) {
+                        [weakSelf successScanEventWithModel:billModel.subWaybill];
+                    };
+                    [weakSelf.view_billCheckSelect showBillSelectViewWithSuperView:weakSelf.view];
+                }else{
+                    [weakSelf successScanEventWithModel:model];
+                }
+            }else{
+                [weakSelf successScanEventWithModel:model];
+            }
+        } fail:^(NSString *failStr) {
+            NSString *str = [[NSString alloc] initWithFormat:@"%@,请重新输入",failStr];
+            [MBProgressHUD showErrorView:self.navigationController.view errorTitle:str];
+            
+            [weakSelf.headview.textfiled becomeFirstResponder];
+        }];
+    }else{
+        [self.NetViewModel loaddataWithMachID:self.machID number:text TypeStr:[self MytypeStr] start:^{
+            
+            [MBProgressHUD showLoadView:self.navigationController.view loadTitle:@"正在请求运单信息"];
+            
+        } success:^(ScanModel *model) {
+            
+            [MBProgressHUD showSuccessView:self.navigationController.view];
+            [self successScanEventWithModel:model];
+            
+            
+        } fail:^(NSString *failStr) {
+            
+            NSString *str = [[NSString alloc] initWithFormat:@"%@,请重新输入",failStr];
+            [MBProgressHUD showErrorView:self.navigationController.view errorTitle:str];
+            
+            [self.headview.textfiled becomeFirstResponder];
+
+            
+        }];
+    }
     
-    [self.NetViewModel loaddataWithMachID:self.machID number:text TypeStr:[self MytypeStr] start:^{
-        
-        [MBProgressHUD showLoadView:self.navigationController.view loadTitle:@"正在请求运单信息"];
-        
-    } success:^(ScanModel *model) {
-        
-        [MBProgressHUD showSuccessView:self.navigationController.view];
-        
-        //发出通知
+    
+}
+
+- (void)successScanEventWithModel:(ScanModel *)model{
+    
+    //发出通知
         [self postYDModel:model];
         
         //如果已经存在单号，不需要重新添加
@@ -215,19 +265,7 @@
         }
         
         [self.headview.textfiled becomeFirstResponder];
-        
-    } fail:^(NSString *failStr) {
-        
-        NSString *str = [[NSString alloc] initWithFormat:@"%@,请重新输入",failStr];
-        [MBProgressHUD showErrorView:self.navigationController.view errorTitle:str];
-        
-        [self.headview.textfiled becomeFirstResponder];
-
-        
-    }];
-    
 }
-
 //刷新并选中数据
 - (void)freshDataSelectDataWithsection:(NSInteger)section{
   
@@ -276,6 +314,10 @@
             
         }
             break;
+        case ScanYDType9610Systm:
+        {
+            typeStr = @"2";
+        }
     }
     
     return typeStr;
@@ -287,7 +329,9 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     NSCharacterSet *charset = [NSCharacterSet decimalDigitCharacterSet];
-    
+    if (self.scanVcType == ScanTypeCheck) {
+        charset = [NSCharacterSet alphanumericCharacterSet];
+    }
     if ([[string stringByTrimmingCharactersInSet:charset] isEqualToString:@""]) {//数字
     
         FlyLog(@"%@",NSStringFromRange(range));
@@ -300,8 +344,11 @@
 //            [MBProgressHUD showTextView:self.navigationController.view textTitle:@"运单号位数不正确"];
             return NO;
         }else if (range.location<10){
+            if (range.location == 4) {
+                NSString *str = [NSString stringWithFormat:@"%@%@",textField.text,string];
+                [self requestInfoWithtext:@"MMMMMMMMMMCDJE01"];
+            }
             return YES;
-
         }
         
     }
@@ -442,5 +489,16 @@
     WriteScanCell *cell = [tableView cellForRowAtIndexPath:indexrow];
     cell.selected = NO;
 }
+
+
+
+#pragma mark- lazy
+-(CheckBillSelectView *)view_billCheckSelect{
+    if (!_view_billCheckSelect) {
+        _view_billCheckSelect = [CheckBillSelectView new];
+    }
+    return _view_billCheckSelect;
+}
+
 
 @end

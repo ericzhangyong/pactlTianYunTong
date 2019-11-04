@@ -15,6 +15,12 @@ typedef void(^AddBZBlock)(void);
 
 @interface AddBZVC : UIViewController
 
+-(instancetype)initWithOpeartionModel:(OperationMachinModel *)opeartionModel
+                                 aWID:(NSString *)aWID
+                               MachID:(NSString *)MachID
+                                  YDH:(NSString *)YDH
+                        DetectionType:(DetectionType)detectionType;
+
 @property (nonatomic) NSString *aWID;
 
 @property (nonatomic) NSString *MachID;

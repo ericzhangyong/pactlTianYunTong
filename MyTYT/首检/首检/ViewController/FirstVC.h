@@ -18,17 +18,14 @@ typedef NS_ENUM(NSInteger,FirstFreshDataType) {
     FirstBtnFresh,//刷新按钮
 };
 
-typedef NS_ENUM(NSInteger,DetectionType){
-    DetectionTypeFirst = 0, //首检
-    DetectionType9610System //9610系统
-};
+
 
 @interface FirstVC : BaseVC
 
 
 @property (nonatomic) AllModel *allmodel;
 
-
 /// 检测类型
 @property (nonatomic,assign) DetectionType detectionType;
+
 @end

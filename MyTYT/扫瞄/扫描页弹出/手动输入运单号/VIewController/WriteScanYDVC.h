@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PreSentScanVC.h"
 
 typedef NS_ENUM(NSInteger,ScanYDType) {
     FirstScanYDType,//首检扫描类型
-    TwentyScanYDType//24小时扫描
+    TwentyScanYDType,//24小时扫描
+    ScanYDType9610Systm//9610系统
+
 };
 
 @interface WriteScanYDVC : UIViewController
@@ -18,5 +21,7 @@ typedef NS_ENUM(NSInteger,ScanYDType) {
 @property (nonatomic) NSString *machID;
 
 @property (nonatomic,assign) ScanYDType type;
+@property (nonatomic, assign) ScanType scanVcType;
+
 
 @end

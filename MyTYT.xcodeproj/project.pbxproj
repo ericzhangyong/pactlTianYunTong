@@ -3,10 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1C8694B795FC8C0C7A455F /* Pods_MyTYTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DDCEFBC7080DFC7F2D2703 /* Pods_MyTYTTests.framework */; };
+		2F5C1F4C5FB4E14C0D06C012 /* Pods_MyTYT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D9E6D92B2277F71A96F3C /* Pods_MyTYT.framework */; };
+		33C28FC53001569C2B16030A /* Pods_MyTYT_MyTYTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB337FC75D0C8D7B684F579 /* Pods_MyTYT_MyTYTUITests.framework */; };
+		C22EF9D5236C0A98002FBDD7 /* UIView+BaseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C22EF9D4236C0A97002FBDD7 /* UIView+BaseCategory.m */; };
+		C22EF9D9236C2E11002FBDD7 /* CheckBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */; };
+		C2B36CB0236FB55500DA8F6C /* CheckOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */; };
+		C2B36CB3236FBFC400DA8F6C /* CheckInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CB2236FBFC400DA8F6C /* CheckInfoView.m */; };
+		C2B36CB92370094300DA8F6C /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CB82370094300DA8F6C /* BaseModel.m */; };
+		C2B36CBD23701C6E00DA8F6C /* CheckBillSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CBC23701C6E00DA8F6C /* CheckBillSelectView.m */; };
+		C2B36CC123701DE800DA8F6C /* CheckBillSelectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CBF23701DE800DA8F6C /* CheckBillSelectedCell.m */; };
+		C2B36CC223701DE800DA8F6C /* CheckBillSelectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B36CC023701DE800DA8F6C /* CheckBillSelectedCell.xib */; };
 		C2FA22FA2365910C00559771 /* BaseConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FA22F92365910C00559771 /* BaseConst.m */; };
 		F10A92CF20A92A2800D8FD8F /* BZAddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A92CD20A92A2800D8FD8F /* BZAddModel.m */; };
 		F10A930420AAEA0F00D8FD8F /* NewBZNetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A92D320AAEA0F00D8FD8F /* NewBZNetViewModel.m */; };
@@ -378,9 +389,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39DDCEFBC7080DFC7F2D2703 /* Pods_MyTYTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTYTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		446CB07B943050C688D8C9D7 /* Pods-MyTYT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYT.debug.xcconfig"; path = "Target Support Files/Pods-MyTYT/Pods-MyTYT.debug.xcconfig"; sourceTree = "<group>"; };
+		795E9A07930F5F1D046C163C /* Pods-MyTYT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYT.release.xcconfig"; path = "Target Support Files/Pods-MyTYT/Pods-MyTYT.release.xcconfig"; sourceTree = "<group>"; };
+		BAB337FC75D0C8D7B684F579 /* Pods_MyTYT_MyTYTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTYT_MyTYTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22EF9D3236C0A97002FBDD7 /* UIView+BaseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BaseCategory.h"; sourceTree = "<group>"; };
+		C22EF9D4236C0A97002FBDD7 /* UIView+BaseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BaseCategory.m"; sourceTree = "<group>"; };
+		C22EF9D7236C2E11002FBDD7 /* CheckBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBottomView.h; sourceTree = "<group>"; };
+		C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBottomView.m; sourceTree = "<group>"; };
+		C2B36CAE236FB55500DA8F6C /* CheckOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckOrderVC.h; sourceTree = "<group>"; };
+		C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckOrderVC.m; sourceTree = "<group>"; };
+		C2B36CB1236FBFC400DA8F6C /* CheckInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInfoView.h; sourceTree = "<group>"; };
+		C2B36CB2236FBFC400DA8F6C /* CheckInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckInfoView.m; sourceTree = "<group>"; };
+		C2B36CB5236FCD8600DA8F6C /* ColorConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorConst.h; sourceTree = "<group>"; };
+		C2B36CB72370094300DA8F6C /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		C2B36CB82370094300DA8F6C /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		C2B36CBB23701C6E00DA8F6C /* CheckBillSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBillSelectView.h; sourceTree = "<group>"; };
+		C2B36CBC23701C6E00DA8F6C /* CheckBillSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBillSelectView.m; sourceTree = "<group>"; };
+		C2B36CBE23701DE800DA8F6C /* CheckBillSelectedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBillSelectedCell.h; sourceTree = "<group>"; };
+		C2B36CBF23701DE800DA8F6C /* CheckBillSelectedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBillSelectedCell.m; sourceTree = "<group>"; };
+		C2B36CC023701DE800DA8F6C /* CheckBillSelectedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBillSelectedCell.xib; sourceTree = "<group>"; };
 		C2FA22F82365910C00559771 /* BaseConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConst.h; sourceTree = "<group>"; };
 		C2FA22F92365910C00559771 /* BaseConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseConst.m; sourceTree = "<group>"; };
 		C2FA22FB2365912A00559771 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		C48D9E6D92B2277F71A96F3C /* Pods_MyTYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CEC98A9D42365027481896 /* Pods-MyTYT-MyTYTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYT-MyTYTUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTYT-MyTYTUITests/Pods-MyTYT-MyTYTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB65271384AB9639E6E356E1 /* Pods-MyTYTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYTTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTYTTests/Pods-MyTYTTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC4DB889C4E96048D00B5D75 /* Pods-MyTYTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYTTests.release.xcconfig"; path = "Target Support Files/Pods-MyTYTTests/Pods-MyTYTTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED48AD94D2F2F93EAD8F7948 /* Pods-MyTYT-MyTYTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYT-MyTYTUITests.release.xcconfig"; path = "Target Support Files/Pods-MyTYT-MyTYTUITests/Pods-MyTYT-MyTYTUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F10A92CD20A92A2800D8FD8F /* BZAddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZAddModel.m; sourceTree = "<group>"; };
 		F10A92CE20A92A2800D8FD8F /* BZAddModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZAddModel.h; sourceTree = "<group>"; };
 		F10A92D220AAEA0F00D8FD8F /* NewBZNetViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBZNetViewModel.h; sourceTree = "<group>"; };
@@ -1037,6 +1073,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5C1F4C5FB4E14C0D06C012 /* Pods_MyTYT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1081,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1C8694B795FC8C0C7A455F /* Pods_MyTYTTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,20 +1089,127 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C28FC53001569C2B16030A /* Pods_MyTYT_MyTYTUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9378C29441331C13D831DF12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C48D9E6D92B2277F71A96F3C /* Pods_MyTYT.framework */,
+				BAB337FC75D0C8D7B684F579 /* Pods_MyTYT_MyTYTUITests.framework */,
+				39DDCEFBC7080DFC7F2D2703 /* Pods_MyTYTTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C22EF9D2236C0A76002FBDD7 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				C22EF9D3236C0A97002FBDD7 /* UIView+BaseCategory.h */,
+				C22EF9D4236C0A97002FBDD7 /* UIView+BaseCategory.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		C22EF9D6236C2DEC002FBDD7 /* BottomView */ = {
+			isa = PBXGroup;
+			children = (
+				C22EF9D7236C2E11002FBDD7 /* CheckBottomView.h */,
+				C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */,
+				C2B36CB1236FBFC400DA8F6C /* CheckInfoView.h */,
+				C2B36CB2236FBFC400DA8F6C /* CheckInfoView.m */,
+			);
+			path = BottomView;
+			sourceTree = "<group>";
+		};
+		C2B36CA9236FB30C00DA8F6C /* 查验 */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36CAD236FB4F700DA8F6C /* Models */,
+				C2B36CAC236FB4EF00DA8F6C /* Views */,
+				C2B36CAB236FB4E700DA8F6C /* ViewModels */,
+				C2B36CAA236FB31800DA8F6C /* ViewControllers */,
+			);
+			path = "查验";
+			sourceTree = "<group>";
+		};
+		C2B36CAA236FB31800DA8F6C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36CAE236FB55500DA8F6C /* CheckOrderVC.h */,
+				C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C2B36CAB236FB4E700DA8F6C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C2B36CAC236FB4EF00DA8F6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2B36CAD236FB4F700DA8F6C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2B36CB6237008F300DA8F6C /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36CB72370094300DA8F6C /* BaseModel.h */,
+				C2B36CB82370094300DA8F6C /* BaseModel.m */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		C2B36CBA2370184700DA8F6C /* ScanPopView */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36CBB23701C6E00DA8F6C /* CheckBillSelectView.h */,
+				C2B36CBC23701C6E00DA8F6C /* CheckBillSelectView.m */,
+				C2B36CBE23701DE800DA8F6C /* CheckBillSelectedCell.h */,
+				C2B36CBF23701DE800DA8F6C /* CheckBillSelectedCell.m */,
+				C2B36CC023701DE800DA8F6C /* CheckBillSelectedCell.xib */,
+			);
+			path = ScanPopView;
+			sourceTree = "<group>";
+		};
 		C2FA22F7236590E400559771 /* const */ = {
 			isa = PBXGroup;
 			children = (
 				C2FA22F82365910C00559771 /* BaseConst.h */,
 				C2FA22F92365910C00559771 /* BaseConst.m */,
 				C2FA22FB2365912A00559771 /* Const.h */,
+				C2B36CB5236FCD8600DA8F6C /* ColorConst.h */,
 			);
 			path = const;
+			sourceTree = "<group>";
+		};
+		EB5A810E8AE6897246D195CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				446CB07B943050C688D8C9D7 /* Pods-MyTYT.debug.xcconfig */,
+				795E9A07930F5F1D046C163C /* Pods-MyTYT.release.xcconfig */,
+				C9CEC98A9D42365027481896 /* Pods-MyTYT-MyTYTUITests.debug.xcconfig */,
+				ED48AD94D2F2F93EAD8F7948 /* Pods-MyTYT-MyTYTUITests.release.xcconfig */,
+				CB65271384AB9639E6E356E1 /* Pods-MyTYTTests.debug.xcconfig */,
+				DC4DB889C4E96048D00B5D75 /* Pods-MyTYTTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F10A92CC20A92A2800D8FD8F /* 添加备注模型 */ = {
@@ -2460,6 +2605,7 @@
 		F165FAF42095A6C0009335B8 /* 功能 */ = {
 			isa = PBXGroup;
 			children = (
+				C2B36CA9236FB30C00DA8F6C /* 查验 */,
 				F13FB4CA20BE40B6008C7496 /* 查询共享证书 */,
 				F1485CB620A6F89F0035CBE9 /* 查看证书数据模型 */,
 				F165FAF52095A6C0009335B8 /* 筛选 */,
@@ -2900,6 +3046,7 @@
 		F16DD32220CA2C0E00AECEED /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				C2B36CBA2370184700DA8F6C /* ScanPopView */,
 				F16DD32320CA2C0E00AECEED /* RightView */,
 				F16DD32F20CA2C0E00AECEED /* leftView */,
 			);
@@ -2909,8 +3056,9 @@
 		F16DD32320CA2C0E00AECEED /* RightView */ = {
 			isa = PBXGroup;
 			children = (
-				F16DD32420CA2C0E00AECEED /* RightView.m */,
+				C22EF9D6236C2DEC002FBDD7 /* BottomView */,
 				F16DD32520CA2C0E00AECEED /* RightView.h */,
+				F16DD32420CA2C0E00AECEED /* RightView.m */,
 				F16DD32620CA2C0E00AECEED /* InfoView */,
 			);
 			path = RightView;
@@ -3256,6 +3404,8 @@
 				F18CDA96208DB24200354764 /* MyTYTTests */,
 				F18CDAA1208DB24200354764 /* MyTYTUITests */,
 				F18CDA7C208DB23C00354764 /* Products */,
+				EB5A810E8AE6897246D195CA /* Pods */,
+				9378C29441331C13D831DF12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3383,6 +3533,7 @@
 		F18CDACA208DB55600354764 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C22EF9D2236C0A76002FBDD7 /* category */,
 				C2FA22F7236590E400559771 /* const */,
 				F1477BCB212BB74200D713F5 /* 布控提示 */,
 				F13ED7B520EB3F9700388EFC /* 24小时提示 */,
@@ -3673,6 +3824,7 @@
 		F18CDC39208DEC1700354764 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C2B36CB6237008F300DA8F6C /* BaseModel */,
 				F18CDC4B208ED5F700354764 /* BaseVC */,
 				F18CDC3A208DEC1700354764 /* BaseNav */,
 			);
@@ -4234,9 +4386,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F18CDAA7208DB24200354764 /* Build configuration list for PBXNativeTarget "MyTYT" */;
 			buildPhases = (
+				4902CB5ACF9CF338B82BDDB2 /* [CP] Check Pods Manifest.lock */,
 				F18CDA77208DB23C00354764 /* Sources */,
 				F18CDA78208DB23C00354764 /* Frameworks */,
 				F18CDA79208DB23C00354764 /* Resources */,
+				6DFD5608C24241C2D0EFCD4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4251,6 +4405,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F18CDAAA208DB24200354764 /* Build configuration list for PBXNativeTarget "MyTYTTests" */;
 			buildPhases = (
+				88A407AB6641C6162C1856FA /* [CP] Check Pods Manifest.lock */,
 				F18CDA8F208DB24200354764 /* Sources */,
 				F18CDA90208DB24200354764 /* Frameworks */,
 				F18CDA91208DB24200354764 /* Resources */,
@@ -4269,9 +4424,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F18CDAAD208DB24200354764 /* Build configuration list for PBXNativeTarget "MyTYTUITests" */;
 			buildPhases = (
+				FA77B8DE1B04EF838CEA494F /* [CP] Check Pods Manifest.lock */,
 				F18CDA9A208DB24200354764 /* Sources */,
 				F18CDA9B208DB24200354764 /* Frameworks */,
 				F18CDA9C208DB24200354764 /* Resources */,
+				F76730B6BED89E4B9A846DA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4350,6 +4507,7 @@
 				F13FB51720BE82AF008C7496 /* QueryAgentCell.xib in Resources */,
 				F10A931720AAEA0F00D8FD8F /* newbzWZCell.xib in Resources */,
 				F141AC8B20CF9F8D00DCB8A7 /* photo_def_photoPickerVc@2x.png in Resources */,
+				C2B36CC223701DE800DA8F6C /* CheckBillSelectedCell.xib in Resources */,
 				F18CDAB9208DB2BD00354764 /* Assets.xcassets in Resources */,
 				F165FB302095A6E7009335B8 /* Mycell.xib in Resources */,
 				F16DD2F320C8C90900AECEED /* AgentCell.xib in Resources */,
@@ -4412,6 +4570,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4902CB5ACF9CF338B82BDDB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTYT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DFD5608C24241C2D0EFCD4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTYT/Pods-MyTYT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTYT/Pods-MyTYT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTYT/Pods-MyTYT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88A407AB6641C6162C1856FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTYTTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F76730B6BED89E4B9A846DA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTYT-MyTYTUITests/Pods-MyTYT-MyTYTUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTYT-MyTYTUITests/Pods-MyTYT-MyTYTUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTYT-MyTYTUITests/Pods-MyTYT-MyTYTUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA77B8DE1B04EF838CEA494F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTYT-MyTYTUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F18CDA77208DB23C00354764 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -4450,12 +4711,14 @@
 				F16DD36820CA2C0F00AECEED /* ScanBotoomView.m in Sources */,
 				F16DD36420CA2C0E00AECEED /* InputCell.m in Sources */,
 				F10A930720AAEA0F00D8FD8F /* NewBZModel.m in Sources */,
+				C22EF9D9236C2E11002FBDD7 /* CheckBottomView.m in Sources */,
 				F13ED7BB20EB3F9700388EFC /* twentyAleartCell.m in Sources */,
 				F1DD2B9E209AAAB80036A347 /* SDWebImageCoderHelper.m in Sources */,
 				F16DD36020CA2C0E00AECEED /* ScanCell.m in Sources */,
 				C2FA22FA2365910C00559771 /* BaseConst.m in Sources */,
 				F16DD35E20CA2C0E00AECEED /* InfoView.m in Sources */,
 				F16DD2D520C8C52500AECEED /* ShowShareImageView.m in Sources */,
+				C2B36CC123701DE800DA8F6C /* CheckBillSelectedCell.m in Sources */,
 				F16DD35A20CA2C0E00AECEED /* ScanNetViewModel.m in Sources */,
 				F13FB50220BE7AA2008C7496 /* QueryCerStateModel.m in Sources */,
 				F1F58E1A20A290EF00CD1D26 /* GSKeyChainDataManager.m in Sources */,
@@ -4496,12 +4759,14 @@
 				F16DD2F920C8C90900AECEED /* AgentSectionModel.m in Sources */,
 				F165FB102095A6C0009335B8 /* SelectVC.m in Sources */,
 				F1F58E5120A3245100CD1D26 /* MYTimer.m in Sources */,
+				C2B36CB0236FB55500DA8F6C /* CheckOrderVC.m in Sources */,
 				F14AD11920AD4B48001CFEC2 /* DetailRowMOdel.m in Sources */,
 				F11D1B0621479C02006C2F0D /* WriteScanhistoryCell.m in Sources */,
 				F141AC4020CF8BC400DCB8A7 /* FlyaViewCell.m in Sources */,
 				F14689B320A7F46400FA2E3C /* SelectCerModel.m in Sources */,
 				F11A563E224B5DA800CAAA9F /* ClickControlAllModel.m in Sources */,
 				F18CDBD5208DB55700354764 /* MASConstraintMaker.m in Sources */,
+				C2B36CB92370094300DA8F6C /* BaseModel.m in Sources */,
 				F1172AE121523D7000498F4F /* ControlModel.m in Sources */,
 				F14AD15620B292C1001CFEC2 /* TwentyFourHourHeadView.m in Sources */,
 				F16DD2A320C660CD00AECEED /* ShowCerDataModel.m in Sources */,
@@ -4562,6 +4827,7 @@
 				F115FAC720CF50CF003E1EF5 /* AddBZImageCell.m in Sources */,
 				F14AD13320AE65DC001CFEC2 /* DetailCheckHeadView.m in Sources */,
 				F1DD2BA6209AAAB80036A347 /* SDWebImageTransition.m in Sources */,
+				C2B36CBD23701C6E00DA8F6C /* CheckBillSelectView.m in Sources */,
 				F115FAAC20CE4494003E1EF5 /* AddBZcollectionviewcell.m in Sources */,
 				F18CDBDE208DB55700354764 /* FlyHttpTools.m in Sources */,
 				F14689B420A7F46400FA2E3C /* SelctCerAllModel.m in Sources */,
@@ -4585,6 +4851,7 @@
 				F16DD36120CA2C0E00AECEED /* LeftView.m in Sources */,
 				F1485CC220A6F8B90035CBE9 /* LookCerNetViewModel.m in Sources */,
 				F1DD2BAA209AAAB80036A347 /* SDWebImageGIFCoder.m in Sources */,
+				C22EF9D5236C0A98002FBDD7 /* UIView+BaseCategory.m in Sources */,
 				F13FB51B20BE82C1008C7496 /* QueryImageCell.m in Sources */,
 				F141AC4220CF8BC400DCB8A7 /* FlypreViewController.m in Sources */,
 				F14AD15F20B2CB22001CFEC2 /* TwentyHourNetViewViewModel.m in Sources */,
@@ -4601,6 +4868,7 @@
 				F1DD2BA7209AAAB80036A347 /* NSData+ImageContentType.m in Sources */,
 				F1CF059620A40ABA00AA2741 /* DeviceModel.m in Sources */,
 				F11D1B0A21479D9A006C2F0D /* WriteScanNewHeadView.m in Sources */,
+				C2B36CB3236FBFC400DA8F6C /* CheckInfoView.m in Sources */,
 				F18CDC3D208DEC3C00354764 /* BaseNav.m in Sources */,
 				F1749C2A20A6A51D002FA77A /* NotifiModel.m in Sources */,
 				F16DD2F820C8C90900AECEED /* AgentRowModel.m in Sources */,
@@ -4865,6 +5133,7 @@
 		};
 		F18CDAA8208DB24200354764 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 446CB07B943050C688D8C9D7 /* Pods-MyTYT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -4886,6 +5155,7 @@
 		};
 		F18CDAA9208DB24200354764 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795E9A07930F5F1D046C163C /* Pods-MyTYT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -4906,6 +5176,7 @@
 		};
 		F18CDAAB208DB24200354764 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB65271384AB9639E6E356E1 /* Pods-MyTYTTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -4925,6 +5196,7 @@
 		};
 		F18CDAAC208DB24200354764 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC4DB889C4E96048D00B5D75 /* Pods-MyTYTTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -4944,6 +5216,7 @@
 		};
 		F18CDAAE208DB24200354764 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9CEC98A9D42365027481896 /* Pods-MyTYT-MyTYTUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHDN68AB54;
@@ -4962,6 +5235,7 @@
 		};
 		F18CDAAF208DB24200354764 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED48AD94D2F2F93EAD8F7948 /* Pods-MyTYT-MyTYTUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHDN68AB54;

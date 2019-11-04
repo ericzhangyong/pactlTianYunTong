@@ -33,6 +33,8 @@
         interface = @"/api/pactl/check/checkStatus";
     }else if ([typeStr isEqualToString:@"1"]){//24小时
         interface = @"/api/pactl/checks/checkStatus";
+    }else if ([typeStr isEqualToString:@"2"]){
+        interface = @"/api/pactl/check/9610/checkStatus";
     }
     
     [FlyHttpTools postWithJsonDic:updic interface:interface success:^(NSDictionary *dic) {
@@ -40,6 +42,8 @@
         if ([dic[@"ok"] integerValue] == 1) {
             
             ScanModel *model = [[ScanModel alloc] initWithDic:dic[@"data"]];
+            ScanBillModel *billModel = [ScanBillModel new];
+            billModel.waybill = model;
             success(model);
         }else{
             fail(dic[@"msg"]);
@@ -52,10 +56,35 @@
         
         fail(NetFailReason);
     }];
-    
-    
+
 }
 
+/// 查验单
+- (void)loaddataWitNumber:(NSString *)number
+                      start:(ScanStartBlock)start
+                    success:(ScanCheckSuccessModelBlock)success
+                     fail:(ScanFailBlock)fail{
+    start();
+    
+    NSDictionary *updic = @{
+                            @"waybillno":number
+                            };
+    NSString *interface = @"/api/pactl/check/9610/getWaybillINfoBySubNo";
+    [FlyHttpTools postWithJsonDic:updic interface:interface success:^(NSDictionary *dic) {
+        
+        if ([dic[@"ok"] integerValue] == 1) {
+            NSArray *dataArr = [ScanBillModel convertModelWithJsonArr:dic[@"data"]];
+            success(dataArr);
+        }else{
+            fail(dic[@"msg"]);
+        }
+        FlyLog(@"%@",dic);
+        
+    } failure:^(NSString *NetFailReason) {
+        
+        fail(NetFailReason);
+    }];
+}
 
 
 //保存
@@ -88,6 +117,13 @@
                    };
         interface = @"/api/pactl/checks/checkmsg";
 
+    }else if ([typeStr isEqualToString:@"2"]){//9610系统
+        updic  = @{
+        @"machineId":machID,
+        @"mac":machID,
+        @"list":listarray
+        };
+        interface = @"/api/pactl/check/checkMsg";
     }
     
  
@@ -97,7 +133,6 @@
         if ([dic[@"ok"] intValue] == 1) {
             
             NSDictionary *temdic = dic[@"data"];
-            
             NSString *numStr = [temdic[@"num"] stringValue];
             success(numStr);
             

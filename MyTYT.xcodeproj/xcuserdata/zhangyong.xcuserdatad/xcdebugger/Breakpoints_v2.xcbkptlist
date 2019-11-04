@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6FB024EC-33B7-48DB-896B-267068F5F68E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0C37F93-8CC2-4BE1-8C92-AECD0CFA383A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-requestDataWithStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AA83E3E-B9BA-40DE-881F-16826405B406"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-requestDataWithStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E5025CE-49DE-415E-A3EF-99E45A354055"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-requestDataWithStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBC94479-8639-4308-A218-6C831E5CA16C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-requestDataWithStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1857A8F7-8392-41A7-AF4E-C18466654BEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-requestDataWithStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE871FD2-C4FE-48F3-AFC5-67925DDCB6E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-LogincalWithCerModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1E1D3AC-372E-46A9-AA39-E3B36E1A43A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x529f;&#x80fd;/&#x67e5;&#x8be2;&#x5171;&#x4eab;&#x8bc1;&#x4e66;/ViewController/QueryShareCerVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3ECA0B0-EA70-4070-B26A-7A9E1B9A1438"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "740"
+            endingLineNumber = "740"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33FD24A9-421D-4559-ABC6-1AC5786F9A9E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "750"
+            endingLineNumber = "750"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24F96B3F-93A7-4E92-8B83-696B3EE3F9C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23C344BD-2280-4943-90F2-635A6CA5A95B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "742"
+            endingLineNumber = "742"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90140E7B-89EC-4D7C-9F9A-F2C7E4E26529"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "752"
+            endingLineNumber = "752"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A86D725-A000-429B-81CB-E079FD89D7F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "761"
+            endingLineNumber = "761"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C3B603F-FB6C-4D37-AA92-D2408905697A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "757"
+            endingLineNumber = "757"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "881"
+            endingLineNumber = "881"
+            landmarkName = "-isYJAgreeClick:upArray:block:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 30df9d3617c1492b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FirstVC isYJAgreeClick:upArray:block:]"
+                  moduleName = "MyTYT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewController/FirstVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "881"
+                  endingLineNumber = "881"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 288fbe13e745c6a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[FirstVC isYJAgreeClick:upArray:block:]_block_invoke"
+                  moduleName = "MyTYT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewController/FirstVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "881"
+                  endingLineNumber = "881"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFE7185C-44E7-4690-826F-D3665A7402CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "892"
+            endingLineNumber = "892"
+            landmarkName = "-isYJAgreeClick:upArray:block:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDBF3452-C22E-467C-86DC-D8B5887F7B02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "905"
+            endingLineNumber = "905"
+            landmarkName = "-isYJAgreeClick:upArray:block:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E67A24A1-EEA8-4B20-AFB9-10FEE8B1E8D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewModel/FirstNetViewModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "-clickAgreeWithArray:start:Success:fail:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E67A24A1-EEA8-4B20-AFB9-10FEE8B1E8D1 - 8f6531d1b707e18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FirstNetViewModel clickAgreeWithArray:start:Success:fail:]"
+                  moduleName = "MyTYT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewModel/FirstNetViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "704">
+               </Location>
+               <Location
+                  uuid = "E67A24A1-EEA8-4B20-AFB9-10FEE8B1E8D1 - c21196ff3c6e3a82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[FirstNetViewModel clickAgreeWithArray:start:Success:fail:]_block_invoke"
+                  moduleName = "MyTYT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewModel/FirstNetViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DCCD414-D60E-423C-90C9-65EE26CFD6B3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewModel/FirstNetViewModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-clickAgreeWithArray:start:Success:fail:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF07A56E-8A91-4DE5-85E5-17CDB92D401C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "888"
+            endingLineNumber = "888"
+            landmarkName = "-isYJAgreeClick:upArray:block:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C150E3AE-ECF9-45C0-A6F8-83E74B63DB77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "899"
+            endingLineNumber = "899"
+            landmarkName = "-isYJAgreeClick:upArray:block:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FD836E2-E81A-4E2C-93A3-CBF1C1426504"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x626b;&#x7784;/&#x626b;&#x63cf;&#x9875;&#x5f39;&#x51fa;/&#x626b;&#x63cf;/ViewController/PreSentScanVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
+            landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30A63C3A-34E6-49AA-8975-EB4B5C1B571E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x626b;&#x7784;/&#x626b;&#x63cf;&#x8fd0;&#x5355;/ViewModel/ScanNetViewModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-saveEventWithMachID:listArray:TypeStr:start:success:fail:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

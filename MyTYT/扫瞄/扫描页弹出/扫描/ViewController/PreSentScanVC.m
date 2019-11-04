@@ -148,7 +148,7 @@
             WriteScanYDVC *vc = [[WriteScanYDVC alloc] init];
             
             vc.machID = self.MachID;
-            
+            vc.scanVcType = self.type;
             
             
             switch (self.fromType) {
@@ -164,6 +164,12 @@
 
                 }
                     break;
+                case From9610System:
+                {
+                    vc.type = ScanYDType9610Systm;
+
+                }
+                    break;
             }
             
             [self.navigationController pushViewController:vc animated:YES];
@@ -171,6 +177,37 @@
             
         }
             break;
+       case ScanTypeCheck:
+       {
+
+           WriteScanYDVC *vc = [[WriteScanYDVC alloc] init];
+           
+           vc.machID = self.MachID;
+           vc.scanVcType = self.type;
+           switch (self.fromType) {
+                   
+               case FromFirstCome:
+               {
+                   vc.type = FirstScanYDType;
+               }
+                   break;
+               case FromTwentyCome:
+               {
+                   vc.type = TwentyScanYDType;
+
+               }
+                   break;
+               case From9610System:
+               {
+                   vc.type = ScanYDType9610Systm;
+
+               }
+                   break;
+           }
+           
+           [self.navigationController pushViewController:vc animated:YES];
+       }
+           break;
             
         case SCANYCER:
         {
@@ -276,8 +313,8 @@
         
         FlyLog(@"%@",medataObject);
         
-        NSString *str = medataObject.stringValue;
         
+        NSString *str = medataObject.stringValue;
 //        FlyLog(@"%@",str);
         
         //停止捕捉（捕捉到立即结束捕捉，要不会捕捉多次声音会出问题）

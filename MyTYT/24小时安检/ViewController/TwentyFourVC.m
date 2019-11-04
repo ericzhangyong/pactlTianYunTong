@@ -418,7 +418,7 @@
     
     [self.view endEditing:YES];
     
-    ScanVC *scanvc = [[ScanVC alloc] init];
+    ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanVCTypeScan];
     
     scanvc.machID = self.allmodel.deviceModel.machinID;
     
