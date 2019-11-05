@@ -115,6 +115,7 @@
     }else{
         self.infomdel = [[infoModel alloc] init];
     }
+//    self.infomdel  =[infoModel convertModelWithJsonDic:dic];
 }
 
 //分单

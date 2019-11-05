@@ -39,6 +39,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_ViewZongDanControl;
 
+@property (weak, nonatomic) IBOutlet UILabel *label_firstKongIcon;
+
 
 @end
 @implementation Mycell
@@ -255,7 +257,6 @@
         [self.DisPlayZBBtn setImage:[UIImage imageNamed:@"pdf2"] forState:UIControlStateNormal];
         self.DisPlayZBBtn.userInteractionEnabled = YES;
     }
-    
 }
 
 #pragma mark------------------------------------------------------------------------------------
@@ -368,25 +369,20 @@
 
 - (void)isControlWithModel:(FirstModel *)mdoel{
     
-    if (mdoel.iscontrol == YES || mdoel.isABControl == YES) {
-        self.view_orderNumKongIcon.hidden = NO;
+    self.view_orderNumKongIcon.hidden = YES;
+    if (self.detectionType == DetectionType9610System) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:mdoel.securityCheckResult]) {
+            self.view_orderNumKongIcon.hidden = NO;
+            self.view_orderNumKongIcon.backgroundColor = [UIColor colorWithHexString:mdoel.securityCheckResultColor];
+        }
     }else{
-        self.view_orderNumKongIcon.hidden = YES;
+        if (mdoel.iscontrol == YES || mdoel.isABControl == YES) {
+            self.label_firstKongIcon.hidden = NO;
+        }else{
+            self.label_firstKongIcon.hidden = YES;
+        }
     }
-    NSInteger type = 0;
-    if (type == 0) {
-        self.label_orderKongIcon.textColor  = [UIColor whiteColor];
-        self.view_orderNumKongIcon.backgroundColor = [UIColor redColor];
-    }else if (type == 1){
-        self.label_orderKongIcon.textColor  = [UIColor whiteColor];
-        self.view_orderNumKongIcon.backgroundColor = [UIColor yellowColor];
-    }else if (type == 2){
-        self.label_orderKongIcon.textColor  = [UIColor whiteColor];
-        self.view_orderNumKongIcon.backgroundColor = [UIColor blueColor];
-    }else if (type == 3){
-        self.label_orderKongIcon.textColor  = [UIColor greenColor];
-        self.view_orderNumKongIcon.backgroundColor = [UIColor yellowColor];
-    }
+    
 }
 /*????*/
 //锂电池

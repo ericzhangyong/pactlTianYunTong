@@ -39,6 +39,16 @@
 //ELM
 @property (nonatomic) NSString *elm_flag;
 
+
+/// 控字的背景颜色
+@property (nonatomic,copy) NSString *securityCheckResultColor;
+/// 控字的
+@property (nonatomic,copy) NSString *securityCheckResult;
+
+@property (nonatomic,copy) NSString *refResult;
+
+
+
 /*
 //证书类型==book为证书
 @property (nonatomic) NSString *bookCheckType;

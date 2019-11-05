@@ -17,7 +17,12 @@
 
 @implementation FirstNetViewModel
 
-- (void)loadDataWithView:(UIView *)view MachId:(NSString *)machId agentName:(NSString *)agentname success:(FirstSuccessBLock)success failStr:(FirstFailBlock)failStr{
+- (void)loadDataWithView:(UIView *)view
+                   MachId:(NSString *)machId
+                agentName:(NSString *)agentname
+            detectionType:(DetectionType)detectionType
+                  success:(FirstSuccessBLock)success
+                  failStr:(FirstFailBlock)failStr{
 
     [FlyView showFlyViewFromSuperView:view];
     
@@ -26,7 +31,14 @@
                             @"agentOprn":agentname
                             };
     
-    [FlyHttpTools postWithJsonDic:updic interface:@"/api/pactl/check/checkMsg" success:^(NSDictionary *dic) {
+    NSString *interface = @"/api/pactl/check/checkMsg";
+    if (detectionType == DetectionType9610System) {
+        interface = @"/api/pactl/check/9610/checkMsg";
+    }else if (detectionType == DetectionTypeFirst){
+        interface = @"/api/pactl/check/checkMsg";
+    }
+
+    [FlyHttpTools postWithJsonDic:updic interface:interface success:^(NSDictionary *dic) {
         
         FirstAllModel *allmodel = [[FirstAllModel alloc] initWIthDic:dic];
         
@@ -103,14 +115,24 @@
 
 #pragma mark------------------------------------------------------------------------------------
 //刷新列表
-- (void)FreshDataListWitMachId:(NSString *)machId agentName:(NSString *)agentname success:(FirstSuccessBLock)success failStr:(FirstFailBlock)failStr{
+- (void)FreshDataListWitMachId:(NSString *)machId
+                      agentName:(NSString *)agentname
+                   dectionType:(DetectionType)detectionType
+                        success:(FirstSuccessBLock)success
+                        failStr:(FirstFailBlock)failStr{
     
     NSDictionary *updic = @{
                             @"machine":machId,
                             @"agentOprn":agentname
                             };
+    NSString *interface = @"/api/pactl/check/checkMsg";
+    if (detectionType == DetectionType9610System) {
+        interface = @"/api/pactl/check/9610/checkMsg";
+    }else if (detectionType == DetectionTypeFirst){
+        interface = @"/api/pactl/check/checkMsg";
+    }
     
-    [FlyHttpTools postWithJsonDic:updic interface:@"/api/pactl/check/checkMsg" success:^(NSDictionary *dic) {
+    [FlyHttpTools postWithJsonDic:updic interface:interface success:^(NSDictionary *dic) {
         
         FirstAllModel *allmodel = [[FirstAllModel alloc] initWIthDic:dic];
         

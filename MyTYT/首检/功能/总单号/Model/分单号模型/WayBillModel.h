@@ -33,9 +33,20 @@
 @property (nonatomic) NSString *elm_flag;
 //备注数量
 @property (nonatomic) NSString *count_remark;
+// 通过pass 不合格 unqualified   暂扣 hold
+@property (nonatomic) NSString *refResult;
+
+
 
 /// 中文品名
 @property (nonatomic,copy) NSString *goods_name_cn;
+
+
+/// 控字的背景颜色
+@property (nonatomic,copy) NSString *securityCheckResultColor;
+/// 控字的
+@property (nonatomic,copy) NSString *securityCheckResult;
+
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

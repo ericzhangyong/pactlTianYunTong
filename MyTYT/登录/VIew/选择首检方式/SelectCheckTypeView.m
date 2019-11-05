@@ -21,19 +21,18 @@
 
 @property (nonatomic, copy) CheckTypeBlock checkblock;
 
+@property (nonatomic,strong) NSString *containStr;
 @end
 
 @implementation SelectCheckTypeView
 
-
-+ (void)showSelectType:(CheckTypeBlock)block{
-    
+//containStr---—>  0:首检+24小时  1.首检 2.24小时 3.9610系统 ‘1，2，3’可以组合
++ (void)showCheckTypeViewContainStr:(NSString *)containStr
+                         SelectType:(CheckTypeBlock)block{
     SelectCheckTypeView *checkview = [[SelectCheckTypeView alloc] init];
-    
+    checkview.containStr = containStr;
     checkview.checkblock = block;
-    
     [checkview creatUI];
-    
 }
 
 - (void)showanimation{
@@ -101,30 +100,60 @@
     [self.backView addSubview:self.hourBtn];
     [self.backView addSubview:self.btn_9610];
     
+    self.firstBtn.hidden = YES;
+    self.hourBtn.hidden = YES;
+    self.btn_9610.hidden = YES;
+    CGFloat viewHeight = 430;
+    CGFloat height_first = 0;
+    CGFloat top_first = 0;
+    CGFloat height_hour = 0;
+    CGFloat top_hour = 0;
+    CGFloat height_9610 = 0;
+    CGFloat top_9610 = 0;
+
+    if ([self.containStr containsString:@"1"]) {
+        height_first = 90;
+        top_first = 40;
+        self.firstBtn.hidden = NO;
+    }
+    if ([self.containStr containsString:@"2"]) {
+        height_hour = 90;
+        top_hour = 40;
+        self.hourBtn.hidden = NO;
+    }
+    if ([self.containStr containsString:@"3"]) {
+         height_9610 = 90;
+        top_9610 = 40;
+        self.btn_9610.hidden = NO;
+    }
+    viewHeight = 40 + top_first+ height_first +top_hour + height_hour+ top_9610 + height_9610;
+    
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.center.equalTo(self);
-        make.height.equalTo(@430);
+        make.height.mas_equalTo(viewHeight);
         make.width.equalTo(self).multipliedBy(0.6);
     }];
     
     [_firstBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.backView.mas_top).offset(40);
-        make.height.mas_equalTo(90);
+        make.top.equalTo(self.backView.mas_top).offset(top_first);
+        make.height.mas_equalTo(height_first);
         make.left.equalTo(self.backView).offset(50);
         make.right.equalTo(self.backView).offset(-50);
     }];
     
+    
+    
     [_hourBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.firstBtn);
-        make.top.equalTo(self.firstBtn.mas_bottom).offset(40);
-        make.height.mas_equalTo(90);
+        make.top.equalTo(self.firstBtn.mas_bottom).offset(top_hour);
+        make.height.mas_equalTo(height_hour);
     }];
     
     [self.btn_9610 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.firstBtn);
-        make.top.equalTo(self.hourBtn.mas_bottom).offset(40);
-        make.bottom.equalTo(self.backView.mas_bottom).offset(-40);
+        make.height.mas_equalTo(height_9610);
+        make.top.equalTo(self.hourBtn.mas_bottom).offset(top_9610);
     }];
 }
 

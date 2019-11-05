@@ -11,18 +11,17 @@
 #import "Masonry.h"
 #import "UIView+BaseCategory.h"
 #import "OperationMachinModel.h"
-#import "CheckBottomView.h"
 
 @interface RightView ()
 
 @property (nonatomic,strong) CheckBottomView *view_bottom;
 
 
-@property (nonatomic,assign) ScanVCType vcType;
+@property (nonatomic,assign) ScanType vcType;
 @end
 @implementation RightView
 
--(instancetype)initWithFrame:(CGRect)frame vcType:(ScanVCType)vcType
+-(instancetype)initWithFrame:(CGRect)frame vcType:(ScanType)vcType
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -38,38 +37,28 @@
     
     [self addSubview:self.ScanBtn];
     [self addSubview:self.titlelable];
-    if (self.vcType == ScanVCTypeScan) {
-        [self addSubview:self.infoView];
-    }else{
+    if (self.vcType == ScanTypeCheck) {
         [self addSubview:self.view_checkInfo];
+    }else{
+        [self addSubview:self.infoView];
     }
     [self addSubview:self.view_beizhu];
     [self.view_beizhu addSubview:self.view_bottom];
-    
+    WEAK_SELF
+    self.view_bottom.bottomClickBlock = ^(NSInteger clickType) {
+        if (weakSelf.bottomClickBlock) {
+            weakSelf.bottomClickBlock(clickType);
+        }
+    };
 }
+
+
 
 -(void)layoutSubviews{
     [super layoutSubviews];
     [self layout];
 }
 
--(void)configData{
-    
-//    addvc.block = ^{
-//
-//        [self requestData];
-//    };
-//    OperationMachinModel *model = [OperationMachinModel new ];
-//    model.ctName =@"大家来卡解放了";
-//    model.machineName = @"测试机器";
-//    self.beizhuVC.opeartionModel = model;
-//
-//    self.beizhuVC.MachID = @"4";
-//
-//    self.beizhuVC.aWID = @"c657ee88a2604f76b4b168930ec54545";
-//
-//    self.beizhuVC.YDH = @"SLE00100306";
-}
 
 - (void)layout{
     
@@ -87,7 +76,7 @@
     }];
 
     self.view_beizhu.hidden = YES;
-    if (self.vcType == ScanVCTypeCheck) {
+    if (self.vcType == ScanTypeCheck) {
         self.view_beizhu.hidden = NO;
         [self.view_beizhu mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).offset(20);
@@ -100,7 +89,7 @@
             make.height.mas_equalTo(50);
         }];
     }
-    if (self.vcType == ScanVCTypeCheck) {
+    if (self.vcType == ScanTypeCheck) {
         [self.view_checkInfo mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self).offset(-20);
             make.top.equalTo(self.ScanBtn.mas_bottom).offset(25);
@@ -116,7 +105,20 @@
         }];
     }
 }
-
+-(void)configDataWithBillModel:(ScanBillModel *)billModel{
+    
+    
+    if (self.vcType == ScanTypeCheck) {
+        self.view_checkInfo.hidden = NO;
+        [self.view_checkInfo loaddataWithscanModel:billModel];
+        self.view_bottom.refResult = billModel.subWaybill.refResult;
+        [self.view_bottom setCount_remark:billModel.count_remark];
+        
+    }else{
+        self.infoView.hidden = NO;
+        [self.infoView loaddataWithscanModel:billModel];
+    }
+}
 
 - (UIButton *)ScanBtn{
     if (!_ScanBtn) {
@@ -165,9 +167,6 @@
     if (!_view_checkInfo) {
         _view_checkInfo = [[CheckInfoView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height*0.5)];
         _view_checkInfo.backgroundColor = [UIColor whiteColor];
-        _view_checkInfo.zhengShuClick = ^(BOOL isClick) {
-            
-        };
     }
     return _view_checkInfo;
 }

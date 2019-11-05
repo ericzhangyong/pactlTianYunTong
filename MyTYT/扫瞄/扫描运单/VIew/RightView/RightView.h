@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "CheckInfoView.h"
 #import "ScanVC.h"
+#import "CheckBottomView.h"
 
 @class InfoView;
 @interface RightView : UIView
 
--(instancetype)initWithFrame:(CGRect)frame vcType:(ScanVCType)vcType;
+-(instancetype)initWithFrame:(CGRect)frame vcType:(ScanType)vcType;
 
 @property (nonatomic) UIButton *ScanBtn;
 
@@ -26,9 +27,10 @@
 /// 备注
 @property (nonatomic,strong) UIView *view_beizhu;
 
+/// 1.不合格 2.暂扣 3.通过 4.备注
+@property (nonatomic,copy) void(^bottomClickBlock)(NSInteger clickType);
 
 
-
--(void)configData;
+-(void)configDataWithBillModel:(ScanBillModel *)billModel;
 
 @end

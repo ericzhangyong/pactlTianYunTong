@@ -47,6 +47,14 @@
                   @"type24hFlag":@"1",
                   };
         interFace = @"/api/pactl/checks/getRemrak";
+    }if ([type isEqualToString:@"2"]) {
+        
+        updic = @{
+                  @"awId":aWID,
+                  @"machineId":deviceModel.machinID
+                  };
+        interFace = @"/api/pactl/check/getRemrak";
+        
     }
    
     

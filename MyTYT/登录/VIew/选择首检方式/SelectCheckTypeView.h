@@ -18,6 +18,9 @@ typedef void(^CheckTypeBlock)(SelectCheckType checkType);
 
 @interface SelectCheckTypeView : UIView
 
-+ (void)showSelectType:(CheckTypeBlock)block;
+
+
++ (void)showCheckTypeViewContainStr:(NSString *)containStr
+                         SelectType:(CheckTypeBlock)block;
 
 @end

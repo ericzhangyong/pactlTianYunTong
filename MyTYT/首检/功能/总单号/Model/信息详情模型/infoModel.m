@@ -96,7 +96,7 @@
         }
         
         //体积
-        if (dic[@"vol"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"vol"]]) {
            
             self.vol = [self decimWithnumber:dic[@"vol"]];
             
@@ -106,14 +106,14 @@
         
         
         //目的港
-        if (dic[@"airportDest"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"airportDest"]]) {
             self.airportDest = dic[@"airportDest"];
         }else{
             self.airportDest = @"";
         }
         
         //品名
-        if (dic[@"goodsDesc"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"goodsDesc"]]) {
             self.goodsDesc = dic[@"goodsDesc"];
         }else{
             self.goodsDesc = @"";
@@ -122,21 +122,21 @@
         self.goodsDesc = [[self.goodsDesc componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]] componentsJoinedByString:@""];
         
         //ELI
-        if (dic[@"eliFlag"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"eliFlag"]]) {
             self.eliFlag = dic[@"eliFlag"];
         }else{
             self.eliFlag = @"";
         }
         
          //ELM
-        if (dic[@"elmFlag"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"elmFlag"]]) {
             self.elmFlag = dic[@"elmFlag"];
         }else{
             self.elmFlag = @"";
         }
         
         //特或代码
-        if (dic[@"holdCode"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"holdCode"]]) {
             self.holdCode = dic[@"holdCode"];
         }else{
             self.holdCode = @"";
@@ -144,19 +144,28 @@
         
         
         //SSR
-        if (dic[@"ssr"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"ssr"]]) {
             self.ssr = dic[@"ssr"];
         }else{
             self.ssr = @"";
         }
         
         //OSI
-        if (dic[@"osi1"] !=Nil) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"osi1"]]) {
             self.osi1 = dic[@"osi1"];
         }else{
             self.osi1 = @"";
         }
-        
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResultColor"]]) {
+            self.securityCheckResultColor =dic[@"securityCheckResultColor"];
+        }else{
+            self.securityCheckResultColor = @"000000";
+        }
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResult"]]) {
+            self.securityCheckResult =dic[@"securityCheckResult"];
+        }else{
+            self.securityCheckResult = @"";
+        }
  
     }
     return self;

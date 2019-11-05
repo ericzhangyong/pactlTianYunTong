@@ -5,6 +5,7 @@ target 'MyTYT' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'YYModel', '~> 1.0.4'
+  pod 'YTKKeyValueStore'
 
 
   # Pods for MyTYT

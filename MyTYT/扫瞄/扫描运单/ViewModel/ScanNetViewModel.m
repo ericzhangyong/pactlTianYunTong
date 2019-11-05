@@ -44,7 +44,8 @@
             ScanModel *model = [[ScanModel alloc] initWithDic:dic[@"data"]];
             ScanBillModel *billModel = [ScanBillModel new];
             billModel.waybill = model;
-            success(model);
+            success(billModel);
+        
         }else{
             fail(dic[@"msg"]);
         }
@@ -119,11 +120,11 @@
 
     }else if ([typeStr isEqualToString:@"2"]){//9610系统
         updic  = @{
-        @"machineId":machID,
+        @"machine":machID,
         @"mac":machID,
         @"list":listarray
         };
-        interface = @"/api/pactl/check/checkMsg";
+        interface = @"/api/pactl/check/9610/checkMsg";
     }
     
  
@@ -143,5 +144,39 @@
     } failure:^(NSString *NetFailReason) {
         fail(NetFailReason);
     }];
+}
+
+
+-(void)saveCheckActionWithAwId:(NSString *)AwId
+                    refResult:(NSString *)refResult
+                        start:(SaveScanStartBlock)start
+                      success:(ScanCheckSuccessModelBlock)success
+                        fail:(SaveScanFailBlock)fail{
+    
+    start();
+    NSMutableDictionary *updic = [NSMutableDictionary dictionary];
+    if (![BaseVerifyUtils isNullOrSpaceStr:refResult] ) {
+        [updic setValue:refResult forKey:@"refResult"];
+    }
+    if (![BaseVerifyUtils isNullOrSpaceStr:AwId] ) {
+        [updic setValue:AwId forKey:@"awId"];
+    }
+    NSString *interface = @"/api/pactl/check/9610/updateSubRefResult";
+       
+    [FlyHttpTools postWithJsonDic:updic interface:interface success:^(NSDictionary *dic) {
+           
+           if ([dic[@"ok"] intValue] == 1) {
+               
+//               NSDictionary *temdic = dic[@"data"];
+               success(@"");
+               
+           }else{
+               fail(dic[@"msg"]);
+           }
+           FlyLog(@"%@",dic);
+    } failure:^(NSString *NetFailReason) {
+           fail(NetFailReason);
+    }];
+    
 }
 @end

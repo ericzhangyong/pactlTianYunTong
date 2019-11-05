@@ -35,8 +35,10 @@
 
 }
 
-- (void)loaddataWithscanModel:(ScanModel *)mdoel{
+- (void)loaddataWithscanModel:(ScanBillModel *)billModel{
     
+    ScanModel *mdoel = billModel.waybill;
+
     self.YDH.text = mdoel.waybillno;
     
     self.HB.text = [NSString stringWithFormat:@"%@  %@",mdoel.flightNo,mdoel.fltDate];

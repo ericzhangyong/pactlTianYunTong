@@ -6,9 +6,9 @@
 //  Copyright © 2018年 上海易迪爱网络工程有限公司. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface OperationMachinModel : NSObject
+@interface OperationMachinModel : BaseModel
 
 //货站ID
 @property (nonatomic) NSString *ctId;

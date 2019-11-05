@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger,BZCheckTYpe) {
-    FIRSTTYPE,//首检
-    TWenTYTYPE//24小时
-};
+//typedef NS_ENUM(NSInteger,BZCheckTYpe) {
+//    FIRSTTYPE,//首检
+//    TWenTYTYPE//24小时
+//};
 
 typedef NS_ENUM(NSInteger,ComeIngType) {
     AddRemarkType,//添加备注类型
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger,ComeIngType) {
 @property (nonatomic,assign) ComeIngType comeType;
 
 //进入类型
-@property (nonatomic,assign) BZCheckTYpe Type;
+@property (nonatomic,assign) DetectionType Type;
 
 //加载所用
 @property (nonatomic) DeviceModel *deviceModel;

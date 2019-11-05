@@ -6,15 +6,17 @@
 //  Copyright © 2018年 上海易迪爱网络工程有限公司. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface BooksModel : NSObject
+@interface BooksModel : BaseModel
 
 @property (nonatomic) NSString *BookNo;
 
 @property (nonatomic) NSString *BookID;
 
 @property (nonatomic) NSString *ID;
+
+
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

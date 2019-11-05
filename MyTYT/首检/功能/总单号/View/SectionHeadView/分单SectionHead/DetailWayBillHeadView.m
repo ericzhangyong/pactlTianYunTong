@@ -54,7 +54,7 @@
     
     [self.FDHLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@20);
-        make.width.equalTo(self).multipliedBy(0.2).offset(-20);
+        make.width.equalTo(self).multipliedBy(0.34).offset(-20);
         make.centerY.equalTo(self);
     }];
     
@@ -81,7 +81,7 @@
     
     [self.PMLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.MDGLable.mas_right).offset(20);
-        make.width.equalTo(self).multipliedBy(0.4).offset(-20);
+        make.width.equalTo(self).multipliedBy(0.26).offset(-20);
         make.centerY.equalTo(self);
         
     }];

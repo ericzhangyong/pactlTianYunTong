@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "BaseModel.h"
 @class ScanBillModel;
+#import "BooksModel.h"
+
+//typedef NS_ENUM(NSInteger,ScanVCType){
+//    ScanVCTypeScan = 0,//扫描界面
+//    ScanVCTypeCheck//查验界面
+//};
 
 @interface ScanModel : BaseModel<NSCoding>
 
@@ -16,7 +22,9 @@
 //代理简称
 @property (nonatomic) NSString *agentShortName;
 //运单号
-@property (nonatomic) NSString *waybillno;
+@property (nonatomic) NSString *waybillno;//waybillNo
+
+@property (nonatomic,copy) NSString *awId;
 
 //航班
 @property (nonatomic) NSString *flightNo;
@@ -36,6 +44,9 @@
 @property (nonatomic) NSString *vol;
 //品名
 @property (nonatomic) NSString *goodsDesc;
+
+/// 通过pass 不合格 unqualified   暂扣 hold
+@property (nonatomic,copy) NSString *refResult;
 
 //电子运单
 @property (nonatomic) NSString *Ele;
@@ -57,6 +68,11 @@
 //状态msg
 @property (nonatomic) NSString *msg;
 
+/// 控字的背景颜色
+@property (nonatomic,copy) NSString *securityCheckResultColor;
+/// 控字的
+@property (nonatomic,copy) NSString *securityCheckResult;
+
 /*****************************************************/
 
 //安检布控
@@ -76,7 +92,7 @@
 /// 总单信息
 @property (nonatomic,copy) NSDictionary *waybill;
 /// 证书信息
-@property (nonatomic,copy) NSArray *books;
+@property (nonatomic,copy) NSArray<BooksModel *> *books;
 
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
@@ -93,6 +109,15 @@
 
 /// 证书信息
 @property (nonatomic,copy) NSArray *books;
+
+/// 备注
+@property (nonatomic,copy) NSString *count_remark;
+
+/// 可安检
+@property (nonatomic,copy) NSString *showText;
+
+/// 扫描和查验界面区分
+@property (nonatomic,assign) ScanType scanType;
 
 @end
 
@@ -112,6 +137,7 @@
 @property (nonatomic,copy) NSString *waybill_no;
 /// 目的港口
 @property (nonatomic,copy) NSString *dest1;
+///件数
 @property (nonatomic,copy) NSString *total_count;
 ///毛重
 @property (nonatomic,copy) NSString *gross_weight;

@@ -20,12 +20,23 @@
 @property (weak, nonatomic) IBOutlet UILabel *pmLable;
 
 @property (weak, nonatomic) IBOutlet UILabel *EleLable;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_eleLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *ELILable;
 @property (weak, nonatomic) IBOutlet UILabel *ELMLable;
 @property (weak, nonatomic) IBOutlet UIButton *BZBtn;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *DeleteImageConstant;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *RightConstant;
+//控字
+@property (weak, nonatomic) IBOutlet UILabel *label_control;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_labelControl;
 
-- (void)loaddatawithModel:(WayBillModel *)model;
+//状态
+@property (weak, nonatomic) IBOutlet UILabel *label_refResult;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_labelresResult;
+
+
+- (void)loaddatawithModel:(WayBillModel *)model
+            detectionType:(DetectionType)detectionType;
 
 @end

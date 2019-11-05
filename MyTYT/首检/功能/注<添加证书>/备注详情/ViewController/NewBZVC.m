@@ -83,15 +83,21 @@
     NSString *type;
     
     switch (self.Type) {
-        case FIRSTTYPE:
+        case DetectionTypeFirst:
         {
             type = @"0";
         }
             break;
             
-        case TWenTYTYPE:
+        case DetectionTypeTwentyFour:
         {
             type = @"1";
+
+        }
+            break;
+        case DetectionType9610System:
+        {
+            type = @"2";
 
         }
             break;
@@ -278,7 +284,7 @@
             if (indexPath.item == 0) {
                 
                 newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model];
+                [cell loaddataWithModel:model detectionType:self.Type];
                 return cell;
                 
             }else if (indexPath.item == model.CanUseCerArray.count + 1){
@@ -317,7 +323,7 @@
                 
                 
                 newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model];
+                [cell loaddataWithModel:model detectionType:self.Type];
                 return cell;
             }else if (indexPath.item == 1){
                 newbzkongcell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzkongcellID" forIndexPath:indexPath];

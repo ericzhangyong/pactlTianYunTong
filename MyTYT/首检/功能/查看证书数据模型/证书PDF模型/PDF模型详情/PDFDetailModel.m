@@ -12,8 +12,12 @@
 
 - (instancetype)initWithDic:(NSDictionary *)dic{
     if (self =[super init]) {
-        
-        self.imagePath = [[NSString alloc] initWithFormat:@"%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:BaseUrlPath],dic[@"fileHttpPath"]];
+        NSString *url = dic[@"fileHttpPath"];
+        if ([url containsString:@"http"]) {
+            self.imagePath = dic[@"fileHttpPath"];
+        }else{
+            self.imagePath = [[NSString alloc] initWithFormat:@"%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:BaseUrlPath],dic[@"fileHttpPath"]];
+        }
     }
     return self;
 }

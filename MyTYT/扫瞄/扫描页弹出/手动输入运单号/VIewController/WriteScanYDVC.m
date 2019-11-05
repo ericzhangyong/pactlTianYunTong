@@ -29,6 +29,9 @@
 
 @property (nonatomic) ScanNetViewModel *NetViewModel;
 @property (nonatomic,strong) CheckBillSelectView *view_billCheckSelect;
+
+/// 是否正在选择bill
+@property (nonatomic,assign) BOOL isSelectBilling;
 @end
 
 @implementation WriteScanYDVC
@@ -68,21 +71,29 @@
 - (void)creatUI{
     
    
-    
-    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(saveEvent)];
+    NSString *title = @"保存";
+    if (self.scanVcType == ScanTypeCheck && self.type == ScanYDType9610Systm) {
+        title = @"确定";
+    }
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleDone target:self action:@selector(saveEvent)];
     self.navigationItem.rightBarButtonItem = right;
     [self.navigationController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor whiteColor]]];
     
     NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:YDArray];
 
     if (array) {//如果有数据
-        
-        for (NSData *data in array) {
-           ScanModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        for (NSDictionary *data in array) {
+           ScanBillModel *model = [ScanBillModel convertModelWithJsonDic:data];
             ScanSectionModel *sectionModel = [[ScanSectionModel alloc] initWithScanModel:model];
 
             [self.dataArray addObject:sectionModel];
         }
+//        for (NSData *data in array) {
+//           ScanModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+//            ScanSectionModel *sectionModel = [[ScanSectionModel alloc] initWithScanModel:model];
+//
+//            [self.dataArray addObject:sectionModel];
+//        }
 
     }
     
@@ -95,10 +106,20 @@
     
     [self.view addSubview:self.tableview];
     [self.headview.textfiled becomeFirstResponder];
+    if (self.scanVcType == ScanTypeCheck) {
+        self.headview.textfiled.returnKeyType = UIReturnKeySearch;
+    }else{
+        self.headview.textfiled.returnKeyType = UIReturnKeyDone;
+    }
 }
 
 //保存
 - (void)saveEvent{
+    
+    if (self.scanVcType == ScanTypeCheck) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
     
     if (self.dataArray.count<=0) {
         [MBProgressHUD showTextView:self.navigationController.view textTitle:@"请先添加运单"];
@@ -110,13 +131,13 @@
     
     for (ScanSectionModel *sectionModel in self.dataArray) {
         
-        ScanModel *model = sectionModel.scanModel;
+        ScanBillModel *model = sectionModel.scanModel;
         
         NSDictionary *needdic = @{
-                                  @"waybillno":model.waybillno
+                                  @"waybillno":model.waybill.waybillno
                                   };
         
-        if ([model.isCheck isEqualToString:@"1"]) {//可安检
+        if ([model.waybill.isCheck isEqualToString:@"1"]) {//可安检
             [array addObject:needdic];
         }
         
@@ -174,15 +195,19 @@
         } success:^(id data) {
            
             [MBProgressHUD showSuccessView:weakSelf.navigationController.view];
-            ScanModel *model = [ScanModel new];
+            ScanBillModel *model = [ScanBillModel new];
             if ([data isKindOfClass:[NSArray class]]) {
                NSArray *dataArr  = data;
-               ScanBillModel  *scanBillModel = dataArr.firstObject;
-                model = scanBillModel.subWaybill;
+                for (ScanBillModel *billModel in dataArr) {
+                    billModel.scanType = self.scanVcType;
+                }
+               ScanBillModel  *model = dataArr.firstObject;
+//                model = scanBillModel.subWaybill;
                 if (dataArr.count>1) {
                     weakSelf.view_billCheckSelect.dataSource = dataArr;
                     weakSelf.view_billCheckSelect.didSeleced = ^(ScanBillModel * _Nonnull billModel) {
-                        [weakSelf successScanEventWithModel:billModel.subWaybill];
+                        weakSelf.isSelectBilling = YES;
+                        [weakSelf successScanEventWithModel:billModel];
                     };
                     [weakSelf.view_billCheckSelect showBillSelectViewWithSuperView:weakSelf.view];
                 }else{
@@ -202,8 +227,8 @@
             
             [MBProgressHUD showLoadView:self.navigationController.view loadTitle:@"正在请求运单信息"];
             
-        } success:^(ScanModel *model) {
-            
+        } success:^(ScanBillModel *model) {
+            model.scanType = weakSelf.scanVcType;
             [MBProgressHUD showSuccessView:self.navigationController.view];
             [self successScanEventWithModel:model];
             
@@ -222,7 +247,7 @@
     
 }
 
-- (void)successScanEventWithModel:(ScanModel *)model{
+- (void)successScanEventWithModel:(ScanBillModel *)model{
     
     //发出通知
         [self postYDModel:model];
@@ -235,7 +260,7 @@
             
             ScanSectionModel *sectionModel = self.dataArray[i];
             
-            if ([sectionModel.scanModel.waybillno isEqualToString:model.waybillno]) {
+            if ([sectionModel.scanModel.waybill.waybillno isEqualToString:model.waybill.waybillno]) {
                 j = i;
                 break;
             }
@@ -263,8 +288,16 @@
         if (self.dataArray.count>0) {
             self.navigationItem.rightBarButtonItem.enabled = YES;
         }
-        
+    if (self.isSelectBilling) {
+        self.isSelectBilling = NO;
+        [self.headview.textfiled resignFirstResponder];
+    }else{
         [self.headview.textfiled becomeFirstResponder];
+    }
+    
+    if (self.scanVcType == ScanTypeCheck) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 //刷新并选中数据
 - (void)freshDataSelectDataWithsection:(NSInteger)section{
@@ -277,7 +310,7 @@
 }
 
 //发出扫描一票通知
-- (void)postYDModel:(ScanModel *)model{
+- (void)postYDModel:(ScanBillModel *)model{
     
     NSDictionary *dic = @{
                           @"data":model
@@ -328,36 +361,40 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
+    if ([string isEqualToString:@"\n"]) {
+        [self requestInfoWithtext:textField.text];
+        return YES;
+    }
+    
     NSCharacterSet *charset = [NSCharacterSet decimalDigitCharacterSet];
     if (self.scanVcType == ScanTypeCheck) {
         charset = [NSCharacterSet alphanumericCharacterSet];
-    }
-    if ([[string stringByTrimmingCharactersInSet:charset] isEqualToString:@""]) {//数字
-    
-        FlyLog(@"%@",NSStringFromRange(range));
-        
-        if (range.location == 10) {
-            NSString *str = [NSString stringWithFormat:@"%@%@",textField.text,string];
-            [self requestInfoWithtext:str];
-            return YES;
-        }else if (range.location>10){
-//            [MBProgressHUD showTextView:self.navigationController.view textTitle:@"运单号位数不正确"];
-            return NO;
-        }else if (range.location<10){
-            if (range.location == 4) {
-                NSString *str = [NSString stringWithFormat:@"%@%@",textField.text,string];
-                [self requestInfoWithtext:@"MMMMMMMMMMCDJE01"];
+    }else{
+        if ([[string stringByTrimmingCharactersInSet:charset] isEqualToString:@""]) {//数字
+            
+                FlyLog(@"%@",NSStringFromRange(range));
+               
+                if (range.location == 10) {
+                    NSString *str = [NSString stringWithFormat:@"%@%@",textField.text,string];
+                    [self requestInfoWithtext:str];
+                    return YES;
+                }else if (range.location>10){
+        //            [MBProgressHUD showTextView:self.navigationController.view textTitle:@"运单号位数不正确"];
+                    return YES;
+                }else if (range.location<10){
+                    
+                    return YES;
+                }
             }
-            return YES;
-        }
-        
     }
-    
-    return NO;
-    
+    return YES;
 }
 
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+       
+    [self requestInfoWithtext:textField.text];
+    return YES;
+}
 
 #pragma mark------------------------------------------------------------------------------------
 
@@ -457,7 +494,7 @@
         case ScanStateRowType:
         {
             WriteScanCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WriteScanCell class]) forIndexPath:indexPath];
-            [cell loaddataWithModel:rowModle.scanModel row:indexPath.section];
+            [cell loaddataWithModel:rowModle.scanModel row:indexPath.section ScanType:self.scanVcType];
             return cell;
         }
             break;

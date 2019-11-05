@@ -92,7 +92,7 @@
     
     __weak typeof(self)weakself = self;
     
-    [self.NetViewModel loadDataWithView:self.view MachId:self.allmodel.deviceModel.machinID agentName:@"" success:^(FirstAllModel *firstAllModel) {
+    [self.NetViewModel loadDataWithView:self.view MachId:self.allmodel.deviceModel.machinID agentName:@"" detectionType:self.detectionType success:^(FirstAllModel *firstAllModel) {
         
         if (firstAllModel.ok == 1) {
             
@@ -263,14 +263,14 @@
 
 //扫瞄
 - (void)scanEvent{
-    ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanVCTypeScan];
+    ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:SCANYGD];
     
     scanvc.machID = self.allmodel.deviceModel.machinID;
     
     if (self.detectionType == DetectionType9610System) {
-        scanvc.intoScantype = IntoScanType9610System;
+        scanvc.detectionType = DetectionType9610System;
     }else{
-        scanvc.intoScantype = FirstScanType;
+        scanvc.detectionType = DetectionTypeFirst;
     }
     [self.navigationController pushViewController:scanvc animated:NO];
 }
@@ -320,14 +320,15 @@
 //        CheckOrderVC *check = [[CheckOrderVC alloc] init];
 //        [self.navigationController pushViewController:check animated:YES];
         
-        ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanVCTypeCheck];
+        ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanTypeCheck];
         
         scanvc.machID = self.allmodel.deviceModel.machinID;
         if (self.detectionType == DetectionType9610System) {
-            scanvc.intoScantype = IntoScanType9610System;
+            scanvc.detectionType = IntoScanType9610System;
         }else{
-            scanvc.intoScantype = FirstScanType;
+            scanvc.detectionType = FirstScanType;
         }
+        scanvc.operationModel = self.allmodel.operationModel;
         [self.navigationController pushViewController:scanvc animated:NO];
     }else{
         [ShowUserAgreeVIew showUserTitle:@"操作说明" content:self.allmodel.protocolModel.protocolContrnt type:ShowOperationType agree:^{
@@ -347,7 +348,7 @@
     
     YDDetailVC *detailVC = [[YDDetailVC alloc] init];
     
-    detailVC.type = FirstDetailType;
+    detailVC.type = self.detectionType;
     
     detailVC.aWID = mdoel.awId;
     
@@ -538,7 +539,7 @@
             break;
     }
     
-    [self.NetViewModel FreshDataListWitMachId:self.allmodel.deviceModel.machinID agentName:agent success:^(FirstAllModel *firstAllModel) {
+    [self.NetViewModel FreshDataListWitMachId:self.allmodel.deviceModel.machinID agentName:agent dectionType:self.detectionType success:^(FirstAllModel *firstAllModel) {
         
         if (firstAllModel.ok == 1) {
             
@@ -591,11 +592,12 @@
             [weakself setYJTGState];//改变一建按钮状态
             
         }else{
-            
+            [MBProgressHUD showErrorView:self.view];
             [weakself ShowFailNetReasonWith:firstAllModel.msg];
         }
         
     } failStr:^(NSString *failStr) {
+        [MBProgressHUD showErrorView:self.view];
         [weakself ShowFailNetReasonWith:failStr];
     }];
     
@@ -988,7 +990,7 @@
     
     vc.comeType = type;
     
-    vc.Type = FIRSTTYPE;
+    vc.Type = DetectionTypeFirst;
     
     vc.CerdataModel = [[CerNeedDataModel alloc] initWithFirstModel:firstModel];
     
@@ -1168,7 +1170,7 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     NSString *title = [NSString stringWithFormat:@"%@/%@ 安检机货物首检",self.allmodel.operationModel.ctName,self.allmodel.operationModel.machineName];
     if (self.detectionType == DetectionType9610System) {
-        title = [NSString stringWithFormat:@"%@/%@ 安检机货物9610检测",self.allmodel.operationModel.ctName,self.allmodel.operationModel.machineName];
+        title = [NSString stringWithFormat:@"%@/%@ 9610货物首检",self.allmodel.operationModel.ctName,self.allmodel.operationModel.machineName];
     }
     self.title = title;
     [self.view addSubview:self.tableview];

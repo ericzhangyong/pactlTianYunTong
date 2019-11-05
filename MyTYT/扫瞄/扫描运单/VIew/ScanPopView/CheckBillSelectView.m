@@ -145,6 +145,7 @@
         cell.label_daiLI.text = billModel.waybill.agentOprn;
         WEAK_SELF;
         cell.selectedBlock = ^(BOOL isSelect) {
+            [self hiddenBillSelectView];
             weakSelf.didSeleced(billModel);
         };
     }

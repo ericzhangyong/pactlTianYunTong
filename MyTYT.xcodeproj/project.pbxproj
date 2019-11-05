@@ -18,7 +18,10 @@
 		C2B36CBD23701C6E00DA8F6C /* CheckBillSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CBC23701C6E00DA8F6C /* CheckBillSelectView.m */; };
 		C2B36CC123701DE800DA8F6C /* CheckBillSelectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CBF23701DE800DA8F6C /* CheckBillSelectedCell.m */; };
 		C2B36CC223701DE800DA8F6C /* CheckBillSelectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B36CC023701DE800DA8F6C /* CheckBillSelectedCell.xib */; };
+		C2B36CC62370FA8700DA8F6C /* WEKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CC52370FA8700DA8F6C /* WEKeyValueStore.m */; };
 		C2FA22FA2365910C00559771 /* BaseConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FA22F92365910C00559771 /* BaseConst.m */; };
+		C2FB00D82371569E00161EB2 /* BaseVerifyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FB00D72371569E00161EB2 /* BaseVerifyUtils.m */; };
+		C2FB00DB2371876B00161EB2 /* NSString+RECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FB00D92371876B00161EB2 /* NSString+RECategory.m */; };
 		F10A92CF20A92A2800D8FD8F /* BZAddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A92CD20A92A2800D8FD8F /* BZAddModel.m */; };
 		F10A930420AAEA0F00D8FD8F /* NewBZNetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A92D320AAEA0F00D8FD8F /* NewBZNetViewModel.m */; };
 		F10A930520AAEA0F00D8FD8F /* newbzwzModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A92D620AAEA0F00D8FD8F /* newbzwzModel.m */; };
@@ -409,9 +412,15 @@
 		C2B36CBE23701DE800DA8F6C /* CheckBillSelectedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBillSelectedCell.h; sourceTree = "<group>"; };
 		C2B36CBF23701DE800DA8F6C /* CheckBillSelectedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBillSelectedCell.m; sourceTree = "<group>"; };
 		C2B36CC023701DE800DA8F6C /* CheckBillSelectedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBillSelectedCell.xib; sourceTree = "<group>"; };
+		C2B36CC42370FA8600DA8F6C /* WEKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEKeyValueStore.h; sourceTree = "<group>"; };
+		C2B36CC52370FA8700DA8F6C /* WEKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEKeyValueStore.m; sourceTree = "<group>"; };
 		C2FA22F82365910C00559771 /* BaseConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConst.h; sourceTree = "<group>"; };
 		C2FA22F92365910C00559771 /* BaseConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseConst.m; sourceTree = "<group>"; };
 		C2FA22FB2365912A00559771 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		C2FB00D62371569D00161EB2 /* BaseVerifyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVerifyUtils.h; sourceTree = "<group>"; };
+		C2FB00D72371569E00161EB2 /* BaseVerifyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVerifyUtils.m; sourceTree = "<group>"; };
+		C2FB00D92371876B00161EB2 /* NSString+RECategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RECategory.m"; sourceTree = "<group>"; };
+		C2FB00DA2371876B00161EB2 /* NSString+RECategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RECategory.h"; sourceTree = "<group>"; };
 		C48D9E6D92B2277F71A96F3C /* Pods_MyTYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CEC98A9D42365027481896 /* Pods-MyTYT-MyTYTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYT-MyTYTUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTYT-MyTYTUITests/Pods-MyTYT-MyTYTUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB65271384AB9639E6E356E1 /* Pods-MyTYTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTYTTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTYTTests/Pods-MyTYTTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -829,7 +838,7 @@
 		F1749C2920A6A51D002FA77A /* FirstAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstAllModel.m; sourceTree = "<group>"; };
 		F18C13F920E0B8DE00B8C5A6 /* SetViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewModel.h; sourceTree = "<group>"; };
 		F18C13FA20E0B8DE00B8C5A6 /* SetViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewModel.m; sourceTree = "<group>"; };
-		F18CDA7B208DB23C00354764 /* MyTYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18CDA7B208DB23C00354764 /* 天运通2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "天运通2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18CDA93208DB24200354764 /* MyTYTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTYTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18CDA97208DB24200354764 /* MyTYTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTYTTests.m; sourceTree = "<group>"; };
 		F18CDA99208DB24200354764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1188,6 +1197,15 @@
 			path = ScanPopView;
 			sourceTree = "<group>";
 		};
+		C2B36CC32370FA5700DA8F6C /* BaseDB */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36CC42370FA8600DA8F6C /* WEKeyValueStore.h */,
+				C2B36CC52370FA8700DA8F6C /* WEKeyValueStore.m */,
+			);
+			path = BaseDB;
+			sourceTree = "<group>";
+		};
 		C2FA22F7236590E400559771 /* const */ = {
 			isa = PBXGroup;
 			children = (
@@ -1197,6 +1215,17 @@
 				C2B36CB5236FCD8600DA8F6C /* ColorConst.h */,
 			);
 			path = const;
+			sourceTree = "<group>";
+		};
+		C2FB00D52371569500161EB2 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				C2FB00D62371569D00161EB2 /* BaseVerifyUtils.h */,
+				C2FB00D72371569E00161EB2 /* BaseVerifyUtils.m */,
+				C2FB00DA2371876B00161EB2 /* NSString+RECategory.h */,
+				C2FB00D92371876B00161EB2 /* NSString+RECategory.m */,
+			);
+			path = tool;
 			sourceTree = "<group>";
 		};
 		EB5A810E8AE6897246D195CA /* Pods */ = {
@@ -3412,7 +3441,7 @@
 		F18CDA7C208DB23C00354764 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F18CDA7B208DB23C00354764 /* MyTYT.app */,
+				F18CDA7B208DB23C00354764 /* 天运通2.2.app */,
 				F18CDA93208DB24200354764 /* MyTYTTests.xctest */,
 				F18CDA9E208DB24200354764 /* MyTYTUITests.xctest */,
 			);
@@ -3533,6 +3562,7 @@
 		F18CDACA208DB55600354764 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C2FB00D52371569500161EB2 /* tool */,
 				C22EF9D2236C0A76002FBDD7 /* category */,
 				C2FA22F7236590E400559771 /* const */,
 				F1477BCB212BB74200D713F5 /* 布控提示 */,
@@ -3824,6 +3854,7 @@
 		F18CDC39208DEC1700354764 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C2B36CC32370FA5700DA8F6C /* BaseDB */,
 				C2B36CB6237008F300DA8F6C /* BaseModel */,
 				F18CDC4B208ED5F700354764 /* BaseVC */,
 				F18CDC3A208DEC1700354764 /* BaseNav */,
@@ -4398,7 +4429,7 @@
 			);
 			name = MyTYT;
 			productName = MyTYT;
-			productReference = F18CDA7B208DB23C00354764 /* MyTYT.app */;
+			productReference = F18CDA7B208DB23C00354764 /* 天运通2.2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F18CDA92208DB24200354764 /* MyTYTTests */ = {
@@ -4790,6 +4821,7 @@
 				F14AD13F20AE997D001CFEC2 /* DetailFDAllCell.m in Sources */,
 				F1DD2BEC209C16540036A347 /* ShowMoreCell.m in Sources */,
 				F10A931020AAEA0F00D8FD8F /* newBzPMCell.m in Sources */,
+				C2FB00DB2371876B00161EB2 /* NSString+RECategory.m in Sources */,
 				F141AC7E20CF9F8D00DCB8A7 /* FlyPreViewCollectionViewCell.m in Sources */,
 				F115FAA220CD0882003E1EF5 /* ShowUserCell.m in Sources */,
 				F10A92CF20A92A2800D8FD8F /* BZAddModel.m in Sources */,
@@ -4827,6 +4859,7 @@
 				F115FAC720CF50CF003E1EF5 /* AddBZImageCell.m in Sources */,
 				F14AD13320AE65DC001CFEC2 /* DetailCheckHeadView.m in Sources */,
 				F1DD2BA6209AAAB80036A347 /* SDWebImageTransition.m in Sources */,
+				C2B36CC62370FA8700DA8F6C /* WEKeyValueStore.m in Sources */,
 				C2B36CBD23701C6E00DA8F6C /* CheckBillSelectView.m in Sources */,
 				F115FAAC20CE4494003E1EF5 /* AddBZcollectionviewcell.m in Sources */,
 				F18CDBDE208DB55700354764 /* FlyHttpTools.m in Sources */,
@@ -4965,6 +4998,7 @@
 				F18CDBE4208DB55700354764 /* IQToolbar.m in Sources */,
 				F13FB4FF20BE7A82008C7496 /* QuerybaseModel.m in Sources */,
 				F14AD1A020B413BB001CFEC2 /* ExplainHeadView.m in Sources */,
+				C2FB00D82371569E00161EB2 /* BaseVerifyUtils.m in Sources */,
 				F16DD29A20C65E8700AECEED /* CerResultCell.m in Sources */,
 				F141AC8420CF9F8D00DCB8A7 /* FlyPhotoPickCollectionCell.m in Sources */,
 				F1CF059220A40ABA00AA2741 /* LoginModel.m in Sources */,
@@ -5147,8 +5181,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ShangHaiAriportCargo.MyTYT;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "天运通2.2";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -5168,8 +5203,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ShangHaiAriportCargo.MyTYT;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "天运通2.2";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

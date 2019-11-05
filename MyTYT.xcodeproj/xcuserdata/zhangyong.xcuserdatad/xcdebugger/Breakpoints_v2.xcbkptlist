@@ -126,54 +126,6 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "740"
-            endingLineNumber = "740"
-            landmarkName = "-clieckSelectWithModel:state:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33FD24A9-421D-4559-ABC6-1AC5786F9A9E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "750"
-            endingLineNumber = "750"
-            landmarkName = "-clieckSelectWithModel:state:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "24F96B3F-93A7-4E92-8B83-696B3EE3F9C3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "744"
-            endingLineNumber = "744"
-            landmarkName = "-clieckSelectWithModel:state:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "23C344BD-2280-4943-90F2-635A6CA5A95B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "742"
             endingLineNumber = "742"
             landmarkName = "-clieckSelectWithModel:state:"
@@ -183,7 +135,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "90140E7B-89EC-4D7C-9F9A-F2C7E4E26529"
+            uuid = "33FD24A9-421D-4559-ABC6-1AC5786F9A9E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -199,6 +151,54 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "24F96B3F-93A7-4E92-8B83-696B3EE3F9C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "746"
+            endingLineNumber = "746"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23C344BD-2280-4943-90F2-635A6CA5A95B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90140E7B-89EC-4D7C-9F9A-F2C7E4E26529"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "754"
+            endingLineNumber = "754"
+            landmarkName = "-clieckSelectWithModel:state:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "4A86D725-A000-429B-81CB-E079FD89D7F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -206,8 +206,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "761"
-            endingLineNumber = "761"
+            startingLineNumber = "763"
+            endingLineNumber = "763"
             landmarkName = "-clieckSelectWithModel:state:"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "757"
-            endingLineNumber = "757"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "-clieckSelectWithModel:state:"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,40 +238,40 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "881"
-            endingLineNumber = "881"
+            startingLineNumber = "883"
+            endingLineNumber = "883"
             landmarkName = "-isYJAgreeClick:upArray:block:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 30df9d3617c1492b"
+                  uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 30e68a23113d680c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[FirstVC isYJAgreeClick:upArray:block:]"
-                  moduleName = "MyTYT"
+                  moduleName = "&#x5929;&#x8fd0;&#x901a;2.2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewController/FirstVC.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "881"
-                  endingLineNumber = "881"
-                  offsetFromSymbolStart = "80">
+                  startingLineNumber = "883"
+                  endingLineNumber = "883"
+                  offsetFromSymbolStart = "86">
                </Location>
                <Location
-                  uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 288fbe13e745c6a3"
+                  uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 28b6a906e1b9e784"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__40-[FirstVC isYJAgreeClick:upArray:block:]_block_invoke"
-                  moduleName = "MyTYT"
+                  moduleName = "&#x5929;&#x8fd0;&#x901a;2.2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewController/FirstVC.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "881"
-                  endingLineNumber = "881"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "883"
+                  endingLineNumber = "883"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "892"
-            endingLineNumber = "892"
+            startingLineNumber = "894"
+            endingLineNumber = "894"
             landmarkName = "-isYJAgreeClick:upArray:block:"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "905"
-            endingLineNumber = "905"
+            startingLineNumber = "907"
+            endingLineNumber = "907"
             landmarkName = "-isYJAgreeClick:upArray:block:"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,42 +318,10 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewModel/FirstNetViewModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "-clickAgreeWithArray:start:Success:fail:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E67A24A1-EEA8-4B20-AFB9-10FEE8B1E8D1 - 8f6531d1b707e18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FirstNetViewModel clickAgreeWithArray:start:Success:fail:]"
-                  moduleName = "MyTYT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewModel/FirstNetViewModel.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "704">
-               </Location>
-               <Location
-                  uuid = "E67A24A1-EEA8-4B20-AFB9-10FEE8B1E8D1 - c21196ff3c6e3a82"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__60-[FirstNetViewModel clickAgreeWithArray:start:Success:fail:]_block_invoke"
-                  moduleName = "MyTYT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangyong/Documents/SourceThree/pactlTianYunTong/MyTYT/%E9%A6%96%E6%A3%80/%E9%A6%96%E6%A3%80/ViewModel/FirstNetViewModel.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -366,8 +334,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewModel/FirstNetViewModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-clickAgreeWithArray:start:Success:fail:"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,8 +350,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "888"
-            endingLineNumber = "888"
+            startingLineNumber = "890"
+            endingLineNumber = "890"
             landmarkName = "-isYJAgreeClick:upArray:block:"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +366,8 @@
             filePath = "MyTYT/&#x9996;&#x68c0;/&#x9996;&#x68c0;/ViewController/FirstVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "899"
-            endingLineNumber = "899"
+            startingLineNumber = "901"
+            endingLineNumber = "901"
             landmarkName = "-isYJAgreeClick:upArray:block:"
             landmarkType = "7">
          </BreakpointContent>
@@ -417,22 +385,6 @@
             startingLineNumber = "314"
             endingLineNumber = "314"
             landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "30A63C3A-34E6-49AA-8975-EB4B5C1B571E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyTYT/&#x626b;&#x7784;/&#x626b;&#x63cf;&#x8fd0;&#x5355;/ViewModel/ScanNetViewModel.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-saveEventWithMachID:listArray:TypeStr:start:success:fail:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

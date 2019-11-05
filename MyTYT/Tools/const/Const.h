@@ -11,7 +11,14 @@
 
 typedef NS_ENUM(NSInteger,DetectionType){
     DetectionTypeFirst = 0, //首检
+    DetectionTypeTwentyFour,//24小时
     DetectionType9610System //9610系统
+};
+typedef NS_ENUM(NSInteger,ScanType) {
+    SCANYGD,//扫描运单号
+    SCANYCER,//扫描证书
+    ScanTypeCheck, //查验扫描
+    ScanTypeCheckYGD_and_YCER //vc界面扫描运单号扫描证书
 };
 
 
@@ -25,5 +32,6 @@ typedef NS_ENUM(NSInteger,DetectionType){
 #import "IQKeyboardManager.h"
 #import "Masonry.h"
 #import "ColorConst.h"
+#import "BaseVerifyUtils.h"
 
 #endif /* Const_h */

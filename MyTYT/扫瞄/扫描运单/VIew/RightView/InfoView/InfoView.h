@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanModel.h"
 
 @class LeftLable;
 @class RightLable;
-@class ScanModel;
 @interface InfoView : UIView
 
 @property (nonatomic) LeftLable *allnumberlable;
@@ -64,6 +64,6 @@
 
 @property (nonatomic) UILabel *eleLable;
 
-- (void)loaddataWithscanModel:(ScanModel *)mdoel;
+- (void)loaddataWithscanModel:(ScanBillModel *)billModel;
 
 @end

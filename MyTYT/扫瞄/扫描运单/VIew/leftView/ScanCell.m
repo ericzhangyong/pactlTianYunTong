@@ -11,6 +11,12 @@
 #import "UIImage+UIImage_FLyColor.h"
 #import "UIColor+ColorString.h"
 
+@interface ScanCell ()
+
+
+@property (nonatomic,assign) DetectionType detectionType;
+
+@end
 @implementation ScanCell
 
 - (void)awakeFromNib {
@@ -26,12 +32,19 @@
     
 }
 
-- (void)loaddatWithMdoel:(ScanModel *)mdoel{
+- (void)loaddatWithMdoel:(ScanBillModel *)billModel
+           detectionType:(DetectionType)detectionType{
 
+    self.detectionType = detectionType;
+    
+    ScanModel *mdoel = billModel.waybill;
+    if (billModel.scanType == ScanTypeCheck) {
+        mdoel = billModel.subWaybill;
+    }
     self.YDHLable.text = mdoel.waybillno;
     
     //是否可以安检
-    [self iscanCheckWithModel:mdoel];
+    [self iscanCheckWithModel:billModel];
     
     //布控
     [self CheckControlWithModel:mdoel];
@@ -40,24 +53,41 @@
     [self dontCheckReasonWithModel:mdoel];
     
     [self lastViewShowWithModel:mdoel];
-   
+    
+    self.label_control.hidden = YES;
+    if (detectionType == DetectionType9610System) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:mdoel.securityCheckResult]) {
+            self.label_control.hidden = NO;
+            NSString *color = [NSString stringWithFormat:@"#%@",mdoel.securityCheckResultColor];
+            self.label_control.text = @"哈哈";
+            self.label_control.textColor = [UIColor redColor];
+            self.label_control.backgroundColor = [UIColor redColor];
+        }
+    }
+    [self setNeedsDisplay];
+
 }
 
 //是否可以安检
-- (void)iscanCheckWithModel:(ScanModel *)model{
+- (void)iscanCheckWithModel:(ScanBillModel *)billModel{
     
-    if ([model.isCheck isEqualToString:@"1"]) {
+    if (billModel.scanType == ScanTypeCheck) {
         self.YDHLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.statelable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
-        self.statelable.text = @"可安检";
-        
+        self.statelable.text = billModel.showText;
     }else{
-        self.YDHLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
-        self.statelable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
-        
-        self.statelable.text = @"不可安检";
+        if ([billModel.waybill.isCheck isEqualToString:@"1"]) {
+            self.YDHLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
+            self.statelable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
+            self.statelable.text = @"可安检";
+            
+        }else{
+            self.YDHLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
+            self.statelable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
+            
+            self.statelable.text = @"不可安检";
+        }
     }
-
 }
 
 //安检布控
@@ -102,8 +132,11 @@
     }else{
         self.reasonContant.constant = 10;
         self.botomcontant.constant = 10;
-        [self.reasonImageView setImage:[UIImage imageWithColor:[UIColor redColor]]];
-        
+        if (self.detectionType == DetectionType9610System) {
+            [self.reasonImageView setImage:[UIImage imageNamed:@""]];
+        }else{
+            [self.reasonImageView setImage:[UIImage imageWithColor:[UIColor redColor]]];
+        }
     }
     
     

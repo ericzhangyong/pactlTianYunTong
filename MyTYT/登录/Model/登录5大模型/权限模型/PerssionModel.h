@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface PerssionModel : NSObject
+@interface PerssionModel : BaseModel
 
 /*
  0 <首检 24小时检测 9610>
@@ -18,6 +19,8 @@
  */
 
 @property (nonatomic) NSString *Permissions;
+
+@property (nonatomic,copy) NSString *xinPermissions;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

@@ -29,7 +29,12 @@
                 
                 if (temdic[@"type"]!=Nil && [temdic[@"type"] isEqualToString:@"jpeg"]) {
                     
-                    [picArray addObject:[[NSString alloc] initWithFormat:@"%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:BaseUrlPath],temdic[@"fileHttpPath"]]];
+                    NSString *url = temdic[@"fileHttpPath"];
+                    if ([url containsString:@"http"]) {
+                        [picArray addObject:url];
+                    }else{
+                        [picArray addObject:[[NSString alloc] initWithFormat:@"%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:BaseUrlPath],url]];
+                    }
                     
                     PDFDetailModel *model = [[PDFDetailModel alloc] initWithDic:temdic];
                     [array addObject:model];

@@ -15,10 +15,10 @@
 - (instancetype)initWithModel:(id)model{
     if (self = [super init]) {
         
-        if ([model isKindOfClass:[ScanModel class]]) {
+        if ([model isKindOfClass:[ScanBillModel class]]) {
             
             self.Type = ScanStateRowType;
-            self.scanModel = model;
+            self.scanModel =  model;
             
         }else if ([model isKindOfClass:[ScanHisToryModel class]]){
             self.Type = ScanHistoryRowType;

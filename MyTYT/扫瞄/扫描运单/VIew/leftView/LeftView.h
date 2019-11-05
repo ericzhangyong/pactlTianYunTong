@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanVC.h"
 
-@class ScanModel;
+#import "ScanModel.h"
 @protocol leftViewDelegate <NSObject>
 
 @required;
 
 //选择展示对应数据
-- (void)SelectRowShowModel:(ScanModel *)model;
+- (void)SelectRowShowModel:(ScanBillModel *)model;
 //删除展示最后一个数据
 - (void)deleteEvent;
 //保存数据
@@ -23,6 +24,12 @@
 @end
 
 @interface LeftView : UIView
+-(instancetype)initWithFrame:(CGRect)frame
+                      vcType:(ScanType)scanVcType
+                  Dectection:(DetectionType)detectionType;
+
+@property (nonatomic,assign) DetectionType detectionType;
+
 
 @property (nonatomic) UILabel *titlelable;
 

@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger,ScanType) {
-    SCANYGD,//扫描运单号
-    SCANYCER,//扫描证书
-    ScanTypeCheck //查验扫描
-};
 
 typedef NS_ENUM(NSInteger,FromType) {
     FromFirstCome,//首检

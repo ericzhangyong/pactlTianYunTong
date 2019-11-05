@@ -98,7 +98,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.32941176470588235" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="dHF-3W-ic3" firstAttribute="top" secondItem="Tdl-bm-Ua4" secondAttribute="top" constant="2" id="8WH-OM-xqC"/>
                                     <constraint firstAttribute="width" constant="17.329999999999998" id="J8P-n7-QPK"/>
@@ -509,6 +509,7 @@
                 <outlet property="elecontant" destination="laZ-PH-FiE" id="2PN-i5-Nd3"/>
                 <outlet property="huowuleibieVIew" destination="8Yx-St-AL5" id="h0I-RF-TmP"/>
                 <outlet property="jianshuLable" destination="gBI-cg-Oli" id="nRg-Pf-mRF"/>
+                <outlet property="label_firstKongIcon" destination="5rG-mq-39b" id="fam-2x-wHq"/>
                 <outlet property="label_orderKongIcon" destination="dHF-3W-ic3" id="RcH-4W-jHj"/>
                 <outlet property="layoutWidth_ViewZongDanControl" destination="J8P-n7-QPK" id="eSM-ee-Bgg"/>
                 <outlet property="layoutWidth_viewCe" destination="qbE-is-rSp" id="FiQ-HC-8aO"/>

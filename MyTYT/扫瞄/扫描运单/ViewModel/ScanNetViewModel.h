@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class ScanModel;
+#import "ScanModel.h"
 
 typedef void(^ScanStartBlock)(void);
-typedef void(^ScanSuccessModelBlock)(ScanModel *model);
+typedef void(^ScanSuccessModelBlock)(ScanBillModel *billModel);
 typedef void(^ScanFailBlock)(NSString *failStr);
 typedef void(^ScanCheckSuccessModelBlock)(id data);
 
@@ -45,6 +45,18 @@ typedef void(^SaveScanFailBlock)(NSString *failStr);
                     success:(SaveScanSuccessModelBlock)success
                        fail:(SaveScanFailBlock)fail;
 
+
+/// 保存查验的借故欧
+/// @param AwId AwId
+/// @param refResult  通过pass 不合格 unqualified   暂扣 hold
+/// @param start startblcok
+/// @param success success description
+/// @param fail fail description
+-(void)saveCheckActionWithAwId:(NSString *)AwId
+                     refResult:(NSString *)refResult
+                         start:(SaveScanStartBlock)start
+                       success:(ScanCheckSuccessModelBlock)success
+                          fail:(SaveScanFailBlock)fail;
 
 
 @end

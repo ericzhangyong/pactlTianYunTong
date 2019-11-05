@@ -29,15 +29,17 @@
         [self addSubview:self.DaiLIlable];
         [self addSubview:self.AgentLable];
         [self addSubview:self.TypeLable];
+        [self addSubview:self.label_9610icon];
         [self addSubview:self.controlLable];
         [self addSubview:self.ABcontrolLable];
         self.backgroundColor = [UIColor whiteColor];
+        [self layout];
         
     }
     return self;
 }
 
-- (void)setDataWithInfoModel:(infoModel *)indomodel testModel:(DeatilTstModel *)testModel gpModel:(GPModel *)gpModel testWord:(NSString *)testWord checkModel:(CheckModel *)checkModel AgentShortName:(NSString *)agentShorName iscontrol:(BOOL)iscontrol isABControl:(BOOL)isABcontrol{
+- (void)setDataWithInfoModel:(infoModel *)indomodel testModel:(DeatilTstModel *)testModel gpModel:(GPModel *)gpModel testWord:(NSString *)testWord checkModel:(CheckModel *)checkModel AgentShortName:(NSString *)agentShorName iscontrol:(BOOL)iscontrol isABControl:(BOOL)isABcontrol detectionType:(DetectionType)detectionType{
     
     //测字
     if ([testModel.isFormal isEqualToString:@"1"]) {//正式
@@ -155,33 +157,68 @@
         self.TypeLable.text = @"";
     }
     
+    CGFloat width9610 = 0;
+    self.label_9610icon.hidden = YES;
+    if (detectionType == DetectionType9610System) {
+        self.label_9610icon.hidden = NO;
+        width9610 = 60;
+    }
+    [self.label_9610icon mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.EleLable.mas_right).offset(5);
+        make.centerY.equalTo(self);
+        make.width.mas_equalTo(width9610);
+        make.height.mas_equalTo(35);
+    }];
     
-    //安检布控
-    if (iscontrol == YES) {
+    self.ABcontrolLable.hidden = YES;
+    self.controlLable.hidden = YES;
+    if (detectionType == DetectionType9610System) {
+        CGFloat width = 40;
+        if (![BaseVerifyUtils isNullOrSpaceStr:indomodel.securityCheckResult]) {
+            self.controlLable.hidden = NO;
+            self.controlLable.text = @"控";
+            self.controlLable.backgroundColor = [UIColor colorWithHexString:indomodel.securityCheckResultColor];
+        }else{
+            width = 0;
+            self.controlLable.backgroundColor =[UIColor colorWithHexString:@"#005493"];
+        }
         [self.controlLable mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.TypeLable.mas_right).offset(8);
-            make.width.equalTo(@100);
+            make.width.mas_equalTo(width);
+            make.height.mas_equalTo(35);
         }];
     }else{
-        [self.controlLable mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.TypeLable.mas_right).offset(0);
-            make.width.equalTo(@0);
-        }];
+        self.ABcontrolLable.hidden = NO;
+        self.controlLable.hidden = NO;
+        self.controlLable.text = @"安检布控";
+
+        //安检布控
+        if (iscontrol == YES) {
+            [self.controlLable mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.TypeLable.mas_right).offset(8);
+                make.width.equalTo(@100);
+            }];
+        }else{
+            [self.controlLable mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.TypeLable.mas_right).offset(0);
+                make.width.equalTo(@0);
+            }];
+        }
+        
+        //安保布控
+        if (isABcontrol == YES) {
+            [self.ABcontrolLable mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.controlLable.mas_right).offset(8);
+                make.width.equalTo(@100);
+            }];
+        }else{
+            [self.ABcontrolLable mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.controlLable.mas_right).offset(0);
+                make.width.equalTo(@0);
+            }];
+        }
     }
-    
-    //安保布控
-    if (isABcontrol == YES) {
-        [self.ABcontrolLable mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.controlLable.mas_right).offset(8);
-            make.width.equalTo(@100);
-        }];
-    }else{
-        [self.ABcontrolLable mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.controlLable.mas_right).offset(0);
-            make.width.equalTo(@0);
-        }];
-    }
-    
+
     [self setNeedsUpdateConstraints];
     
     [self setNeedsLayout];
@@ -209,7 +246,6 @@
 - (void)layoutSubviews{
     
     [super layoutSubviews];
-    [self layout];
 
 }
 
@@ -249,9 +285,15 @@
         make.height.width.lessThanOrEqualTo(@20);
     }];
     
+    [self.label_9610icon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.EleLable.mas_right).offset(5);
+        make.centerY.equalTo(self);
+        make.width.mas_equalTo(30);
+    }];
+    
     [_TypeLable mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.equalTo(self.EleLable.mas_right).offset(8);
+        make.left.equalTo(self.label_9610icon.mas_right).offset(8);
         make.centerY.equalTo(self);
         make.height.equalTo(@35);
         make.width.greaterThanOrEqualTo(@100);
@@ -365,11 +407,24 @@
         _TypeLable.layer.cornerRadius = 5;
         _TypeLable.textColor = [UIColor whiteColor];
         _TypeLable.textAlignment = NSTextAlignmentCenter;
-        _TypeLable.adjustsFontSizeToFitWidth = YES;
     }
-    
     return _TypeLable;
 }
+- (UILabel *)label_9610icon{
+    if (!_label_9610icon) {
+        _label_9610icon = [[UILabel alloc] init];
+        _label_9610icon.font = [UIFont systemFontOfSize:20];
+        _label_9610icon.layer.masksToBounds = YES;
+        _label_9610icon.layer.cornerRadius = 5;
+        _label_9610icon.textColor = [UIColor whiteColor];
+        _label_9610icon.textAlignment = NSTextAlignmentCenter;
+        _label_9610icon.text = @"9610";
+        _label_9610icon.backgroundColor = [UIColor colorWithRed:0.596 green:0.796 blue:0.157 alpha:1.00];
+    }
+    return _label_9610icon;
+}
+
+
 
 - (UILabel *)controlLable{
     if (!_controlLable) {

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface infoModel : NSObject
+@interface infoModel : BaseModel
 
 
 //运单主键
@@ -55,6 +56,11 @@
 @property (nonatomic) NSNumber *chargeWeight;
 //体积
 @property (nonatomic) NSNumber *vol;
+
+/// 控字的背景颜色
+@property (nonatomic,copy) NSString *securityCheckResultColor;
+/// 控字的
+@property (nonatomic,copy) NSString *securityCheckResult;
 
 
 

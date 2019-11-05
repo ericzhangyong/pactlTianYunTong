@@ -13,10 +13,10 @@
 
 @implementation ScanSectionModel
 
-- (instancetype)initWithScanModel:(ScanModel *)scanModel{
+- (instancetype)initWithScanModel:(ScanBillModel *)scanModel{
     if (self = [super init]) {
         
-        self.scanModel = scanModel;
+        self.scanModel =  scanModel;
         
         [self setData];
         
@@ -33,9 +33,9 @@
     [array addObject:stateRowModel];
     
     
-    if (self.scanModel.historyArray.count>0) {
+    if (self.scanModel.waybill.historyArray.count>0) {
         
-    for (NSDictionary *temdic in self.scanModel.historyArray) {
+    for (NSDictionary *temdic in self.scanModel.waybill.historyArray) {
         
         ScanHisToryModel *hisModel = [[ScanHisToryModel alloc] initWithDic:temdic];
         ScanRowModel *HisRowModel = [[ScanRowModel alloc] initWithModel:hisModel];

@@ -172,7 +172,26 @@
         }else{
             self.isABControl = NO;
         }
-
+        
+        //锂电池
+        if (dic[@"eli_flag"] == Nil) {
+            self.eli_flag = nil;
+        }else{
+            self.eli_flag = dic[@"eli_flag"];
+        }
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResultColor"]]) {
+            self.securityCheckResultColor =dic[@"securityCheckResultColor"];
+        }else{
+            self.securityCheckResultColor = @"000000";
+        }
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResult"]]) {
+            self.securityCheckResult =dic[@"securityCheckResult"];
+        }else{
+            self.securityCheckResult = @"";
+        }
+    
+        
+    
     }
     return self;
 }

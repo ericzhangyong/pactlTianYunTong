@@ -17,7 +17,7 @@ typedef void(^DetailLoadFailBlock)(NSString *FailStr);
 
 @interface DetailYDNetViewModel : NSObject
 
-//加载信息<0首检 1 24小时>
+//加载信息<0首检 1 24小时 2：9610>
 - (void)loadDataWithView:(UIView *)superView
                     aWID:(NSString *)aWID
              deviceModel:(DeviceModel *)deviceModel

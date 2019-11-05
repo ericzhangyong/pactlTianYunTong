@@ -64,19 +64,19 @@
     NSString *type;
     
     switch (self.type) {
-        case FirstDetailType:
+        case DetectionTypeFirst:
         {
             type = @"0";
         }
             break;
             
-        case TwentyFourDetailType:
+        case DetectionTypeTwentyFour:
         {
             type = @"1";
             
         }
             break;
-        case System9610Type:
+        case DetectionType9610System:
          {
             type = @"2";
                    
@@ -101,7 +101,7 @@
     self.dataManager = [[DetailDataManager alloc] initWithWith:detailModel gpModel:gpModel];
     
     
-    [self.headview setDataWithInfoModel:self.dataManager.detailModel.infomdel testModel:self.dataManager.detailModel.testModel gpModel:self.dataManager.gpModel testWord:self.testWord checkModel:[self.dataManager.detailModel.checkArray firstObject] AgentShortName:self.dataManager.detailModel.agentShortName iscontrol:detailModel.iscontrol isABControl:detailModel.isABcontrol];
+    [self.headview setDataWithInfoModel:self.dataManager.detailModel.infomdel testModel:self.dataManager.detailModel.testModel gpModel:self.dataManager.gpModel testWord:self.testWord checkModel:[self.dataManager.detailModel.checkArray firstObject] AgentShortName:self.dataManager.detailModel.agentShortName iscontrol:detailModel.iscontrol isABControl:detailModel.isABcontrol detectionType:self.type];
     
     [self.tableview reloadData];
 
@@ -218,7 +218,7 @@
             DetailWayBillCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailWayBillCellID" forIndexPath:indexPath];
             cell.BZBtn.tag = rowmodel.dataRow;
             [cell.BZBtn addTarget:self action:@selector(FDBZWithSender:) forControlEvents:UIControlEventTouchUpInside];
-            [cell loaddatawithModel:rowmodel.waymodel];
+            [cell loaddatawithModel:rowmodel.waymodel detectionType:self.type];
             return cell;
         }
             break;

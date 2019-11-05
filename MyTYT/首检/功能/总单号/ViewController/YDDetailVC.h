@@ -12,16 +12,16 @@
 @class OperationMachinModel;
 @class DeviceModel;
 
-typedef NS_ENUM(NSInteger,DetailType) {
-    FirstDetailType,//首检
-    TwentyFourDetailType,//24小时
-    System9610Type//9610
-};
+//typedef NS_ENUM(NSInteger,DetailType) {
+//    FirstDetailType,//首检
+//    TwentyFourDetailType,//24小时
+//    System9610Type//9610
+//};
 
 @interface YDDetailVC : UIViewController
 
 //进入类型
-@property (nonatomic,assign) DetailType type;
+@property (nonatomic,assign) DetectionType type;
 
 //运单主键
 @property (nonatomic) NSString *aWID;

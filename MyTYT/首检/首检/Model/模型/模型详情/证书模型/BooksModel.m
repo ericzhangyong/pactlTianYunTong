@@ -33,4 +33,11 @@
     return self;
 }
 
++(NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
+    return @{@"ID":@[@"ID",@"id"],
+             @"BookID":@[@"BookID",@"bookId"],
+             @"BookNo":@[@"bookNo",@"BookNo"],
+    };
+}
+
 @end

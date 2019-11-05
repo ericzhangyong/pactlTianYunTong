@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanModel.h"
 
-@class ScanModel;
 
 @interface ScanCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *YDHLable;
@@ -31,7 +31,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *lastView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastHeight;
+@property (weak, nonatomic) IBOutlet UILabel *label_control;
 
-- (void)loaddatWithMdoel:(ScanModel *)mdoel;
+
+- (void)loaddatWithMdoel:(ScanBillModel *)billModel detectionType:(DetectionType)detectionType;
 
 @end

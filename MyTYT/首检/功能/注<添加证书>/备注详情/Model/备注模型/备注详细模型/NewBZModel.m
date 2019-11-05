@@ -71,8 +71,23 @@
             self.CanUseCerArray = [NSArray arrayWithArray:userarray];
         }
         
-       
+       if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResultColor"]]) {
+           self.securityCheckResultColor =dic[@"securityCheckResultColor"];
+       }else{
+           self.securityCheckResultColor = @"000000";
+       }
+       if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResult"]]) {
+           self.securityCheckResult =dic[@"securityCheckResult"];
+       }else{
+           self.securityCheckResult = @"";
+       }
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"refResult"]]) {
+            self.securityCheckResult =dic[@"refResult"];
+        }else{
+            self.securityCheckResult = @"";
+        }
 
+        
     }
     return self;
 }

@@ -198,6 +198,17 @@
         }else{
             [self HistoryWithArray:@[]];
         }
+        
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResultColor"]]) {
+            self.securityCheckResultColor =dic[@"securityCheckResultColor"];
+        }else{
+            self.securityCheckResultColor = @"000000";
+        }
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"securityCheckResult"]]) {
+            self.securityCheckResult =dic[@"securityCheckResult"];
+        }else{
+            self.securityCheckResult = @"";
+        }
     }
     return self;
 }
@@ -283,17 +294,24 @@
 }
 
 +(NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
-    return @{@"waybillno":@[@"waybillno",@"waybill_no"],
+    return @{@"waybillno":@[@"waybillNo",@"waybill_no",@"waybillno"],
              @"agentOprn":@[@"agentOprn",@"agent_oprn"],
-             @"airportDest":@[@"airportDest",@"dest1"]
+             @"airportDest":@[@"airportDest",@"dest1"],
+             @"rcpNo":@[@"rcpNo",@"total_count"],
+             @"grossWeight":@[@"grossWeight",@"gross_weight"],
+             @"goodsDesc":@[@"goodsDesc",@"goods_desc"]
     };
 }
+
 
 @end
 
 @implementation ScanBillModel
 
-
++ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{
+    return @{@"books":[BooksModel class]
+             };
+}
 @end
 
 

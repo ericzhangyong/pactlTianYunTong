@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ScanModel.h"
 
-@class ScanModel;
 @class ScanHisToryModel;
 
 typedef NS_ENUM(NSInteger,ScanRowType) {
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger,ScanRowType) {
 
 @property (nonatomic,assign) ScanRowType Type;
 
-@property (nonatomic) ScanModel *scanModel;
+@property (nonatomic) ScanBillModel *scanModel;
 
 @property (nonatomic) ScanHisToryModel *hisModel;
 

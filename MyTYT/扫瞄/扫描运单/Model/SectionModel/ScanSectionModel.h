@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanModel.h"
 
-@class ScanModel;
 
 @interface ScanSectionModel : NSObject
 
-@property (nonatomic) ScanModel *scanModel;
+@property (nonatomic) ScanBillModel *scanModel;
 
 @property (nonatomic) NSArray *rowArray;
 
@@ -24,6 +24,6 @@
 
 @property (nonatomic) UIView *SectionHeadView;
 
-- (instancetype)initWithScanModel:(ScanModel *)scanModel;
+- (instancetype)initWithScanModel:(ScanBillModel *)scanModel;
 
 @end

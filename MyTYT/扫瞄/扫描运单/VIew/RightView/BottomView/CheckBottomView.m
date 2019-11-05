@@ -43,21 +43,58 @@
 
 }
 
+-(void)setCount_remark:(NSString *)count_remark{
+    _count_remark = count_remark;
+    if ([count_remark isEqualToString:@"0"] ||[BaseVerifyUtils isNullOrSpaceStr:count_remark]) {
+        [self setBtnStatus:self.btn_beiZhu IsSelected:NO];
+    }else{
+        [self setBtnStatus:self.btn_beiZhu IsSelected:count_remark.doubleValue>0];
+    }
+}
+
+///通过pass 不合格 unqualified   暂扣 hold
+-(void)setRefResult:(NSString *)refResult{
+    _refResult = refResult;
+    [self setBtnStatus:self.btn_tongGuo IsSelected:NO];
+    [self setBtnStatus:self.btn_zanKou IsSelected:NO];
+    [self setBtnStatus:self.btn_buHeGe IsSelected:NO];
+    if ([refResult isEqualToString:pass]) {
+        [self setBtnStatus:self.btn_tongGuo IsSelected:YES];
+    }else if ([refResult isEqualToString:hold]){
+        [self setBtnStatus:self.btn_zanKou IsSelected:YES];
+    }else if ([refResult isEqualToString:unqualified]){
+        [self setBtnStatus:self.btn_buHeGe IsSelected:YES];
+    }
+}
+
+
+-(void)setBtnStatus:(UIButton *)btn IsSelected:(BOOL)isSelected{
+    btn.selected = isSelected;
+    if (isSelected) {
+        btn.backgroundColor = Color0093F0;
+    }else{
+        btn.backgroundColor = Color9A9A9A;
+    }
+}
+
 #pragma mark- click
 -(void)btn_tongGuoClick{
     if (self.bottomClickBlock) {
+        self.refResult = pass;
         self.bottomClickBlock(3);
     }
 }
 
 -(void)btn_zanKouClick{
     if (self.bottomClickBlock) {
+        self.refResult = hold;
         self.bottomClickBlock(2);
     }
 }
 
 -(void)btn_buHeGeClick{
     if (self.bottomClickBlock) {
+        self.refResult = unqualified;
         self.bottomClickBlock(1);
     }
 }
@@ -67,6 +104,7 @@
         self.bottomClickBlock(4);
     }
 }
+
 
 
 

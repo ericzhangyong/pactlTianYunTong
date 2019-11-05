@@ -35,6 +35,7 @@ typedef void(^FirstClickAgreeFailBlock)(NSString *FailStr);
 - (void)loadDataWithView:(UIView *)view
                   MachId:(NSString *)machId
                agentName:(NSString *)agentname
+           detectionType:(DetectionType)detectionType
                  success:(FirstSuccessBLock)success
                  failStr:(FirstFailBlock)failStr;
 
@@ -49,6 +50,7 @@ typedef void(^FirstClickAgreeFailBlock)(NSString *FailStr);
 //刷新列表
 - (void)FreshDataListWitMachId:(NSString *)machId
                      agentName:(NSString *)agentname
+                   dectionType:(DetectionType)detectionType
                        success:(FirstSuccessBLock)success
                        failStr:(FirstFailBlock)failStr;
 

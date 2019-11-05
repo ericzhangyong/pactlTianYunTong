@@ -418,11 +418,11 @@
     
     [self.view endEditing:YES];
     
-    ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:ScanVCTypeScan];
+    ScanVC *scanvc = [[ScanVC alloc] initWithScanVCType:SCANYGD];
     
     scanvc.machID = self.allmodel.deviceModel.machinID;
     
-    scanvc.intoScantype = TwenTyScanType;
+    scanvc.detectionType = DetectionTypeTwentyFour;
     
     [self.navigationController pushViewController:scanvc animated:NO];
 }
@@ -568,7 +568,7 @@
     
     YDDetailVC *detailVC = [[YDDetailVC alloc] init];
     
-    detailVC.type = TwentyFourDetailType;
+    detailVC.type = DetectionTypeTwentyFour;
     
     detailVC.testWord = mdoel.testWord;
     
@@ -1032,7 +1032,7 @@
     
     vc.comeType = type;
     
-    vc.Type = TWenTYTYPE;
+    vc.Type = DetectionTypeTwentyFour;
     
     vc.CerdataModel = [[CerNeedDataModel alloc] initWithTwentyModel:twentyModel];
     

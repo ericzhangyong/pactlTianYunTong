@@ -34,7 +34,12 @@
 }
 
 
-- (void)loaddataWithModel:(ScanModel *)model row:(NSInteger)row{
+- (void)loaddataWithModel:(ScanBillModel *)billModel row:(NSInteger)row ScanType:(ScanType)scanType{
+    
+    ScanModel *model = billModel.waybill;
+    if (scanType == ScanTypeCheck) {
+        model = billModel.subWaybill;
+    }
     
     //序号
     self.XHLAble.text = [NSString stringWithFormat:@"%ld",row+1];

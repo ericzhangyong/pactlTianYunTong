@@ -71,6 +71,12 @@
                       @"machineId":deviceModel.machinID,
                       @"type24hFlag":@"1"
                       };
+    }else if([type isEqualToString:@"2"]){
+        
+         DetailDic = @{
+                   @"awId":aWID,
+                   @"machineId":deviceModel.machinID
+                   };
     }
     
   

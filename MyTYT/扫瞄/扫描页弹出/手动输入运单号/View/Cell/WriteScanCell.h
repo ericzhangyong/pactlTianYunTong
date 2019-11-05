@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class ScanModel;
+
+#import "ScanModel.h"
 
 @interface WriteScanCell : UITableViewCell
 
@@ -38,6 +39,6 @@
 @property (weak, nonatomic) IBOutlet UIView *lastView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastHeight;
 
-- (void)loaddataWithModel:(ScanModel *)model row:(NSInteger)row;
+- (void)loaddataWithModel:(ScanBillModel *)billModel row:(NSInteger)row ScanType:(ScanType)scanType;
 
 @end

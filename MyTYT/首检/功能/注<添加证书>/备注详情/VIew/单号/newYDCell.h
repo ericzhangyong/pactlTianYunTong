@@ -15,6 +15,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *EleLable;
 @property (weak, nonatomic) IBOutlet UILabel *ydLable;
 
-- (void)loaddataWithModel:(NewBZModel *)model;
+@property (weak, nonatomic) IBOutlet UILabel *label_control;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_labelControl;
+
+//状态
+@property (weak, nonatomic) IBOutlet UILabel *label_refResult;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_labelresResult;
+
+
+- (void)loaddataWithModel:(NewBZModel *)model detectionType:(DetectionType)detectionType;
 
 @end

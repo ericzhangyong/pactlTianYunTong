@@ -274,32 +274,63 @@
 //进行权限判断
 - (void)selectType{
     
-    if ([self.allmodel.perssioModel.Permissions isEqualToString:@"0"]) {//都有权限
-        
-        [SelectCheckTypeView showSelectType:^(SelectCheckType checkType) {
+    
+    if (![BaseVerifyUtils isNullOrSpaceStr:self.allmodel.perssioModel.xinPermissions]) {
+       
+        if (self.allmodel.perssioModel.xinPermissions.length>1) {
+            [SelectCheckTypeView showCheckTypeViewContainStr:self.allmodel.perssioModel.xinPermissions SelectType:^(SelectCheckType checkType) {
+               if (checkType == FirstCheck){//安检
+                   
+                   [self IntoFirstCheck];
+                   
+               }else if (checkType == twenty_fourHourCheck){//24小时检测
+                   
+                   [self IntotwentyFourHourCehck];
+               }else if (checkType == Check9610){
+                   [self Into9610SysCheck];
+               }
+            }];
+        }
+        else if ([self.allmodel.perssioModel.xinPermissions isEqualToString:@"1"]){//首检
             
-            if (checkType == FirstCheck){//安检
-                
-                [self IntoFirstCheck];
-                
-            }else if (checkType == twenty_fourHourCheck){//24小时检测
-                
-                [self IntotwentyFourHourCehck];
-            }else if (checkType == Check9610){
-                [self Into9610SysCheck];
-            }
-        }];
-        
-    }else if ([self.allmodel.perssioModel.Permissions isEqualToString:@"1"]){//首检
-        
-        [self IntoFirstCheck];
-        
-    }else if ([self.allmodel.perssioModel.Permissions isEqualToString:@"2"]){//24小时
-        [self IntotwentyFourHourCehck];
-        
-    }else if ([self.allmodel.perssioModel.Permissions isEqualToString:@"3"]){//9610
-        [self Into9610SysCheck];
+            [self IntoFirstCheck];
+            
+        }else if ([self.allmodel.perssioModel.xinPermissions isEqualToString:@"2"]){//24小时
+            [self IntotwentyFourHourCehck];
+            
+        }else if ([self.allmodel.perssioModel.xinPermissions isEqualToString:@"3"]){//9610
+            [self Into9610SysCheck];
+        }
+    }else{
+        if ([self.allmodel.perssioModel.Permissions isEqualToString:@"0"]) {//都有权限
+            
+            [SelectCheckTypeView showCheckTypeViewContainStr:@"1,2" SelectType:^(SelectCheckType checkType) {
+               
+                if (checkType == FirstCheck){//安检
+                    
+                    [self IntoFirstCheck];
+                    
+                }else if (checkType == twenty_fourHourCheck){//24小时检测
+                    
+                    [self IntotwentyFourHourCehck];
+                }else if (checkType == Check9610){
+                    [self Into9610SysCheck];
+                }
+            }];
+            
+        }else if ([self.allmodel.perssioModel.Permissions isEqualToString:@"1"]){//首检
+            
+            [self IntoFirstCheck];
+            
+        }else if ([self.allmodel.perssioModel.Permissions isEqualToString:@"2"]){//24小时
+            [self IntotwentyFourHourCehck];
+            
+        }else if ([self.allmodel.perssioModel.Permissions isEqualToString:@"3"]){//9610
+            [self Into9610SysCheck];
+        }
     }
+    
+    
 }
 
 //首检

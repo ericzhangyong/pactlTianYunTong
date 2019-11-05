@@ -24,6 +24,11 @@
 //代理简称
 @property (nonatomic) NSString *agent_short_name;
 
+/// 控字的背景颜色
+@property (nonatomic,copy) NSString *securityCheckResultColor;
+/// 控字的
+@property (nonatomic,copy) NSString *securityCheckResult;
+
 /**********************测**********==
  '1' 时显示 showWord
  !='1' 或者为空或字段不存在时显示取到的’测’字(取到的值)
@@ -93,6 +98,8 @@
 
 //是否安保布控
 @property (nonatomic,assign) BOOL isABControl;
+
+
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

@@ -14,9 +14,13 @@
     if (self = [super init]) {
         
         self.Permissions = dic[@"Permissions"];
+        self.xinPermissions = dic[@"newPermissions"];
+
+        
 
     }
     return self;
 }
+
 
 @end

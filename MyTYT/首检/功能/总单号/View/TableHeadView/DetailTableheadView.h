@@ -30,11 +30,13 @@
 @property (nonatomic) UILabel *AgentLable;
 
 @property (nonatomic) UILabel *TypeLable;
+@property (nonatomic) UILabel *label_9610icon;
+
 
 @property (nonatomic) UILabel *controlLable;
 
 @property (nonatomic) UILabel *ABcontrolLable;
 
-- (void)setDataWithInfoModel:(infoModel *)indomodel testModel:(DeatilTstModel *)testModel gpModel:(GPModel *)gpModel testWord:(NSString *)testWord checkModel:(CheckModel *)checkModel AgentShortName:(NSString *)agentShorName iscontrol:(BOOL)iscontrol isABControl:(BOOL)isABcontrol;
+- (void)setDataWithInfoModel:(infoModel *)indomodel testModel:(DeatilTstModel *)testModel gpModel:(GPModel *)gpModel testWord:(NSString *)testWord checkModel:(CheckModel *)checkModel AgentShortName:(NSString *)agentShorName iscontrol:(BOOL)iscontrol isABControl:(BOOL)isABcontrol detectionType:(DetectionType)detectionType;
 
 @end

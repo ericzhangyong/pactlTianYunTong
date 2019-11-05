@@ -16,15 +16,19 @@
 
 @interface LeftView ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic,assign) ScanType vcType;
 @end
 
 @implementation LeftView
 
 - (instancetype)initWithFrame:(CGRect)frame
+                       vcType:(ScanType)scanVcType
+                   Dectection:(DetectionType)detectionType
 {
     self = [super initWithFrame:frame];
     if (self) {
-     
+        self.vcType = scanVcType;
+        self.detectionType = detectionType;
         [self creatUI];
         
         [self layout];
@@ -39,8 +43,10 @@
 
     for (ScanSectionModel *sectionModel in self.dataArray) {
 
-        NSData *data =[NSKeyedArchiver archivedDataWithRootObject:sectionModel.scanModel];
-        [array addObject:data];
+//        NSData *data =[NSKeyedArchiver archivedDataWithRootObject:sectionModel.scanModel];
+        NSDictionary *dict = sectionModel.scanModel.modelToJsonDictionary;
+        [array addObject:dict];
+//        [array addObject:data];
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:array forKey:YDArray];
@@ -191,7 +197,7 @@
         case ScanStateRowType:
         {
             ScanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScanCellID" forIndexPath:indexPath];
-            [cell loaddatWithMdoel:rowModel.scanModel];
+            [cell loaddatWithMdoel:rowModel.scanModel detectionType:self.detectionType];
             cell.DeleteBtn.tag = indexPath.section+100;
             [cell.DeleteBtn addTarget:self action:@selector(deleteWIthBtn:) forControlEvents:UIControlEventTouchUpInside];
             return cell;
