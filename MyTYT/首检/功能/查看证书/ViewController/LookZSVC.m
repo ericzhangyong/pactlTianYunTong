@@ -8,6 +8,7 @@
 
 #import "LookZSVC.h"
 #import "BooksModel.h"
+#import "NSString+RECategory.h"
 
 @interface LookZSVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -31,7 +32,16 @@
 }
 
 - (CGSize)preferredContentSize{
-    return CGSizeMake(220, 50*self.dataarray.count);
+    CGFloat maxWidth = 180;
+    for (int i = 0; i<self.dataarray.count; i++) {
+        BooksModel *model = self.dataarray[i];
+        NSString *string = model.BookNo;
+        CGFloat width = [string widthWithFont:[UIFont systemFontOfSize:18]]+40;
+        if (width >maxWidth) {
+            maxWidth = width;
+        }
+    }
+    return CGSizeMake(maxWidth, 50*self.dataarray.count);
 }
 
 - (void)creatUI{
@@ -74,8 +84,9 @@
     
     BooksModel *model = self.dataarray[indexPath.row];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.text = [NSString stringWithFormat:@"pekxmmm%@",model.BookNo];//model.BookNo;
+    cell.textLabel.text = model.BookNo;
     cell.textLabel.textColor = BtnColor;
+    cell.textLabel.font = [UIFont systemFontOfSize:18];
     return cell;
 }
 

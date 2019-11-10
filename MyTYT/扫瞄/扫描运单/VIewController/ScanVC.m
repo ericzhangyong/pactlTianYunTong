@@ -23,6 +23,7 @@
 #import "ShowMoreImageView.h"
 #import "PDFImageModel.h"
 #import "AddBZVC.h"
+#import "WriteScanYDVC.h"
 
 
 @interface ScanVC ()<leftViewDelegate>
@@ -57,8 +58,7 @@
     
     [self creatUI];
     
-    [self scanEvent];
-    
+   [self scanEvent];
     
 }
 
@@ -95,6 +95,85 @@
     [self successScanEventWithModel:model];
     
 }
+
+//- (void)inputVC{
+// 
+//    switch (self.vcType) {
+//        case SCANYGD:
+//        {
+//
+//            WriteScanYDVC *vc = [[WriteScanYDVC alloc] init];
+//            
+//            vc.machID = self.machID;
+//            vc.scanVcType = self.vcType;
+//            
+//            
+//            switch (self.detectionType) {
+//                    
+//                case DetectionTypeFirst:
+//                {
+//                    vc.type = FirstScanYDType;
+//                }
+//                    break;
+//                case DetectionTypeTwentyFour:
+//                {
+//                    vc.type = TwentyScanYDType;
+//
+//                }
+//                    break;
+//                case DetectionType9610System:
+//                {
+//                    vc.type = ScanYDType9610Systm;
+//
+//                }
+//                    break;
+//            }
+//            
+//            [self.navigationController pushViewController:vc animated:YES];
+//
+//            
+//        }
+//            break;
+//       case ScanTypeCheck:
+//       {
+//
+//           WriteScanYDVC *vc = [[WriteScanYDVC alloc] init];
+//           
+//           vc.machID = self.machID;
+//           vc.scanVcType = self.vcType;
+//           switch (self.detectionType) {
+//                   
+//               case DetectionTypeFirst:
+//               {
+//                   vc.type = FirstScanYDType;
+//               }
+//                   break;
+//               case DetectionTypeTwentyFour:
+//               {
+//                   vc.type = TwentyScanYDType;
+//
+//               }
+//                   break;
+//               case DetectionType9610System:
+//               {
+//                   vc.type = ScanYDType9610Systm;
+//
+//               }
+//                   break;
+//           }
+//           UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+//              
+//          nav.modalPresentationStyle = UIModalPresentationFormSheet;
+//          
+//          [self presentViewController:nav animated:YES completion:nil];
+//           
+//       }
+//           break;
+//
+//    }
+//    
+// 
+//}
 
 
 - (void)dealloc{
