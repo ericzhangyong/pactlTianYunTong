@@ -31,7 +31,7 @@
 }
 
 - (CGSize)preferredContentSize{
-    return CGSizeMake(180, 50*self.dataarray.count);
+    return CGSizeMake(220, 50*self.dataarray.count);
 }
 
 - (void)creatUI{
@@ -74,7 +74,7 @@
     
     BooksModel *model = self.dataarray[indexPath.row];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.text = model.BookNo;
+    cell.textLabel.text = [NSString stringWithFormat:@"pekxmmm%@",model.BookNo];//model.BookNo;
     cell.textLabel.textColor = BtnColor;
     return cell;
 }

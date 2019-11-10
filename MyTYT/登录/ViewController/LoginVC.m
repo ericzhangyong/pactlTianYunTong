@@ -104,7 +104,7 @@
         if (![self.loginview.accountTextField.text isEqualToString:@""] && ![self.loginview.passWordTextfiled.text isEqualToString:@""]) {//自己输入
             
         }else{
-            self.loginview.accountTextField.text = @"XAJ03";
+            self.loginview.accountTextField.text = @"XAJ003";
             self.loginview.passWordTextfiled.text = @"123456";
         }
         

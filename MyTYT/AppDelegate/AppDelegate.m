@@ -78,8 +78,8 @@
     NSString *BaseUrl;
     
     if (testInteacher == 1) {
-//        BaseUrl = @"http://chendejun00.gicp.net";
-        BaseUrl = @"http://192.168.100.3:79";
+        BaseUrl = @"http://chendejun00.gicp.net";
+//        BaseUrl = @"http://192.168.100.3:79";
     }else{
         BaseUrl = @"http://10.10.9.160";
     }

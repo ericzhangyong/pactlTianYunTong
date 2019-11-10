@@ -59,9 +59,9 @@
         if (![BaseVerifyUtils isNullOrSpaceStr:mdoel.securityCheckResult]) {
             self.label_control.hidden = NO;
             NSString *color = [NSString stringWithFormat:@"#%@",mdoel.securityCheckResultColor];
-            self.label_control.text = @"哈哈";
-            self.label_control.textColor = [UIColor redColor];
-            self.label_control.backgroundColor = [UIColor redColor];
+            self.label_control.text = @"控";
+            self.label_control.textColor = [UIColor whiteColor];
+            self.label_control.backgroundColor = [UIColor colorWithHexString:color];
         }
     }
     [self setNeedsDisplay];

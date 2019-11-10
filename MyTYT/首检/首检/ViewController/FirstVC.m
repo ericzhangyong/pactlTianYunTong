@@ -990,7 +990,7 @@
     
     vc.comeType = type;
     
-    vc.Type = DetectionTypeFirst;
+    vc.Type = self.detectionType;
     
     vc.CerdataModel = [[CerNeedDataModel alloc] initWithFirstModel:firstModel];
     

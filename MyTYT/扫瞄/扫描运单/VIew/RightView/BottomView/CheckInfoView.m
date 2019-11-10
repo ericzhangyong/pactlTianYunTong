@@ -189,7 +189,7 @@
     [self.imageView_pdf mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.label_zhengShu.mas_right).offset(20);
         make.centerY.equalTo(self.label_zhengShu);
-        make.width.height.mas_equalTo(20);
+        make.width.height.mas_equalTo(30);
         make.right.lessThanOrEqualTo(self.mas_right).offset(-10);
     }];
     
@@ -231,7 +231,7 @@
     [self.label_muDiGangKou mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.label_minuteOrder);
         make.top.equalTo(self.label_allOrderNum.mas_bottom).offset(20);
-        make.width.mas_equalTo(80);
+        make.width.mas_equalTo(100);
     }];
     [self.label_muDiGangKouContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.label_muDiGangKou.mas_right).offset(20);

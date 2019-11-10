@@ -82,9 +82,9 @@
            self.securityCheckResult = @"";
        }
         if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"refResult"]]) {
-            self.securityCheckResult =dic[@"refResult"];
+            self.refResult =dic[@"refResult"];
         }else{
-            self.securityCheckResult = @"";
+            self.refResult = @"";
         }
 
         

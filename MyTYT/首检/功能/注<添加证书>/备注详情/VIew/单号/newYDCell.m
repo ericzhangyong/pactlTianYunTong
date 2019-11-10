@@ -10,6 +10,10 @@
 #import "NewBZModel.h"
 #import "NSString+RECategory.h"
 
+@interface newYDCell ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_labelEle;
+
+@end
 @implementation newYDCell
 
 - (void)awakeFromNib {
@@ -28,11 +32,13 @@
     
     self.ydLable.text = model.waybill_no;
     
+    
     if ([model.wb_ele isEqualToString:@"1"]) {//电子运单
         self.EleLable.hidden = NO;
+        self.layoutWidth_labelEle.constant = 20;
     }else{
         self.EleLable.hidden = YES;
-
+        self.layoutWidth_labelEle.constant = 0;
     }
     
     

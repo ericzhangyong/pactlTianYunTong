@@ -199,7 +199,7 @@
 - (UIButton *)btn_9610{
     if (!_btn_9610) {
         _btn_9610 = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btn_9610 setTitle:@"9610系统检测" forState:UIControlStateNormal];
+        [_btn_9610 setTitle:@"9610货物首检" forState:UIControlStateNormal];
         _btn_9610.backgroundColor = NavColor;
         [_btn_9610 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _btn_9610.layer.cornerRadius = 5;

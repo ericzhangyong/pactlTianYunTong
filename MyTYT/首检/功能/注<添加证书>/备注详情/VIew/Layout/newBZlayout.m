@@ -120,13 +120,13 @@
    CGFloat y = self.totolheight;
     
     if (indexpath.row == 0) {
-        attibute.frame = CGRectMake(0, y, kuan *0.2, 50);
+        attibute.frame = CGRectMake(0, y, kuan *0.3, 50);
 
     }else if(indexpath.row == 1){
-        attibute.frame = CGRectMake(kuan *0.2, y, kuan *0.3, 50);
+        attibute.frame = CGRectMake(kuan *0.3, y, kuan *0.3, 50);
 
     }else if (indexpath.row == 2){
-        attibute.frame = CGRectMake( kuan *0.5,y, kuan *0.4, 50);
+        attibute.frame = CGRectMake( kuan *0.6,y, kuan *0.3, 50);
 
     }else if (indexpath.row == 3){
         attibute.frame = CGRectMake(kuan *0.9,y, kuan *0.1, 50);
@@ -164,11 +164,11 @@
     }
     
         if (indexpath.row == 0) {
-            attibute.frame = CGRectMake(0, maxheight, kuan *0.2, height);
+            attibute.frame = CGRectMake(0, maxheight, kuan *0.3, height);
 
         }else if (indexpath.row == zscount +1){
             
-            attibute.frame = CGRectMake(0.5*kuan, maxheight, kuan *0.4, height);
+            attibute.frame = CGRectMake(0.6*kuan, maxheight, kuan *0.3, height);
 
         }else if (indexpath.row == zscount +2){
             
@@ -176,7 +176,7 @@
 
         }else{
             
-            attibute.frame = CGRectMake(0.2*kuan, maxheight + (indexpath.row - 1)*baseheight, kuan *0.3, baseheight);
+            attibute.frame = CGRectMake(0.3*kuan, maxheight + (indexpath.row - 1)*baseheight, kuan *0.3, baseheight);
         }
         
         if (indexpath.row == [self.collectionView numberOfItemsInSection:indexpath.section] - 1) {
@@ -202,13 +202,13 @@
     }
     
     if (indexpath.row == 0) {
-        attibute.frame = CGRectMake(0,MAxheight , kuan *0.2, height);
+        attibute.frame = CGRectMake(0,MAxheight , kuan *0.3, height);
         
     }else if(indexpath.row == 1){
-        attibute.frame = CGRectMake(kuan *0.2, MAxheight, kuan *0.3, height);
+        attibute.frame = CGRectMake(kuan *0.3, MAxheight, kuan *0.3, height);
 
     }else if (indexpath.row == 2){
-        attibute.frame = CGRectMake( kuan *0.5,MAxheight, kuan *0.4, height);
+        attibute.frame = CGRectMake( kuan *0.6,MAxheight, kuan *0.3, height);
 
     }else if (indexpath.row == 3){
         attibute.frame = CGRectMake(kuan *0.9,MAxheight, kuan *0.1, height);

@@ -12,6 +12,7 @@
 		33C28FC53001569C2B16030A /* Pods_MyTYT_MyTYTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB337FC75D0C8D7B684F579 /* Pods_MyTYT_MyTYTUITests.framework */; };
 		C22EF9D5236C0A98002FBDD7 /* UIView+BaseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C22EF9D4236C0A97002FBDD7 /* UIView+BaseCategory.m */; };
 		C22EF9D9236C2E11002FBDD7 /* CheckBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */; };
+		C23FAD552378038A001DB21E /* CheckBIllselectHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23FAD542378038A001DB21E /* CheckBIllselectHeaderView.m */; };
 		C2B36CB0236FB55500DA8F6C /* CheckOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */; };
 		C2B36CB3236FBFC400DA8F6C /* CheckInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CB2236FBFC400DA8F6C /* CheckInfoView.m */; };
 		C2B36CB92370094300DA8F6C /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CB82370094300DA8F6C /* BaseModel.m */; };
@@ -400,6 +401,8 @@
 		C22EF9D4236C0A97002FBDD7 /* UIView+BaseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BaseCategory.m"; sourceTree = "<group>"; };
 		C22EF9D7236C2E11002FBDD7 /* CheckBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBottomView.h; sourceTree = "<group>"; };
 		C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBottomView.m; sourceTree = "<group>"; };
+		C23FAD532378038A001DB21E /* CheckBIllselectHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBIllselectHeaderView.h; sourceTree = "<group>"; };
+		C23FAD542378038A001DB21E /* CheckBIllselectHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBIllselectHeaderView.m; sourceTree = "<group>"; };
 		C2B36CAE236FB55500DA8F6C /* CheckOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckOrderVC.h; sourceTree = "<group>"; };
 		C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckOrderVC.m; sourceTree = "<group>"; };
 		C2B36CB1236FBFC400DA8F6C /* CheckInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInfoView.h; sourceTree = "<group>"; };
@@ -1193,6 +1196,8 @@
 				C2B36CBE23701DE800DA8F6C /* CheckBillSelectedCell.h */,
 				C2B36CBF23701DE800DA8F6C /* CheckBillSelectedCell.m */,
 				C2B36CC023701DE800DA8F6C /* CheckBillSelectedCell.xib */,
+				C23FAD532378038A001DB21E /* CheckBIllselectHeaderView.h */,
+				C23FAD542378038A001DB21E /* CheckBIllselectHeaderView.m */,
 			);
 			path = ScanPopView;
 			sourceTree = "<group>";
@@ -4982,6 +4987,7 @@
 				F115FAA720CD0A43003E1EF5 /* ShutBottomView.m in Sources */,
 				F14AD11020AD0DC0001CFEC2 /* DeatilTstModel.m in Sources */,
 				F14AD16720B2D063001CFEC2 /* TwentyAllModel.m in Sources */,
+				C23FAD552378038A001DB21E /* CheckBIllselectHeaderView.m in Sources */,
 				F18CDBD3208DB55700354764 /* ViewController+MASAdditions.m in Sources */,
 				F13FB4D120BE40CE008C7496 /* QueryShareCerVC.m in Sources */,
 				F1DD2BA8209AAAB80036A347 /* UIImageView+WebCache.m in Sources */,

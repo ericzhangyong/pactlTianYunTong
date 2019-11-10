@@ -9,6 +9,7 @@
 #import "CheckBillSelectView.h"
 #import "CheckBillSelectedCell.h"
 #import "ScanModel.h"
+#import "CheckBIllselectHeaderView.h"
 
 
 @interface CheckBillSelectView()<UITableViewDelegate,UITableViewDataSource>
@@ -131,6 +132,14 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 35;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 35;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    CheckBIllselectHeaderView *headerView = [[CheckBIllselectHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 35)];
+    return headerView;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     

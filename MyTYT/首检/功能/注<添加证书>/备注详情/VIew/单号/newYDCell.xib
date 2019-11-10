@@ -90,6 +90,7 @@
                 <outlet property="label_control" destination="cOW-02-kSn" id="SOB-y0-NFX"/>
                 <outlet property="label_refResult" destination="yJz-FT-PAB" id="5Wy-un-rrI"/>
                 <outlet property="layoutWidth_labelControl" destination="SKl-dE-UNx" id="bJk-a4-Qdw"/>
+                <outlet property="layoutWidth_labelEle" destination="vUk-aU-XbC" id="1Bs-Gf-7c2"/>
                 <outlet property="layoutWidth_labelresResult" destination="xP1-3M-QoQ" id="U2Q-Tg-uS5"/>
                 <outlet property="ydLable" destination="Sza-8W-fzi" id="Qf3-ST-hZR"/>
             </connections>

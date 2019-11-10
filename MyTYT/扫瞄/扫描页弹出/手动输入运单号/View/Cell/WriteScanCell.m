@@ -11,6 +11,10 @@
 #import "UIImage+UIImage_FLyColor.h"
 #import "UIColor+ColorString.h"
 
+@interface WriteScanCell ()
+
+@property (nonatomic,assign) ScanType scnType;
+@end
 @implementation WriteScanCell
 
 - (void)awakeFromNib {
@@ -36,6 +40,7 @@
 
 - (void)loaddataWithModel:(ScanBillModel *)billModel row:(NSInteger)row ScanType:(ScanType)scanType{
     
+    self.scnType = scanType;
     ScanModel *model = billModel.waybill;
     if (scanType == ScanTypeCheck) {
         model = billModel.subWaybill;
@@ -61,17 +66,23 @@
     self.JSZLLAble.text = [NSString stringWithFormat:@"%@ / %@",model.rcpNo,model.grossWeight];
     
     //安检状态
-    if ([model.isCheck isEqualToString:@"1"]) {
+    if (self.scnType == ScanTypeCheck) {
         self.stateLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.stateLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.stateLable.text = @"可安检";
-        
     }else{
-        self.stateLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
-        self.stateLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
-        
-        self.stateLable.text = @"不可安检";
+        if ([model.isCheck isEqualToString:@"1"]) {
+            self.stateLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
+            self.stateLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
+            self.stateLable.text = @"可安检";
+        }else{
+            self.stateLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
+            self.stateLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
+            
+            self.stateLable.text = @"不可安检";
+        }
     }
+    
     
     //电子运单
     [self eleEventWithModel:model];
@@ -139,8 +150,11 @@
     }else{
         self.lableTopConstant.constant = 10;
         self.lableBootomConstant.constant = 10;
-        [self.BackImageView setImage:[UIImage imageWithColor:[UIColor redColor]]];
-
+        if (self.scnType == ScanTypeCheck) {
+            [self.BackImageView setImage:[UIImage imageNamed:@""]];
+        }else{
+            [self.BackImageView setImage:[UIImage imageWithColor:[UIColor redColor]]];
+        }
     }
     
     self.MSGLable.text = model.msg;

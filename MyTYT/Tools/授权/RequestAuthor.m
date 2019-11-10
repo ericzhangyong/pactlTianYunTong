@@ -83,7 +83,17 @@
     UIAlertController *aleartVc = [UIAlertController alertControllerWithTitle:@"没有权限访问您的相机" message:aleartMessage preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        ;
+        
+
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >=10.0) {
+            // 系统大于10的时候直接打开当前App的设置界面
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+        } else {
+            // 系统小于10的时候，打开Wi-Fi界面
+            [[UIApplication sharedApplication] openURL:url];
+        }
+       
     }];
     
     [aleartVc addAction:ok];
