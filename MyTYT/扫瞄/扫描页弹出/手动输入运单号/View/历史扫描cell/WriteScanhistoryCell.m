@@ -22,7 +22,8 @@
 }
 
 
-- (void)loadDataWithModel:(ScanHisToryModel *)model{
+- (void)loadDataWithModel:(ScanHisToryModel *)model
+                 ScanType:(ScanType)scanVCType{
     
     
     self.operationtime.text = model.HisTime;

@@ -10,6 +10,8 @@
 #import "CheckBillSelectedCell.h"
 #import "ScanModel.h"
 #import "CheckBIllselectHeaderView.h"
+#import "BaseVerifyUtils.h"
+#import "NSString+RECategory.h"
 
 
 @interface CheckBillSelectView()<UITableViewDelegate,UITableViewDataSource>
@@ -34,14 +36,14 @@
 
 -(void)showBillSelectViewWithSuperView:(UIView *)superView{
     
-    if (superView != nil) {
-        self.frame = CGRectMake(0, 0, superView.bounds.size.width, superView.bounds.size.height);
-        [superView addSubview:self];
-    }else{
+//    if (superView != nil) {
+//        self.frame = CGRectMake(0, 0, superView.bounds.size.width, superView.bounds.size.height);
+//        [superView addSubview:self];
+//    }else{
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         [window addSubview:self];
-    }
+//    }
     self.view_background.alpha = 0;
     self.view_contain.alpha = 0;
     [UIView animateWithDuration:0.3 animations:^{
@@ -131,7 +133,7 @@
     return self.dataSource.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 35;
+    return 40;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 35;
@@ -157,6 +159,34 @@
             [self hiddenBillSelectView];
             weakSelf.didSeleced(billModel);
         };
+        cell.layoutWidht_labelControl.constant = 0;
+        cell.layoutLeft_labelControl.constant  = 0;
+        if (![BaseVerifyUtils isNullOrSpaceStr:billModel.subWaybill.securityCheckResult]) {
+            cell.label_control.hidden = NO;
+            cell.layoutWidht_labelControl.constant = 20;
+            cell.layoutLeft_labelControl.constant  = 5;
+            cell.label_control.backgroundColor = [UIColor colorWithHexString:billModel.subWaybill.securityCheckResultColor];
+        }
+        cell.label_reResult.hidden = YES;
+        if (![BaseVerifyUtils isNullOrSpaceStr:billModel.subWaybill.refResult]) {
+                   cell.label_reResult.hidden = NO;
+                   //通过pass 不合格 unqualified   暂扣 hold
+                      NSString *title = @"通过";
+                      if ([billModel.subWaybill.refResult isEqualToString:@"pass"]) {
+                          title = @"通过";
+                      }else if ([billModel.subWaybill.refResult isEqualToString:@"unqualified"]){
+                          title = @"不合格";
+                      }else if ([billModel.subWaybill.refResult isEqualToString:@"hold"]){
+                          title = @"暂扣";
+                      }
+                   CGFloat width = [title widthWithFont:[UIFont systemFontOfSize:13]]+8;
+                   cell.layoutWidth_reResult.constant = width;
+                    cell.label_reResult.text = title;
+                   cell.label_reResult.backgroundColor = [UIColor colorWithHexString:billModel.subWaybill.securityCheckResultColor];
+        }else{
+            cell.label_reResult.text = @"";
+            cell.layoutWidth_reResult.constant =0;
+        }
     }
     return cell;
 }

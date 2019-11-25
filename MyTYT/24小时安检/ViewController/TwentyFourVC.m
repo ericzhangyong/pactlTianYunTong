@@ -1288,7 +1288,7 @@
 #pragma mark---------------------------------------UI---------------------------------------
 - (void)creatUI{
     
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
     self.title = [NSString stringWithFormat:@"%@/24小时首检",self.allmodel.operationModel.ctName];
     [self.view addSubview:self.tableview];
     
@@ -1325,7 +1325,7 @@
         _tableview.estimatedRowHeight = 90;
         _tableview.sectionHeaderHeight = 160;
         _tableview.tableFooterView = [[UIView alloc] init];
-        _tableview.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _tableview.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
         _tableview.showsVerticalScrollIndicator = NO;
         
         [_tableview registerNib:[UINib nibWithNibName:@"TwentyCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"TwentyCellID"];

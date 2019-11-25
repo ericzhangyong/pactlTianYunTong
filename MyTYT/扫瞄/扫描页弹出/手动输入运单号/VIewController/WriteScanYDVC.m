@@ -117,7 +117,8 @@
 - (void)saveEvent{
     
     if (self.scanVcType == ScanTypeCheck) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [self requestInfoWithtext:self.headview.textfiled.text];
+//        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         return;
     }
     
@@ -369,6 +370,9 @@
     NSCharacterSet *charset = [NSCharacterSet decimalDigitCharacterSet];
     if (self.scanVcType == ScanTypeCheck) {
         charset = [NSCharacterSet alphanumericCharacterSet];
+        if (textField.text.length>0) {
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+        }
     }else{
         if ([[string stringByTrimmingCharactersInSet:charset] isEqualToString:@""]) {//数字
             
@@ -502,7 +506,7 @@
         case ScanHistoryRowType:
         {
             WriteScanhistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WriteScanhistoryCell class]) forIndexPath:indexPath];
-            [cell loadDataWithModel:rowModle.hisModel];
+            [cell loadDataWithModel:rowModle.hisModel ScanType:self.scanVcType];
             
             return cell;
         }

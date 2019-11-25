@@ -51,8 +51,9 @@
     
     //运单号
     NSMutableString *str = [NSMutableString stringWithFormat:@"%@", model.waybillno];
-    
-    [str insertString:@"-" atIndex:3];
+    if (scanType != ScanTypeCheck) {
+        [str insertString:@"-" atIndex:3];
+    }
     
     self.YDHLAble.text = str;
     
@@ -66,7 +67,9 @@
     self.JSZLLAble.text = [NSString stringWithFormat:@"%@ / %@",model.rcpNo,model.grossWeight];
     
     //安检状态
+    self.stateLable.hidden = NO;
     if (self.scnType == ScanTypeCheck) {
+        self.stateLable.hidden = YES;
         self.stateLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.stateLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.stateLable.text = @"可安检";

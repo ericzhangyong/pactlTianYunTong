@@ -87,7 +87,7 @@
 - (void)creatUI{
     
     self.title = @"查询共享证书";
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
     
     [self.view addSubview:self.collectionView];
     
@@ -242,7 +242,7 @@
             // Fallback on earlier versions
         }
         _collectionView.alwaysBounceVertical = YES;
-        _collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _collectionView.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
         
         [_collectionView registerNib:[UINib nibWithNibName:@"QueryCollectionReusableHeadView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([QueryCollectionReusableHeadView class])];
           [_collectionView registerNib:[UINib nibWithNibName:@"QueryFootResuableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([QueryFootResuableView class])];

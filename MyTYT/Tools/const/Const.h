@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger,ScanType) {
     SCANYGD,//扫描运单号
     SCANYCER,//扫描证书
     ScanTypeCheck, //查验扫描
-    ScanTypeCheckYGD_and_YCER //vc界面扫描运单号扫描证书
+    //ScanTypeCheckYGD_and_YCER //vc界面扫描运单号扫描证书
 };
 
 

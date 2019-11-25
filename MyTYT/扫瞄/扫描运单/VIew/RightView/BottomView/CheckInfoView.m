@@ -86,7 +86,7 @@
         }
         
         //证书
-        if (billModel.books >0) {
+        if (billModel.books.count >0) {
             self.imageView_pdf.image = [UIImage imageNamed:@"pdf2"];
             self.imageView_pdf.userInteractionEnabled = YES;
         }else{
@@ -101,7 +101,7 @@
         self.label_daiLiContent.text = @"";
         self.label_allMuDiGangKouContent.text = @"";
         //证书
-        if (billModel.books >0) {
+        if (billModel.books.count >0) {
             self.imageView_pdf.image = [UIImage imageNamed:@"pdf2"];
             self.imageView_pdf.userInteractionEnabled = YES;
         }else{

@@ -41,7 +41,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
         [self addSubview:self.imageview];
         [self addSubview:self.lable];
         [self addSubview:self.btn];

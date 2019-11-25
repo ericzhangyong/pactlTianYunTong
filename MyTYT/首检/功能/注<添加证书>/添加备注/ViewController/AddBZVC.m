@@ -526,7 +526,7 @@
 - (void)creatUI{
     
     
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
     self.navigationController.navigationBar.translucent = NO;
     self.title = [NSString stringWithFormat:@"运单号:%@",self.YDH];
     UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStyleDone target:self action:@selector(back)];
@@ -630,7 +630,7 @@
         _tableview.dataSource = self;
         _tableview.estimatedRowHeight = 200;
         _tableview.allowsSelection = NO;
-        _tableview.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _tableview.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
 
         if (@available(iOS 11.0, *)) {
             _tableview.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;

@@ -52,7 +52,7 @@
     
     self.title = @"添加证书";
     
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
     [self.view addSubview:self.leftview];
     [self.view addSubview:self.cerview];
     [self.view addSubview:self.collectionview];

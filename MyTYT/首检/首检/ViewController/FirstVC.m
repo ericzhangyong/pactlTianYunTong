@@ -1167,7 +1167,7 @@
 #pragma mark---------------------------------------UI---------------------------------------------
 - (void)creatUI{
     
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
     NSString *title = [NSString stringWithFormat:@"%@/%@ 安检机货物首检",self.allmodel.operationModel.ctName,self.allmodel.operationModel.machineName];
     if (self.detectionType == DetectionType9610System) {
         title = [NSString stringWithFormat:@"%@/%@ 9610货物首检",self.allmodel.operationModel.ctName,self.allmodel.operationModel.machineName];
@@ -1201,7 +1201,7 @@
         _tableview.estimatedRowHeight = 90;
         _tableview.sectionHeaderHeight = 140;
         _tableview.tableFooterView = [[UIView alloc] init];
-        _tableview.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _tableview.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
         _tableview.showsVerticalScrollIndicator = NO;
         
         [_tableview registerNib:[UINib nibWithNibName:@"Mycell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MycellID"];

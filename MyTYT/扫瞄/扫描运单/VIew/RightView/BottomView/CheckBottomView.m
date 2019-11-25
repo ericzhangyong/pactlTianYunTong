@@ -71,8 +71,17 @@
 -(void)setBtnStatus:(UIButton *)btn IsSelected:(BOOL)isSelected{
     btn.selected = isSelected;
     if (isSelected) {
-        btn.backgroundColor = Color0093F0;
+        if (btn == self.btn_tongGuo) {
+            btn.backgroundColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
+        }else if (btn == self.btn_buHeGe){
+            btn.backgroundColor = [UIColor redColor];
+        }else if (btn == self.btn_zanKou){
+            btn.backgroundColor = [UIColor colorWithHexString:@"f9e35d"];
+        }else{
+            btn.backgroundColor = Color0093F0;
+        }
     }else{
+       
         btn.backgroundColor = Color9A9A9A;
     }
 }

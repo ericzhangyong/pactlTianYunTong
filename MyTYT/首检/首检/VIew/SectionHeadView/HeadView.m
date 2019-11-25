@@ -505,7 +505,7 @@
 - (UIView *)tableHeadView{
     if (!_tableHeadView) {
         _tableHeadView = [[UIView alloc] init];
-        _tableHeadView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _tableHeadView.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
     }
     return _tableHeadView;
 }
@@ -529,7 +529,7 @@
         _allBtn.layer.masksToBounds = YES;
         _allBtn.layer.borderColor = [UIColor orangeColor].CGColor;
         _allBtn.layer.borderWidth = 0.5;
-        [_allBtn setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+        [_allBtn setBackgroundColor:[UIColor colorWithHexString:@"f1f1f1"]];
       
         
     }

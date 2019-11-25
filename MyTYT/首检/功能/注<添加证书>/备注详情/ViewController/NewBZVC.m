@@ -207,7 +207,7 @@
         _colltionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kuan, gao-64) collectionViewLayout:layout];
         _colltionview.delegate = self;
         _colltionview.dataSource = self;
-        _colltionview.backgroundColor =  [UIColor groupTableViewBackgroundColor];
+        _colltionview.backgroundColor =  [UIColor colorWithHexString:@"f1f1f1"];
         
         
         _colltionview.alwaysBounceVertical = YES;

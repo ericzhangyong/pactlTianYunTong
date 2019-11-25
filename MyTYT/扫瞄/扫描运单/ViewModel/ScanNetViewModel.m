@@ -9,6 +9,7 @@
 #import "ScanNetViewModel.h"
 #import "ScanModel.h"
 #import "FlyHttpTools.h"
+#import "BaseVerifyUtils.h"
 
 @implementation ScanNetViewModel
 
@@ -47,7 +48,11 @@
             success(billModel);
         
         }else{
-            fail(dic[@"msg"]);
+            NSString *msg = dic[@"msg"];
+            if ([BaseVerifyUtils isNullOrSpaceStr:msg]) {
+                msg = @"请求失败";
+            }
+            fail(msg);
         }
         
       
@@ -75,6 +80,9 @@
         
         if ([dic[@"ok"] integerValue] == 1) {
             NSArray *dataArr = [ScanBillModel convertModelWithJsonArr:dic[@"data"]];
+            for (ScanBillModel *billModel in dataArr) {
+                billModel.scanType = ScanTypeCheck;
+            }
             success(dataArr);
         }else{
             fail(dic[@"msg"]);

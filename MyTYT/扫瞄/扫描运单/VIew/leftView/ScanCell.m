@@ -29,7 +29,7 @@
     
     [self.controlImageview setImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"#005493"]]];
 
-    
+    self.contentView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)loaddatWithMdoel:(ScanBillModel *)billModel
@@ -75,17 +75,19 @@
         self.YDHLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.statelable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         self.statelable.text = billModel.showText;
+        self.contentView.backgroundColor = [UIColor whiteColor];
     }else{
         if ([billModel.waybill.isCheck isEqualToString:@"1"]) {
             self.YDHLable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
             self.statelable.textColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
             self.statelable.text = @"可安检";
-            
+            self.contentView.backgroundColor = [UIColor colorWithRed:0.212 green:0.671 blue:0.376 alpha:1.00];
         }else{
             self.YDHLable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
             self.statelable.textColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
             
             self.statelable.text = @"不可安检";
+            self.contentView.backgroundColor = [UIColor colorWithRed:1.000 green:0.494 blue:0.475 alpha:1.00];
         }
     }
 }

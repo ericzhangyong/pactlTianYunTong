@@ -28,6 +28,7 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
+    self.tableview.backgroundColor = [UIColor whiteColor];
     self.tableview.frame = CGRectMake(0, 0, self.preferredContentSize.width, self.preferredContentSize.height);
 }
 

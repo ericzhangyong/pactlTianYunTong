@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *operationMan;
 @property (weak, nonatomic) IBOutlet UILabel *operationState;
 @property (weak, nonatomic) IBOutlet UILabel *operationtime;
-- (void)loadDataWithModel:(ScanHisToryModel *)model;
+- (void)loadDataWithModel:(ScanHisToryModel *)model ScanType:(ScanType)scanVCType;
+
+
 
 
 @end

@@ -841,7 +841,7 @@
 		F1749C2920A6A51D002FA77A /* FirstAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstAllModel.m; sourceTree = "<group>"; };
 		F18C13F920E0B8DE00B8C5A6 /* SetViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewModel.h; sourceTree = "<group>"; };
 		F18C13FA20E0B8DE00B8C5A6 /* SetViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewModel.m; sourceTree = "<group>"; };
-		F18CDA7B208DB23C00354764 /* 天运通2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "天运通2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18CDA7B208DB23C00354764 /* 天运通2.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "天运通2.3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18CDA93208DB24200354764 /* MyTYTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTYTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18CDA97208DB24200354764 /* MyTYTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTYTTests.m; sourceTree = "<group>"; };
 		F18CDA99208DB24200354764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -3446,7 +3446,7 @@
 		F18CDA7C208DB23C00354764 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F18CDA7B208DB23C00354764 /* 天运通2.2.app */,
+				F18CDA7B208DB23C00354764 /* 天运通2.3.app */,
 				F18CDA93208DB24200354764 /* MyTYTTests.xctest */,
 				F18CDA9E208DB24200354764 /* MyTYTUITests.xctest */,
 			);
@@ -4434,7 +4434,7 @@
 			);
 			name = MyTYT;
 			productName = MyTYT;
-			productReference = F18CDA7B208DB23C00354764 /* 天运通2.2.app */;
+			productReference = F18CDA7B208DB23C00354764 /* 天运通2.3.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F18CDA92208DB24200354764 /* MyTYTTests */ = {
@@ -5177,6 +5177,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7EDPZEKU8P;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5187,9 +5188,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ShangHaiAriportCargo.MyTYT;
-				PRODUCT_NAME = "天运通2.2";
+				PRODUCT_NAME = "天运通2.3";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -5200,6 +5201,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7EDPZEKU8P;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MyTYT/Setting/PrefixHeader.pch;
@@ -5209,9 +5211,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ShangHaiAriportCargo.MyTYT;
-				PRODUCT_NAME = "天运通2.2";
+				PRODUCT_NAME = "天运通2.3";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

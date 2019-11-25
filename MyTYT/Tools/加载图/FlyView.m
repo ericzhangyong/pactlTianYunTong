@@ -71,7 +71,7 @@
 
     loadingView.frame = CGRectMake(0, -32, superView.frame.size.width, superView.frame.size.height+32);
     
-    loadingView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    loadingView.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
 
     [loadingView addSubview:loadingView.activityview];
     

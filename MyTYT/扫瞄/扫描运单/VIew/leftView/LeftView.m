@@ -199,6 +199,7 @@
             ScanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScanCellID" forIndexPath:indexPath];
             [cell loaddatWithMdoel:rowModel.scanModel detectionType:self.detectionType];
             cell.DeleteBtn.tag = indexPath.section+100;
+            cell.DeleteBtn.hidden = self.vcType == ScanTypeCheck;
             [cell.DeleteBtn addTarget:self action:@selector(deleteWIthBtn:) forControlEvents:UIControlEventTouchUpInside];
             return cell;
 
@@ -286,9 +287,11 @@
 
 //保存
 - (void)saveevent{
+    self.saveBtn.enabled = NO;
     if ([_delelgate respondsToSelector:@selector(saveEventWith:)]) {
         
         [_delelgate saveEventWith:self.dataArray];
+        self.saveBtn.enabled = YES;
     }
 }
 

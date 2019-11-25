@@ -79,7 +79,7 @@
     
     if (testInteacher == 1) {
         BaseUrl = @"http://chendejun00.gicp.net";
-//        BaseUrl = @"http://192.168.100.3:79";
+//        BaseUrl = @"http://192.168.1.115:84";
     }else{
         BaseUrl = @"http://10.10.9.160";
     }

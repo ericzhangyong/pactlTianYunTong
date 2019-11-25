@@ -274,7 +274,7 @@
     [self.sesstion addOutput:dataOutput];
     
     //设置扫码格式，输出元数据类型必须在添加到回话后设置格式
-    if (self.type == SCANYGD) {
+    if (self.type == SCANYGD || self.type == ScanTypeCheck) {
         
         dataOutput.metadataObjectTypes = @[AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode];
 

@@ -42,6 +42,10 @@
 /// 当前选中index
 @property (nonatomic,assign) NSInteger currentSelectIndex;
 @property (nonatomic,copy) NSString *refResult;
+
+/// 是否改变过当前运单
+@property (nonatomic,assign) BOOL checkIsHaveControl;
+
 @end
 
 @implementation ScanVC
@@ -66,6 +70,7 @@
 - (void)addNotifiCation{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(InputYDHEventNotiDication:) name:YDNOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(InputYDSaveNotification:) name:YDSaveNotiFication object:nil];
+    
 }
 
 //去除通知
@@ -200,8 +205,8 @@
 //显示扫描页面
 - (void)PresentVC{
     
-    if (self.vcType == ScanTypeCheck && self.leftView.dataArray.count>0) {
-        [MBProgressHUD showTextView:self.view textTitle:@"请先完成当前分单再扫描"];
+    if (self.vcType == ScanTypeCheck && self.checkIsHaveControl) {
+        [MBProgressHUD showTextView:self.view textTitle:@"请先保存当前分单查验结论再进行扫描！"];
         return;
     }
     
@@ -234,10 +239,10 @@
             break;
             
     }
-    
+    WEAK_SELF;
     scanvc.block = ^(NSString *scanStr) {
         
-        [self RequestDDinfoWithStr:scanStr];
+        [weakSelf RequestDDinfoWithStr:scanStr];
         FlyLog(@"%@",scanStr);
     };
     
@@ -256,7 +261,7 @@
     
     
     
-    if (self.vcType) {
+    if (self.vcType == ScanTypeCheck) {
     
         [self.NetViewModel loaddataWitNumber:str start:^{
             [MBProgressHUD showLoadView:weakself.view loadTitle:@"正在加载"];
@@ -308,6 +313,11 @@
 //成功扫描
 - (void)successScanEventWithModel:(ScanBillModel *)model{
     
+    if (self.vcType == ScanTypeCheck) {
+        if (self.leftView.dataArray.count>0) {
+            [self.leftView.dataArray removeAllObjects];
+        }
+    }
     //如果已经存在单号，不需要重新添加
     int j = -1;
     
@@ -319,7 +329,6 @@
             j = i;
             break;
         }
-        
     }
     
     
@@ -365,6 +374,7 @@
     
     //查验
     if (self.vcType == ScanTypeCheck && self.detectionType == DetectionType9610System) {
+        self.checkIsHaveControl = NO;
         [self saveCheckOrderWithrefResult:self.refResult];
     }else{//扫描
 
@@ -501,6 +511,13 @@
 -(void)saveCheckOrderWithrefResult:(NSString *)refResult{
     ScanSectionModel *sectionModel = self.leftView.dataArray[self.currentSelectIndex];
     ScanBillModel *billModel = sectionModel.scanModel;
+    if ([BaseVerifyUtils isNullOrSpaceStr:refResult]) {
+        refResult = billModel.subWaybill.refResult;
+    }
+    if ([BaseVerifyUtils isNullOrSpaceStr:refResult]) {
+        [MBProgressHUD showTextView:self.view textTitle:@"请先给出查验结论再保存！"];
+        return;
+    }
     
     WEAK_SELF
     [self.NetViewModel saveCheckActionWithAwId:billModel.subWaybill.awId refResult:refResult start:^{
@@ -518,6 +535,9 @@
 #pragma mark- click
 /// 1.不合格 2.暂扣 3.通过 4.备注  // 通过pass 不合格 unqualified   暂扣 hold
 -(void)hangdleCheckBottomClickType:(NSInteger)clickType{
+    if (self.vcType == ScanTypeCheck) {
+        self.checkIsHaveControl = YES;
+    }
     if (clickType == 1) {
         self.refResult = unqualified;
     }else if (clickType == 2){
@@ -559,7 +579,7 @@
     
     
     self.title = self.vcType== ScanTypeCheck?@"查验":@"扫描";
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"f1f1f1"];
 
     [self.view addSubview:self.leftView];
     [self.view addSubview:self.rightVIew];
