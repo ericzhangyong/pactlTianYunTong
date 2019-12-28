@@ -167,6 +167,11 @@
             self.securityCheckResult = @"";
         }
  
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"goodsNameCn"]]) {
+            self.goodsNameCn =dic[@"goodsNameCn"];
+        }else{
+            self.goodsNameCn = @"";
+        }
     }
     return self;
 }

@@ -28,6 +28,7 @@
 #import "BZCerModel.h"
 #import "PDFImageModel.h"
 #import "DeviceModel.h"
+#import "NewBzChPMCell.h"
 
 @interface NewBZVC ()<UICollectionViewDelegate,UICollectionViewDataSource,newbZcolltionviewldelegate>
 
@@ -66,10 +67,9 @@
     
     [self.dataarray removeAllObjects];
     
-    newbzwzModel *wzmodel = [[newbzwzModel alloc] init];
+    newbzwzModel *wzmodel = [[newbzwzModel alloc] initWithDetectionType:self.Type];
     [self.dataarray addObject:wzmodel];//添加文字
     
-   
     [self.dataarray addObjectsFromArray:mdoel.array];
     
     [self.colltionview reloadData];
@@ -203,7 +203,7 @@
 #pragma mark------------------------------------------------------------------------------------
 - (UICollectionView *)colltionview{
     if (!_colltionview) {
-        newBZlayout *layout = [[newBZlayout alloc] init];
+        newBZlayout *layout = [[newBZlayout alloc] initWithDetectionType:self.Type];
         _colltionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kuan, gao-64) collectionViewLayout:layout];
         _colltionview.delegate = self;
         _colltionview.dataSource = self;
@@ -224,6 +224,8 @@
         [_colltionview registerNib:[UINib nibWithNibName:@"newbzkongcell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"newbzkongcellID"];
         [_colltionview registerNib:[UINib nibWithNibName:@"newBzPMCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"newBzPMCellID"];
         [_colltionview registerNib:[UINib nibWithNibName:@"NewBZBZCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"NewBZBZCellID"];
+        [_colltionview registerNib:[UINib nibWithNibName:@"NewBzChPMCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"NewBzChPMCell"];
+
         
     }
     return _colltionview;
@@ -261,8 +263,13 @@
     }
     
     NewBZModel *mdoel = self.dataarray[section];
-    
-    return mdoel.CanUseCerArray.count >0 ? mdoel.CanUseCerArray.count + 3 :mdoel.CanUseCerArray.count + 4;
+    NSInteger count;
+    if (self.Type == DetectionType9610System) {
+        count=  mdoel.CanUseCerArray.count >0 ? mdoel.CanUseCerArray.count + 3 :mdoel.CanUseCerArray.count + 4;
+    }else{
+        count =  mdoel.CanUseCerArray.count >0 ? mdoel.CanUseCerArray.count + 4 :mdoel.CanUseCerArray.count + 5;
+    }
+    return count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -281,65 +288,135 @@
         
         if ([model.type isEqualToString:@"0"] && model.CanUseCerArray.count >0) {//带证书类型
             
-            if (indexPath.item == 0) {
-                
-                newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model detectionType:self.Type];
-                return cell;
-                
-            }else if (indexPath.item == model.CanUseCerArray.count + 1){
-                
-                newBzPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newBzPMCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model];
-                return cell;
-                
-            }else if (indexPath.item == model.CanUseCerArray.count + 2){
-                
-                NewBZBZCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBZBZCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model];
-                cell.bzBtn.tag = indexPath.section + 100;
-                [cell.bzBtn addTarget:self action:@selector(bZEventWith:) forControlEvents:UIControlEventTouchUpInside];
-                return cell;
-                
+            if (self.Type == DetectionType9610System) {
+                if (indexPath.item == 0) {
+                    
+                    newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model detectionType:self.Type];
+                    return cell;
+                    
+                }else if (indexPath.item == model.CanUseCerArray.count + 1){
+                    
+                    newBzPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newBzPMCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                    
+                }else if (indexPath.item == model.CanUseCerArray.count + 2){
+                    
+                    NewBZBZCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBZBZCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    cell.bzBtn.tag = indexPath.section + 100;
+                    [cell.bzBtn addTarget:self action:@selector(bZEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    return cell;
+                    
+                }else{
+                    
+                    newbzZSCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzZSCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model.CanUseCerArray[indexPath.row-1]];
+                    cell.ZSImgBtn.tag = indexPath.section *1000 + indexPath.row - 1;
+                    cell.ZSTitleBtn.tag = indexPath.section *1000 + indexPath.row - 1;
+                    cell.deleteBtn.tag = indexPath.section *1000 + indexPath.row - 1;
+                    
+                    [cell.ZSTitleBtn addTarget:self action:@selector(quiryZSEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.ZSImgBtn addTarget:self action:@selector(quiryZSEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    
+                    
+                    return cell;
+                }
             }else{
-                
-                newbzZSCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzZSCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model.CanUseCerArray[indexPath.row-1]];
-                cell.ZSImgBtn.tag = indexPath.section *1000 + indexPath.row - 1;
-                cell.ZSTitleBtn.tag = indexPath.section *1000 + indexPath.row - 1;
-                cell.deleteBtn.tag = indexPath.section *1000 + indexPath.row - 1;
-                
-                [cell.ZSTitleBtn addTarget:self action:@selector(quiryZSEventWith:) forControlEvents:UIControlEventTouchUpInside];
-                [cell.ZSImgBtn addTarget:self action:@selector(quiryZSEventWith:) forControlEvents:UIControlEventTouchUpInside];
-               
-                
-                return cell;
+                if (indexPath.item == 0) {
+                    
+                    newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model detectionType:self.Type];
+                    return cell;
+                    
+                }else if (indexPath.item == model.CanUseCerArray.count + 1){
+                    
+                    newBzPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newBzPMCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                    
+                }else if (indexPath.item == model.CanUseCerArray.count + 2){
+                    
+                    NewBzChPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBzChPMCell" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                    
+                }else if (indexPath.item == model.CanUseCerArray.count + 3){
+                    
+                    NewBZBZCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBZBZCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    cell.bzBtn.tag = indexPath.section + 100;
+                    [cell.bzBtn addTarget:self action:@selector(bZEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    return cell;
+                    
+                }else{
+                    
+                    newbzZSCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzZSCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model.CanUseCerArray[indexPath.row-1]];
+                    cell.ZSImgBtn.tag = indexPath.section *1000 + indexPath.row - 1;
+                    cell.ZSTitleBtn.tag = indexPath.section *1000 + indexPath.row - 1;
+                    cell.deleteBtn.tag = indexPath.section *1000 + indexPath.row - 1;
+                    
+                    [cell.ZSTitleBtn addTarget:self action:@selector(quiryZSEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell.ZSImgBtn addTarget:self action:@selector(quiryZSEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    
+                    
+                    return cell;
+                }
             }
-            
-            
+        
         }else{//不带证书类型
             
-            if (indexPath.item == 0) {
-                
-                
-                newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model detectionType:self.Type];
-                return cell;
-            }else if (indexPath.item == 1){
-                newbzkongcell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzkongcellID" forIndexPath:indexPath];
-                
-                return cell;
-            }else if (indexPath.item == 2){
-                newBzPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newBzPMCellID" forIndexPath:indexPath];
-                [cell loaddataWithModel:model];
-                return cell;
-            }else if(indexPath.item == 3){
-                NewBZBZCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBZBZCellID" forIndexPath:indexPath];
-                cell.bzBtn.tag = indexPath.section + 100;
-                [cell.bzBtn addTarget:self action:@selector(bZEventWith:) forControlEvents:UIControlEventTouchUpInside];
-                [cell loaddataWithModel:model];
-                return cell;
+            if (self.Type == DetectionType9610System) {
+                if (indexPath.item == 0) {
+                    
+                    
+                    newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model detectionType:self.Type];
+                    return cell;
+                }else if (indexPath.item == 1){
+                    newbzkongcell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzkongcellID" forIndexPath:indexPath];
+                    
+                    return cell;
+                }else if (indexPath.item == 2){
+                    newBzPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newBzPMCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                }else if(indexPath.item == 3){
+                    NewBZBZCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBZBZCellID" forIndexPath:indexPath];
+                    cell.bzBtn.tag = indexPath.section + 100;
+                    [cell.bzBtn addTarget:self action:@selector(bZEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                }
+            }else{
+                if (indexPath.item == 0) {
+                    
+                    newYDCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newYDCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model detectionType:self.Type];
+                    return cell;
+                }else if (indexPath.item == 1){
+                    newbzkongcell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newbzkongcellID" forIndexPath:indexPath];
+                    
+                    return cell;
+                }else if (indexPath.item == 2){
+                    newBzPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newBzPMCellID" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                }else if (indexPath.item == 3){
+                    NewBzChPMCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBzChPMCell" forIndexPath:indexPath];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                }else if(indexPath.item == 4){
+                    NewBZBZCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewBZBZCellID" forIndexPath:indexPath];
+                    cell.bzBtn.tag = indexPath.section + 100;
+                    [cell.bzBtn addTarget:self action:@selector(bZEventWith:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell loaddataWithModel:model];
+                    return cell;
+                }
             }
+           
         }
         
         

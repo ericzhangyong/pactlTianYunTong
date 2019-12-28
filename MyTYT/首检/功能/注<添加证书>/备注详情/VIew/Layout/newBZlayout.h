@@ -18,6 +18,9 @@
 
 @interface newBZlayout : UICollectionViewLayout
 
+-(instancetype)initWithDetectionType:(DetectionType)detectionType;
+
+
 @property (nonatomic,weak) id<newbZcolltionviewldelegate> delegate;
 
 @end

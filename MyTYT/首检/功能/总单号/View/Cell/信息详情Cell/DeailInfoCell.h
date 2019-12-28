@@ -20,6 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *TJLable;
 @property (weak, nonatomic) IBOutlet UILabel *MDGLable;
 @property (weak, nonatomic) IBOutlet UILabel *PMLable;
+//中文品名
+@property (weak, nonatomic) IBOutlet UIView *view_chPinMing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutHeight_chPinMing;
+@property (weak, nonatomic) IBOutlet UILabel *label_chPinMingContent;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *ELILable;
 @property (weak, nonatomic) IBOutlet UILabel *ELMLable;
 @property (weak, nonatomic) IBOutlet UILabel *THDMLable;
@@ -29,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *BZBtn;
 @property (weak, nonatomic) IBOutlet UILabel *INLable;
 
-- (void)loaddataWithInfomationModel:(infoModel *)model remakcount:(NSInteger)count;
+- (void)loaddataWithInfomationModel:(infoModel *)model remakcount:(NSInteger)count dectionType:(DetectionType)detectionType;
 
 @end
 

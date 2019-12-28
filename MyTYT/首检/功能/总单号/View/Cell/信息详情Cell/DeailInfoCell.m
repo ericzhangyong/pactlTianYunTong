@@ -9,6 +9,11 @@
 #import "DeailInfoCell.h"
 #import "infoModel.h"
 
+@interface DeailInfoCell ()
+
+@property (nonatomic,assign) DetectionType detectionType;
+
+@end
 @implementation DeailInfoCell
 
 - (void)awakeFromNib {
@@ -24,8 +29,11 @@
     self.TJLable.adjustsFontSizeToFitWidth = YES;
 }
 
-- (void)loaddataWithInfomationModel:(infoModel *)model remakcount:(NSInteger)count{
+- (void)loaddataWithInfomationModel:(infoModel *)model
+                         remakcount:(NSInteger)count
+                        dectionType:(DetectionType)detectionType{
 
+    self.detectionType = detectionType;
     [self setOtherWithModel:model];
     
     [self setELWithModel:model];
@@ -112,6 +120,15 @@
     }
     
     self.PMLable.attributedText = attribute;
+    
+    if (self.detectionType == DetectionType9610System) {
+        self.view_chPinMing.hidden = YES;
+        self.layoutHeight_chPinMing.constant = 0;
+    }else{
+        self.view_chPinMing.hidden = NO;
+        self.layoutHeight_chPinMing.constant = 50;
+        self.label_chPinMingContent.text = model.goodsNameCn;
+    }
     
 }
 

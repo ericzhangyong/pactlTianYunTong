@@ -12,6 +12,8 @@
 //@class SectionheadLable;
 
 @interface DetailWayBillHeadView : DetailSectionBaseHeadView
+-(instancetype)initWithDetectionType:(DetectionType)detectionType;
+
 
 @property (nonatomic) SectionheadLable *FDHLable;
 
@@ -22,6 +24,9 @@
 @property (nonatomic) SectionheadLable *MDGLable;
 
 @property (nonatomic) SectionheadLable *PMLable;
+/// 中文品名
+@property (nonatomic) SectionheadLable *PMChLable;
+
 
 @property (nonatomic) SectionheadLable *BZLable;
 

@@ -16,9 +16,18 @@
 
 @property (nonatomic) NSMutableArray *attriArray;
 
+@property (nonatomic,assign) DetectionType detectionType;
 @end
 
 @implementation newBZlayout
+
+-(instancetype)initWithDetectionType:(DetectionType)detectionType{
+    if (self = [super init]) {
+        self.detectionType = detectionType;
+    }
+    return self;
+}
+
 
 - (NSMutableArray *)attriArray{
     if (!_attriArray) {
@@ -119,19 +128,39 @@
     
    CGFloat y = self.totolheight;
     
-    if (indexpath.row == 0) {
-        attibute.frame = CGRectMake(0, y, kuan *0.3, 50);
-
-    }else if(indexpath.row == 1){
-        attibute.frame = CGRectMake(kuan *0.3, y, kuan *0.3, 50);
-
-    }else if (indexpath.row == 2){
-        attibute.frame = CGRectMake( kuan *0.6,y, kuan *0.3, 50);
-
-    }else if (indexpath.row == 3){
-        attibute.frame = CGRectMake(kuan *0.9,y, kuan *0.1, 50);
-
+    if (self.detectionType == DetectionType9610System) {
+        if (indexpath.row == 0) {
+            attibute.frame = CGRectMake(0, y, kuan *0.3, 50);
+            
+        }else if(indexpath.row == 1){
+            attibute.frame = CGRectMake(kuan *0.3, y, kuan *0.3, 50);
+            
+        }else if (indexpath.row == 2){
+            attibute.frame = CGRectMake( kuan *0.6,y, kuan *0.3, 50);
+            
+        }else if (indexpath.row == 3){
+            attibute.frame = CGRectMake(kuan *0.9,y, kuan *0.1, 50);
+            
+        }
+    }else{
+        if (indexpath.row == 0) {
+            attibute.frame = CGRectMake(0, y, kuan *0.2, 50);
+            
+        }else if(indexpath.row == 1){
+            attibute.frame = CGRectMake(kuan *0.2, y, kuan *0.3, 50);
+            
+        }else if (indexpath.row == 2){
+            attibute.frame = CGRectMake( kuan *0.5,y, kuan *0.2, 50);
+            
+        }else if (indexpath.row == 3){
+            attibute.frame = CGRectMake( kuan *0.7,y, kuan *0.2, 50);
+            
+        }else if (indexpath.row == 4){
+            attibute.frame = CGRectMake(kuan *0.9,y, kuan *0.1, 50);
+            
+        }
     }
+   
     
     if (indexpath.row == [self.collectionView numberOfItemsInSection:indexpath.section] - 1) {
         self.totolheight += 50;
@@ -163,6 +192,7 @@
         
     }
     
+    if (self.detectionType == DetectionType9610System) {
         if (indexpath.row == 0) {
             attibute.frame = CGRectMake(0, maxheight, kuan *0.3, height);
 
@@ -178,6 +208,32 @@
             
             attibute.frame = CGRectMake(0.3*kuan, maxheight + (indexpath.row - 1)*baseheight, kuan *0.3, baseheight);
         }
+    }else{
+
+       if (indexpath.row == 0) {
+           attibute.frame = CGRectMake(0, maxheight, kuan *0.2, height);
+
+       }else if (indexpath.row == zscount ){
+
+           attibute.frame = CGRectMake(0.2*kuan, maxheight + (indexpath.row - 1)*baseheight, kuan *0.3, baseheight);
+
+       }else if (indexpath.row == zscount +1){
+
+           attibute.frame = CGRectMake(0.5*kuan, maxheight, kuan *0.5, height);
+
+       }else if (indexpath.row == zscount +2){
+
+           attibute.frame = CGRectMake(0.7*kuan, maxheight, kuan *0.2, height);
+
+       }else if (indexpath.row == zscount +3){
+
+           attibute.frame = CGRectMake(0.9*kuan, maxheight, kuan *0.1, height);
+
+       }
+
+
+    }
+        
         
         if (indexpath.row == [self.collectionView numberOfItemsInSection:indexpath.section] - 1) {
             self.totolheight = (self.totolheight + (zscount)*baseheight);
@@ -201,19 +257,40 @@
         
     }
     
-    if (indexpath.row == 0) {
-        attibute.frame = CGRectMake(0,MAxheight , kuan *0.3, height);
-        
-    }else if(indexpath.row == 1){
-        attibute.frame = CGRectMake(kuan *0.3, MAxheight, kuan *0.3, height);
+    if (self.detectionType == DetectionType9610System) {
+        if (indexpath.row == 0) {
+            attibute.frame = CGRectMake(0,MAxheight , kuan *0.3, height);
+            
+        }else if(indexpath.row == 1){
+            attibute.frame = CGRectMake(kuan *0.3, MAxheight, kuan *0.3, height);
 
-    }else if (indexpath.row == 2){
-        attibute.frame = CGRectMake( kuan *0.6,MAxheight, kuan *0.3, height);
+        }else if (indexpath.row == 2){
+            attibute.frame = CGRectMake( kuan *0.6,MAxheight, kuan *0.3, height);
 
-    }else if (indexpath.row == 3){
-        attibute.frame = CGRectMake(kuan *0.9,MAxheight, kuan *0.1, height);
+        }else if (indexpath.row == 3){
+            attibute.frame = CGRectMake(kuan *0.9,MAxheight, kuan *0.1, height);
 
+        }
+    }else{
+        if (indexpath.row == 0) {
+            attibute.frame = CGRectMake(0,MAxheight , kuan *0.2, height);
+            
+        }else if(indexpath.row == 1){
+            attibute.frame = CGRectMake(kuan *0.2, MAxheight, kuan *0.3, height);
+
+        }else if (indexpath.row == 2){
+            attibute.frame = CGRectMake( kuan *0.5,MAxheight, kuan *0.2, height);
+
+        }else if (indexpath.row == 3){
+            attibute.frame = CGRectMake(kuan *0.7,MAxheight, kuan *0.2, height);
+
+        }else if (indexpath.row == 4){
+            attibute.frame = CGRectMake(kuan *0.9,MAxheight, kuan *0.1, height);
+
+        }
     }
+    
+    
     
     if (indexpath.row == [self.collectionView numberOfItemsInSection:indexpath.section] - 1) {
         self.totolheight += height;

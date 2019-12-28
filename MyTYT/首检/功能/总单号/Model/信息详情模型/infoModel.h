@@ -35,8 +35,11 @@
 @property (nonatomic) NSString *csName;
 //目的港
 @property (nonatomic) NSString *airportDest;
-//品名
+//品名（9610中文品名 其他是英文品名）
 @property (nonatomic) NSString *goodsDesc;
+//中文品名
+@property (nonatomic) NSString *goodsNameCn;
+
 //ELI
 @property (nonatomic) NSString *eliFlag;
 //ELM

@@ -10,6 +10,8 @@
 
 @interface newbzwzModel : NSObject
 
+-(instancetype)initWithDetectionType:(DetectionType)detectionTyep;
+
 @property (nonatomic) NSArray *wzarray;
 
 @end

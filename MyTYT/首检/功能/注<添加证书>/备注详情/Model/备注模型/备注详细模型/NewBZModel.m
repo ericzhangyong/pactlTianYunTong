@@ -86,6 +86,13 @@
         }else{
             self.refResult = @"";
         }
+        if (![BaseVerifyUtils isNullOrSpaceStr:dic[@"goods_name_cn"]]) {
+            self.goods_name_cn =dic[@"goods_name_cn"];
+        }else{
+            self.goods_name_cn = @"";
+        }
+        
+        
 
         
     }

@@ -10,11 +10,15 @@
 
 @implementation newbzwzModel
 
-- (instancetype)init
+- (instancetype)initWithDetectionType:(DetectionType)detectionTyep;
 {
     self = [super init];
     if (self) {
-        self.wzarray = @[@"运单号",@"证书",@"品名",@"备注"];
+        if (detectionTyep == DetectionType9610System) {
+            self.wzarray = @[@"运单号",@"证书",@"品名",@"备注"];
+        }else{
+            self.wzarray = @[@"运单号",@"证书",@"英文品名",@"中文品名",@"备注"];
+        }
     }
     return self;
 }

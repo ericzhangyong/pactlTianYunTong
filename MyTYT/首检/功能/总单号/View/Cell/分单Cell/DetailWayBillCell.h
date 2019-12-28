@@ -17,7 +17,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *JSNumber;
 @property (weak, nonatomic) IBOutlet UILabel *ZLNumber;
 @property (weak, nonatomic) IBOutlet UILabel *MdgLable;
+//英文品名
+@property (weak, nonatomic) IBOutlet UIView *view_enPinMing;
 @property (weak, nonatomic) IBOutlet UILabel *pmLable;
+//中文品名
+@property (weak, nonatomic) IBOutlet UIView *view_chPinMing;
+@property (weak, nonatomic) IBOutlet UILabel *label_chPinMing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_wayBill;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWith_enPinMing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_chPinMing;
+
+
+
 
 @property (weak, nonatomic) IBOutlet UILabel *EleLable;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_eleLabel;

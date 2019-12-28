@@ -13,6 +13,8 @@
 		C22EF9D5236C0A98002FBDD7 /* UIView+BaseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C22EF9D4236C0A97002FBDD7 /* UIView+BaseCategory.m */; };
 		C22EF9D9236C2E11002FBDD7 /* CheckBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */; };
 		C23FAD552378038A001DB21E /* CheckBIllselectHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23FAD542378038A001DB21E /* CheckBIllselectHeaderView.m */; };
+		C253899923B756B700DF6964 /* NewBzChPMCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C253899723B756B700DF6964 /* NewBzChPMCell.m */; };
+		C253899A23B756B700DF6964 /* NewBzChPMCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C253899823B756B700DF6964 /* NewBzChPMCell.xib */; };
 		C2B36CB0236FB55500DA8F6C /* CheckOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */; };
 		C2B36CB3236FBFC400DA8F6C /* CheckInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CB2236FBFC400DA8F6C /* CheckInfoView.m */; };
 		C2B36CB92370094300DA8F6C /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B36CB82370094300DA8F6C /* BaseModel.m */; };
@@ -403,6 +405,9 @@
 		C22EF9D8236C2E11002FBDD7 /* CheckBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBottomView.m; sourceTree = "<group>"; };
 		C23FAD532378038A001DB21E /* CheckBIllselectHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBIllselectHeaderView.h; sourceTree = "<group>"; };
 		C23FAD542378038A001DB21E /* CheckBIllselectHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBIllselectHeaderView.m; sourceTree = "<group>"; };
+		C253899623B756B700DF6964 /* NewBzChPMCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBzChPMCell.h; sourceTree = "<group>"; };
+		C253899723B756B700DF6964 /* NewBzChPMCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBzChPMCell.m; sourceTree = "<group>"; };
+		C253899823B756B700DF6964 /* NewBzChPMCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewBzChPMCell.xib; sourceTree = "<group>"; };
 		C2B36CAE236FB55500DA8F6C /* CheckOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckOrderVC.h; sourceTree = "<group>"; };
 		C2B36CAF236FB55500DA8F6C /* CheckOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckOrderVC.m; sourceTree = "<group>"; };
 		C2B36CB1236FBFC400DA8F6C /* CheckInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInfoView.h; sourceTree = "<group>"; };
@@ -1138,6 +1143,16 @@
 			path = BottomView;
 			sourceTree = "<group>";
 		};
+		C253899523B7567500DF6964 /* 中文品名 */ = {
+			isa = PBXGroup;
+			children = (
+				C253899623B756B700DF6964 /* NewBzChPMCell.h */,
+				C253899723B756B700DF6964 /* NewBzChPMCell.m */,
+				C253899823B756B700DF6964 /* NewBzChPMCell.xib */,
+			);
+			path = "中文品名";
+			sourceTree = "<group>";
+		};
 		C2B36CA9236FB30C00DA8F6C /* 查验 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1325,6 +1340,7 @@
 		F10A92E120AAEA0F00D8FD8F /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				C253899523B7567500DF6964 /* 中文品名 */,
 				F10A92E220AAEA0F00D8FD8F /* 备注 */,
 				F10A92E620AAEA0F00D8FD8F /* 单号 */,
 				F10A92EA20AAEA0F00D8FD8F /* Layout */,
@@ -4558,6 +4574,7 @@
 				F13ED7BC20EB3F9700388EFC /* twentyAleartCell.xib in Resources */,
 				F1DD2B45209994260036A347 /* AddBZCell.xib in Resources */,
 				F16DD2AF20C6AF5E00AECEED /* LikeCell.xib in Resources */,
+				C253899A23B756B700DF6964 /* NewBzChPMCell.xib in Resources */,
 				F16DD29B20C65E8700AECEED /* CerResultCell.xib in Resources */,
 				F1F58DFE20A1757800CD1D26 /* SelectcerCell.xib in Resources */,
 				F141AC4120CF8BC400DCB8A7 /* FlyaViewCell.xib in Resources */,
@@ -4726,6 +4743,7 @@
 				F16DD2A620C6619900AECEED /* ShowCerModel.m in Sources */,
 				F141AC7C20CF9F8D00DCB8A7 /* PhotoListTableViewCell.m in Sources */,
 				F14AD18920B3E60A001CFEC2 /* TwentyMachineModel.m in Sources */,
+				C253899923B756B700DF6964 /* NewBzChPMCell.m in Sources */,
 				F14AD0F320AC5EDE001CFEC2 /* DetailBookCell.m in Sources */,
 				F13FB4DA20BE6A7F008C7496 /* QueryDataManger.m in Sources */,
 				F1DD2BA5209AAAB80036A347 /* SDWebImageDownloaderOperation.m in Sources */,

@@ -208,7 +208,7 @@
         {
             DeailInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeailInfoCellID" forIndexPath:indexPath];
             [cell.BZBtn addTarget:self action:@selector(ZDBZEvent) forControlEvents:UIControlEventTouchUpInside];
-            [cell loaddataWithInfomationModel:rowmodel.infomdoel remakcount:self.dataManager.detailModel.count];
+            [cell loaddataWithInfomationModel:rowmodel.infomdoel remakcount:self.dataManager.detailModel.count dectionType:self.type];
 
             return cell;
         }

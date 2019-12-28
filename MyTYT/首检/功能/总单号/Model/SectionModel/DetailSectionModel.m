@@ -100,13 +100,13 @@
             
         case SetionWayBillCellType:
         {
-            DetailWayBillHeadView *headView = [[DetailWayBillHeadView alloc] init];
+            DetailWayBillHeadView *headView = [[DetailWayBillHeadView alloc] initWithDetectionType:self.detailType];
             if (self.detailType == DetectionType9610System) {
                 headView.FDHLable.text = @"物流单号";
                 headView.PMLable.text = @"中文品名";
             }else{
                 headView.FDHLable.text = @"分单号";
-                headView.PMLable.text = @"品名";
+                headView.PMLable.text = @"英文品名";
             }
             
             self.SectionheadView =  headView;

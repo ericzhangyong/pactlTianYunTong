@@ -16,6 +16,10 @@
 //品名
 @property (nonatomic) NSString *goods_desc;
 
+//中文品名
+@property (nonatomic) NSString *goods_name_cn;
+
+
 
 //0时显示证书以及证书添加信息
 @property (nonatomic) NSString *type;

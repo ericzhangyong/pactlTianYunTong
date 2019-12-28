@@ -12,7 +12,7 @@
 
 @interface DetailWayBillCell ()
 
-@property (nonatomic,assign) NSInteger detectionType;
+@property (nonatomic,assign) DetectionType detectionType;
 @end
 @implementation DetailWayBillCell
 
@@ -128,10 +128,7 @@
 //ELI ELM 品名
 - (void)setELWithModel:(WayBillModel *)model{
     
-    NSString *pinMing = model.goods_name_cn;
-    if ([BaseVerifyUtils isNullOrSpaceStr:model.goods_name_cn]) {
-        pinMing = model.goods_desc;
-    }
+    NSString *pinMing = model.goods_desc;
     NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@",pinMing] attributes:@{}];
    
     
@@ -172,12 +169,37 @@
         [attribute appendAttributedString:ELM];
 
     }
-    
-    
     self.pmLable.attributedText = attribute;
+    
+    
+    self.pmLable.textAlignment = NSTextAlignmentCenter;
+    self.label_chPinMing.textAlignment = NSTextAlignmentCenter;
+    CGFloat fdRate = 0.34;
+    CGFloat pmRate = 0;
+    CGFloat pmChRate = 0.26;
+    self.view_enPinMing.hidden = YES;
+    if (self.detectionType != DetectionType9610System) {
+        fdRate = 0.2;
+        pmRate = 0.2;
+        pmChRate = 0.2;
+        self.view_enPinMing.hidden = NO;
+    }
+    self.layoutWidth_wayBill.constant = fdRate*kScreenWidth;
+    self.layoutWith_enPinMing.constant = pmRate*kScreenWidth;
+    self.layoutWidth_chPinMing.constant = pmChRate*kScreenWidth;
+    NSString *chGoodName = model.goods_name_cn;
+    if ([BaseVerifyUtils isNullOrSpaceStr:model.goods_name_cn]) {
+        chGoodName = model.goods_desc;
+    }
+    self.label_chPinMing.text = chGoodName;
     
 }
 
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+    
+}
 
 //备注
 - (void)setBZWithModel:(WayBillModel *)mdoel{
