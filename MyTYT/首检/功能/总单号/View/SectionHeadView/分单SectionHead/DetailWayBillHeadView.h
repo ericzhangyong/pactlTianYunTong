@@ -7,8 +7,9 @@
 //
 
 #import "DetailSectionBaseHeadView.h"
+#import "SectionheadLable.h"
 
-@class SectionheadLable;
+//@class SectionheadLable;
 
 @interface DetailWayBillHeadView : DetailSectionBaseHeadView
 

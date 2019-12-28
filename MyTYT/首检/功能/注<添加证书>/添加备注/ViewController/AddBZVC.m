@@ -147,7 +147,7 @@
                 [weakself.tableview reloadData];
 
             }
-            
+            [weakself beiZhuContentChangedWithNum:allmodel.dataarray.count];
         }else{
             [MBProgressHUD showTextView:weakself.view textTitle:allmodel.msg];
 
@@ -159,6 +159,11 @@
 
     }];
     
+}
+
+-(void)beiZhuContentChangedWithNum:(NSInteger)num{
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"beiZhuContentChange" object:@(num)];
 }
 
 - (void)failEvent{
@@ -289,6 +294,8 @@
         [sectionModel.rowarray removeObjectAtIndex:row];
         [weakself.tableview reloadData];
         [weakself.tableview scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionNone animated:NO];
+        [weakself beiZhuContentChangedWithNum:sectionModel.rowarray.count];
+
     } fail:^(NSString *fail) {
         [MBProgressHUD showErrorView:weakself.navigationController.view errorTitle:fail];
     }];

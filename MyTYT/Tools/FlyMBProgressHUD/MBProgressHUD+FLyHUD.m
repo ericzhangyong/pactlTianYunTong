@@ -7,6 +7,7 @@
 //
 
 #import "MBProgressHUD+FLyHUD.h"
+#import "NSString+RECategory.h"
 
 @implementation MBProgressHUD (FLyHUD)
 
@@ -47,8 +48,13 @@
     hud.mode = MBProgressHUDModeText;
     
     hud.label.text = errortitle;
-    
-    [hud hideAnimated:YES afterDelay:2.5];
+    hud.label.lineBreakMode= NSLineBreakByWordWrapping;
+    hud.label.numberOfLines = 0;
+    CGFloat height = [errortitle heightWithFont:hud.label.font width:view.frame.size.width];
+    CGRect frame = hud.frame;
+    frame.size.height = height;
+    hud.label.frame = frame;
+    [hud hideAnimated:YES afterDelay:3.5];
 }
 
 //登录成功直接隐藏

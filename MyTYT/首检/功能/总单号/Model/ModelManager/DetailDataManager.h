@@ -19,7 +19,7 @@
 
 @property (nonatomic) DetailModel *detailModel;
 
-- (instancetype)initWithWith:(DetailModel *)detailModel gpModel:(GPModel *)gpmdoel;
+- (instancetype)initWithWith:(DetailModel *)detailModel gpModel:(GPModel *)gpmdoel dectionType:(DetectionType)detailType;
 //返回列表所需要的数据类型
 
 @end

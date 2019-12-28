@@ -487,6 +487,10 @@
 ////进入备注页面
 - (void)IntoBZVC{
 
+    if (self.leftView.dataArray.count == 0) {
+        [MBProgressHUD showTextView:self.view textTitle:@"没有运单,请扫描之后再添加备注"];
+        return;
+    }
     
     ScanSectionModel *sectionModel = self.leftView.dataArray[self.currentSelectIndex];
     ScanBillModel *billModel = sectionModel.scanModel;

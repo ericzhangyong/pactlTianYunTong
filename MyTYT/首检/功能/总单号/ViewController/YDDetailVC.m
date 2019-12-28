@@ -98,7 +98,7 @@
 - (void)SuccessEventWith:(GPModel *)gpModel detailModel:(DetailModel *)detailModel{
     
    
-    self.dataManager = [[DetailDataManager alloc] initWithWith:detailModel gpModel:gpModel];
+    self.dataManager = [[DetailDataManager alloc] initWithWith:detailModel gpModel:gpModel dectionType:self.type];
     
     
     [self.headview setDataWithInfoModel:self.dataManager.detailModel.infomdel testModel:self.dataManager.detailModel.testModel gpModel:self.dataManager.gpModel testWord:self.testWord checkModel:[self.dataManager.detailModel.checkArray firstObject] AgentShortName:self.dataManager.detailModel.agentShortName iscontrol:detailModel.iscontrol isABControl:detailModel.isABcontrol detectionType:self.type];

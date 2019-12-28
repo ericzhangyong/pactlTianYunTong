@@ -49,9 +49,9 @@
     
     self.JS.text = mdoel.rcpNo;
     
-    self.ZL.text = mdoel.grossWeight;
+    self.ZL.text = [NSString stringWithFormat:@"%.2f",mdoel.grossWeight.doubleValue];
     
-    self.JFZL.text = mdoel.chargeWeight;
+    self.JFZL.text = [NSString stringWithFormat:@"%.2f",mdoel.chargeWeight.doubleValue];
     
     self.TJ.text = mdoel.vol;
     

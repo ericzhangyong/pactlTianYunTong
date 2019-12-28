@@ -14,15 +14,22 @@
 #import "detailInfoheadView.h"
 #import "DetailCheckHeadView.h"
 
+@interface DetailSectionModel ()
+//进入类型
+@property (nonatomic,assign) DetectionType detailType;
+
+@end
 @implementation DetailSectionModel
 
 
 - (instancetype)initWithSectioncellType:(DetailCellType)SectioncellType
-                               RowArray:(NSArray<NSArray *> *)rowArray{
+                               RowArray:(NSArray<NSArray *> *)rowArray
+                          DetectionType:(DetectionType)detailType{
     
     if (self = [super init]) {
         
         self.cellType = SectioncellType;
+        self.detailType = detailType;
         
         NSMutableArray *array = [NSMutableArray array];
         
@@ -93,7 +100,16 @@
             
         case SetionWayBillCellType:
         {
-            self.SectionheadView = [[DetailWayBillHeadView alloc] init];
+            DetailWayBillHeadView *headView = [[DetailWayBillHeadView alloc] init];
+            if (self.detailType == DetectionType9610System) {
+                headView.FDHLable.text = @"物流单号";
+                headView.PMLable.text = @"中文品名";
+            }else{
+                headView.FDHLable.text = @"分单号";
+                headView.PMLable.text = @"品名";
+            }
+            
+            self.SectionheadView =  headView;
         }
             break;
             
@@ -116,5 +132,7 @@
     
     self.SectionFooterView = [[UIView alloc] init];
 }
+
+
 
 @end

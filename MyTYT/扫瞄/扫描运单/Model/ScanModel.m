@@ -209,6 +209,47 @@
         }else{
             self.securityCheckResult = @"";
         }
+        
+        
+        if (dic[@"pCheckRemark"] !=Nil && [dic[@"pCheckRemark"] isKindOfClass:[NSDictionary class]]) {
+            
+            NSDictionary *temdic = dic[@"pCheckRemark"];
+            self.pCheckRemark = [BZModle new];
+            self.pCheckRemark.employid = temdic[@"employid"];
+            
+            self.pCheckRemark.ID = temdic[@"id"];
+            
+            self.pCheckRemark.awID = temdic[@"awId"];
+            
+            self.pCheckRemark.remark = temdic[@"remark"];
+            
+            self.pCheckRemark.isedit = temdic[@"isedit"];
+            
+            NSDate *detailDate = [NSDate dateWithTimeIntervalSince1970:([temdic[@"createddate"] doubleValue]/1000)];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //实例化一个NSDateFormatter对象
+            //设定时间格式,这里可以设置成自己需要的格式
+            [dateFormatter setDateFormat:@"HH:mm MM/dd "];
+            
+            self.pCheckRemark.time = [dateFormatter stringFromDate: detailDate];
+            
+            
+            
+            
+        }else{
+            
+            self.pCheckRemark.employid = @"";
+            
+            self.pCheckRemark.ID = @"";
+            
+            self.pCheckRemark.awID = @"";
+            
+            self.pCheckRemark.remark =@"";
+            
+            self.pCheckRemark.isedit = @"";
+            
+            self.pCheckRemark.time = @"";
+            
+        }
     }
     return self;
 }

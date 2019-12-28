@@ -40,6 +40,8 @@
     [self.btn_buHeGe addTarget:self action:@selector(btn_buHeGeClick) forControlEvents:UIControlEventTouchUpInside];
     [self.btn_zanKou addTarget:self action:@selector(btn_zanKouClick) forControlEvents:UIControlEventTouchUpInside];
     [self.btn_tongGuo addTarget:self action:@selector(btn_tongGuoClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beiZhuContentChange:) name:@"beiZhuContentChange" object:nil];
 
 }
 
@@ -50,6 +52,12 @@
     }else{
         [self setBtnStatus:self.btn_beiZhu IsSelected:count_remark.doubleValue>0];
     }
+}
+
+-(void)beiZhuContentChange:(NSNotification *)nofication{
+    
+    NSNumber *count_remark = nofication.object;
+    self.count_remark = count_remark.stringValue;
 }
 
 ///通过pass 不合格 unqualified   暂扣 hold

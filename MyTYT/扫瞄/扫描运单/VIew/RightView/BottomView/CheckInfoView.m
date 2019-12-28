@@ -7,7 +7,12 @@
 //
 
 #import "CheckInfoView.h"
+#import "NSString+RECategory.h"
 
+@interface CheckInfoView ()
+
+@property (nonatomic,strong) ScanBillModel *billModel;
+@end
 @implementation CheckInfoView
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -35,6 +40,7 @@
    
     self.label_minuteOrderContent = [[RightLable alloc] init];
     self.label_zhongWenPinMingContent = [[RightLable alloc] init];
+    self.label_zhongWenPinMingContent.adjustsFontSizeToFitWidth = NO;
     self.label_allOrderNumContent = [[RightLable alloc] init];
     self.label_muDiGangKouContent = [[RightLable alloc] init];
     self.label_allMuDiGangKouContent = [[RightLable alloc] init];
@@ -51,6 +57,8 @@
     [self addSubview:self.label_daiLi];
     [self addSubview:self.label_minuteOrderContent];
     [self addSubview:self.label_zhongWenPinMingContent];
+    self.label_zhongWenPinMingContent.lineBreakMode = NSLineBreakByWordWrapping;
+    self.label_zhongWenPinMingContent.numberOfLines = 0;
     [self addSubview:self.label_allOrderNumContent];
     [self addSubview:self.label_muDiGangKouContent];
     [self addSubview:self.label_allMuDiGangKouContent];
@@ -62,6 +70,7 @@
 
 - (void)loaddataWithscanModel:(ScanBillModel *)billModel{
     
+    self.billModel = billModel;
     if (billModel) {
         ScanModel *allBillMoel = billModel.waybill;
         ScanModel *subBillModel = billModel.subWaybill;
@@ -200,10 +209,15 @@
         make.width.mas_equalTo(80);
     }];
 
-
+    CGFloat height = 20;
+    NSString *zhongwenContent = self.billModel.subWaybill.goodsDesc;
+    if (![BaseVerifyUtils isNullOrSpaceStr:zhongwenContent]) {
+        CGFloat width = kScreenWidth-20-CGRectGetMaxX(self.label_zhongWenPinMing.frame)-15;
+        height = [zhongwenContent heightWithFont:[UIFont boldSystemFontOfSize:15] width:width]+5;
+    }
     [self.label_zhongWenPinMingContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.label_zhongWenPinMing.mas_right).offset(20);
-        make.centerY.equalTo(self.label_zhongWenPinMing);
+        make.top.equalTo(self.label_zhongWenPinMing);
         make.right.equalTo(self).offset(-20);
         make.right.lessThanOrEqualTo(self.mas_right).offset(-10);
     }];
@@ -211,7 +225,7 @@
     
     [self.label_allOrderNum mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.label_minuteOrder);
-        make.top.equalTo(self.label_zhongWenPinMing.mas_bottom).offset(20);
+        make.top.equalTo(self.label_zhongWenPinMingContent.mas_bottom).offset(20);
         make.width.mas_equalTo(80);
     }];
     

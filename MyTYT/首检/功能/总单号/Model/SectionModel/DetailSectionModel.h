@@ -28,9 +28,11 @@ typedef NS_ENUM(NSInteger,DetailCellType) {
 
 @property (nonatomic,assign) DetailCellType cellType;
 
+
 @property (nonatomic) NSArray *rowArray;
 
 - (instancetype)initWithSectioncellType:(DetailCellType)SectioncellType
-                                 RowArray:(NSArray<NSArray *> *)rowArray;
+                               RowArray:(NSArray<NSArray *> *)rowArray
+                          DetectionType:(DetectionType)detailType;
 
 @end

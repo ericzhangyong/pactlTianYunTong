@@ -10,6 +10,7 @@
 #import "BaseModel.h"
 @class ScanBillModel;
 #import "BooksModel.h"
+#import "BZModle.h"
 
 //typedef NS_ENUM(NSInteger,ScanVCType){
 //    ScanVCTypeScan = 0,//扫描界面
@@ -23,6 +24,8 @@
 @property (nonatomic) NSString *agentShortName;
 //运单号
 @property (nonatomic) NSString *waybillno;//waybillNo
+//b
+@property (nonatomic,copy) BZModle *pCheckRemark;
 
 @property (nonatomic,copy) NSString *awId;
 

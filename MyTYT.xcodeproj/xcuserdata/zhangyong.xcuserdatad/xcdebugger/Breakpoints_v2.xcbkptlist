@@ -256,7 +256,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "883"
                   endingLineNumber = "883"
-                  offsetFromSymbolStart = "86">
+                  offsetFromSymbolStart = "80">
                </Location>
                <Location
                   uuid = "F2BC2A75-477A-4794-946E-BE31F2C1AD99 - 28b6a906e1b9e743"
@@ -271,7 +271,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "883"
                   endingLineNumber = "883"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -369,22 +369,6 @@
             startingLineNumber = "901"
             endingLineNumber = "901"
             landmarkName = "-isYJAgreeClick:upArray:block:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4FD836E2-E81A-4E2C-93A3-CBF1C1426504"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyTYT/&#x626b;&#x7784;/&#x626b;&#x63cf;&#x9875;&#x5f39;&#x51fa;/&#x626b;&#x63cf;/ViewController/PreSentScanVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
-            landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
